@@ -1025,25 +1025,29 @@
     <h2 data-lang="no">Klar til å komme i gang?</h2>
     <p class="section-intro" data-lang="en">Tell us about your business and Salesforce needs. Our team in Asker, Norway will respond within one business day.</p>
     <p class="section-intro" data-lang="no">Fortell oss om din virksomhet og Salesforce-behov. Teamet vårt i Asker, Norge, svarer innen én virkedag.</p>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" onsubmit="handleSubmit(event)" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="7a957239-2948-46c5-9c7d-d42ef5bc52ef"/>
+      <input type="hidden" name="subject" value="New Contact Form Submission — EikenTech"/>
+      <input type="hidden" name="from_name" value="EikenTech Website"/>
+      <input type="checkbox" name="botcheck" style="display:none"/>
       <div class="form-group">
         <label data-lang="en">Full Name</label>
         <label data-lang="no">Fullt navn</label>
-        <input type="text" placeholder="Your name" required/>
+        <input type="text" name="name" placeholder="Your name" required/>
       </div>
       <div class="form-group">
         <label data-lang="en">Company</label>
         <label data-lang="no">Selskap</label>
-        <input type="text" placeholder="Your company" required/>
+        <input type="text" name="company" placeholder="Your company" required/>
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input type="email" placeholder="you@company.com" required/>
+        <input type="email" name="email" placeholder="you@company.com" required/>
       </div>
       <div class="form-group">
         <label data-lang="en">Service Interest</label>
         <label data-lang="no">Tjenesteinteresse</label>
-        <select>
+        <select name="service">
           <option data-lang="en">Salesforce Managed Support</option>
           <option data-lang="no">Salesforce administrert støtte</option>
           <option data-lang="en">Implementation & Optimization</option>
@@ -1061,7 +1065,7 @@
       <div class="form-group full">
         <label data-lang="en">Message</label>
         <label data-lang="no">Melding</label>
-        <textarea placeholder="Tell us about your project..." data-lang="en"></textarea>
+        <textarea name="message" placeholder="Tell us about your project..." data-lang="en"></textarea>
         <textarea placeholder="Fortell oss om prosjektet ditt..." data-lang="no"></textarea>
       </div>
       <button type="submit" class="form-submit" data-lang="en">Send Message →</button>
@@ -1118,14 +1122,67 @@
 </footer>
 
 <script>
-  // Contact form
-  function handleSubmit(e) {
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const tab = this.dataset.tab;
+      document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.tab === tab);
+      });
+    });
+  });
+
+  // Language toggle
+  document.getElementById('btn-en').addEventListener('click', function() {
+    document.body.classList.remove('lang-no');
+    document.getElementById('btn-en').classList.add('active');
+    document.getElementById('btn-no').classList.remove('active');
+  });
+  document.getElementById('btn-no').addEventListener('click', function() {
+    document.body.classList.add('lang-no');
+    document.getElementById('btn-no').classList.add('active');
+    document.getElementById('btn-en').classList.remove('active');
+  });
+
+  // Contact form - Web3Forms
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
+    const form = e.target;
+    const btn = form.querySelector('.form-submit:not([style*="display:none"])') || form.querySelector('.form-submit');
+    const isNo = document.body.classList.contains('lang-no');
     const orig = btn.textContent;
-    btn.textContent = document.body.classList.contains('lang-no') ? '✓ Sendt!' : '✓ Sent!';
-    btn.style.background = '#1040A0';
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 3000);
+    btn.textContent = isNo ? 'Sender...' : 'Sending...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    try {
+      const data = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        btn.textContent = isNo ? '✓ Melding sendt!' : '✓ Message Sent!';
+        btn.style.background = '#1040A0';
+        btn.style.opacity = '1';
+        form.reset();
+        setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.disabled = false; }, 4000);
+      } else {
+        btn.textContent = isNo ? '✗ Feil. Prøv igjen.' : '✗ Error. Try again.';
+        btn.style.background = '#dc2626';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 4000);
+      }
+    } catch (err) {
+      btn.textContent = isNo ? '✗ Feil. Prøv igjen.' : '✗ Error. Try again.';
+      btn.style.background = '#dc2626';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 4000);
+    }
   }
 
   // Scroll reveal
@@ -1142,32 +1199,6 @@
     el.style.opacity = '0';
     observer.observe(el);
   });
-
-  // Attach tab button listeners via JS instead of onclick attributes
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const tab = this.dataset.tab;
-      document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
-      document.getElementById('tab-' + tab).classList.add('active');
-      document.querySelectorAll('.tab-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.tab === tab);
-      });
-    });
-  });
-
-  // Attach lang button listeners via JS instead of onclick attributes
-  // Lang buttons
-  document.getElementById('btn-en').addEventListener('click', function() {
-    document.body.classList.remove('lang-no');
-    document.getElementById('btn-en').classList.add('active');
-    document.getElementById('btn-no').classList.remove('active');
-  });
-  document.getElementById('btn-no').addEventListener('click', function() {
-    document.body.classList.add('lang-no');
-    document.getElementById('btn-no').classList.add('active');
-    document.getElementById('btn-en').classList.remove('active');
-  });
-
 </script>
 </body>
 </html>
