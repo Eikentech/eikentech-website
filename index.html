@@ -338,7 +338,7 @@
 
     /* ── SERVICES ── */
     .services { background: var(--white); }
-    .services-tabs { display: flex; gap: 0; margin-bottom: 52px; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; flex-wrap: wrap; }
+    .services-tabs { display: flex; gap: 0; margin-bottom: 52px; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
     .tab-btn {
       background: var(--white);
       border: none;
@@ -358,7 +358,8 @@
     .tab-btn.active { background: var(--ink); color: var(--white); }
     .tab-btn:hover:not(.active) { background: var(--fog); }
     .service-panel { display: none; }
-    .service-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; background: var(--rule); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+    .service-panel.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--rule); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+    #tab-cicd.active, #tab-testing.active, #tab-cloud.active { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
     .service-card {
       background: var(--white);
       padding: 36px 32px;
@@ -533,6 +534,9 @@
     .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
     .contact-form .full { grid-column: 1 / -1; }
     .form-group label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--silver); margin-bottom: 8px; }
+    .form-group label[data-lang="no"] { display: none; }
+    body.lang-no .form-group label[data-lang="en"] { display: none; }
+    body.lang-no .form-group label[data-lang="no"] { display: block; }
     .form-group input,
     .form-group textarea,
     .form-group select {
@@ -568,7 +572,12 @@
       transition: all 0.2s;
       margin-top: 8px;
     }
-    .form-submit:hover { background: var(--blue-light); }
+    .form-submit[data-lang="no"] { display: none; }
+    body.lang-no .form-submit[data-lang="en"] { display: none; }
+    body.lang-no .form-submit[data-lang="no"] { display: block; }
+    .form-group textarea[data-lang="no"] { display: none; }
+    body.lang-no .form-group textarea[data-lang="en"] { display: none; }
+    body.lang-no .form-group textarea[data-lang="no"] { display: block; }
 
     /* ── FOOTER ── */
     footer {
@@ -601,6 +610,7 @@
       .hero { padding: 72px 24px; }
       .hero-stats { display: none; }
       .about-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .service-panel.active { grid-template-columns: 1fr; }
       .domains-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .contact-form { grid-template-columns: 1fr; }
@@ -610,9 +620,11 @@
     }
 
     /* ── HIDDEN LANG ── */
-    [data-lang="no"] { display: none; }
-    body.lang-no [data-lang="en"] { display: none; }
-    body.lang-no [data-lang="no"] { display: revert; }
+    [data-lang="no"] { display: none !important; }
+    body.lang-no [data-lang="en"] { display: none !important; }
+    body.lang-no [data-lang="no"] { display: block !important; }
+    body.lang-no span[data-lang="no"],
+    body.lang-no a[data-lang="no"] { display: inline !important; }
   </style>
 </head>
 <body>
@@ -733,14 +745,10 @@
   <p class="section-intro" data-lang="no">Fra Salesforce-administrert støtte til CI/CD-pipelines og programvaretesting — vi dekker hele spekteret av IT-tjenester virksomheten din trenger for å vokse.</p>
 
   <div class="services-tabs">
-    <button class="tab-btn active" data-tab="salesforce" data-lang="en">Salesforce</button>
-    <button class="tab-btn active" data-tab="salesforce" data-lang="no">Salesforce</button>
-    <button class="tab-btn" data-tab="cicd" data-lang="en">CI/CD</button>
-    <button class="tab-btn" data-tab="cicd" data-lang="no">CI/CD</button>
-    <button class="tab-btn" data-tab="testing" data-lang="en">Testing</button>
-    <button class="tab-btn" data-tab="testing" data-lang="no">Testing</button>
-    <button class="tab-btn" data-tab="cloud" data-lang="en">Cloud & AI</button>
-    <button class="tab-btn" data-tab="cloud" data-lang="no">Sky & KI</button>
+    <button class="tab-btn active" data-tab="salesforce">Salesforce</button>
+    <button class="tab-btn" data-tab="cicd">CI/CD</button>
+    <button class="tab-btn" data-tab="testing">Quality Engineering</button>
+    <button class="tab-btn" data-tab="cloud">Cloud & AI</button>
   </div>
 
   <div id="tab-salesforce" class="service-panel active">
@@ -1042,7 +1050,7 @@
           <option data-lang="no">Implementering og optimalisering</option>
           <option data-lang="en">CI/CD Services</option>
           <option data-lang="no">CI/CD-tjenester</option>
-          <option data-lang="en">Software Testing</option>
+          <option data-lang="en">Quality Engineering</option>
           <option data-lang="no">Programvaretesting</option>
           <option data-lang="en">Cloud & AI Integration</option>
           <option data-lang="no">Sky og KI-integrasjon</option>
@@ -1076,7 +1084,7 @@
       <ul>
         <li><a href="#services" data-lang="en">Salesforce Support</a><a href="#services" data-lang="no">Salesforce-støtte</a></li>
         <li><a href="#services" data-lang="en">CI/CD Consulting</a><a href="#services" data-lang="no">CI/CD-rådgivning</a></li>
-        <li><a href="#services" data-lang="en">Software Testing</a><a href="#services" data-lang="no">Programvaretesting</a></li>
+        <li><a href="#services" data-lang="en">Quality Engineering</a><a href="#services" data-lang="no">Kvalitetsteknikk</a></li>
         <li><a href="#services" data-lang="en">Cloud & AI</a><a href="#services" data-lang="no">Sky og KI</a></li>
       </ul>
     </div>
@@ -1100,8 +1108,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p data-lang="en">© 2025 EikenTech. All rights reserved.</p>
-    <p data-lang="no">© 2025 EikenTech. Alle rettigheter forbeholdt.</p>
+    <p data-lang="en">© 2026 EikenTech. All rights reserved.</p>
+    <p data-lang="no">© 2026 EikenTech. Alle rettigheter forbeholdt.</p>
     <div class="footer-locs">
       <span class="footer-loc">🇳🇴 <span data-lang="en">Asker, Norway</span><span data-lang="no">Asker, Norge</span></span>
       <span class="footer-loc">🇮🇳 <span data-lang="en">New Delhi, India</span><span data-lang="no">New Delhi, India</span></span>
@@ -1148,6 +1156,7 @@
   });
 
   // Attach lang button listeners via JS instead of onclick attributes
+  // Lang buttons
   document.getElementById('btn-en').addEventListener('click', function() {
     document.body.classList.remove('lang-no');
     document.getElementById('btn-en').classList.add('active');
