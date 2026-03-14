@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EikenTech — Technology That Grows With You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #112240;
+      --blue: #1A56DB;
+      --blue-light: #3B82F6;
+      --accent: #00C9A7;
+      --accent2: #F59E0B;
+      --white: #FFFFFF;
+      --off-white: #F0F4FF;
+      --gray: #94A3B8;
+      --gray-light: #E2E8F0;
+      --text: #1E293B;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── LANGUAGE TOGGLE ── */
+    .lang-bar {
+      background: var(--navy);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 8px 48px;
+      gap: 8px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--gray);
+      padding: 4px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,22,40,0.97);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--navy) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      font-size: 14px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 48px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,86,219,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,201,167,0.1) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      animation: fadeUp 0.9s ease both;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,201,167,0.12);
+      border: 1px solid rgba(0,201,167,0.3);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: #94A3B8;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 560px;
+      font-weight: 300;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-stats {
+      position: absolute;
+      right: 48px;
+      bottom: 80px;
+      display: flex;
+      gap: 40px;
+      animation: fadeUp 0.9s 0.3s ease both;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--gray); margin-top: 4px; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 96px 48px; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-intro {
+      font-size: 17px;
+      color: #64748B;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 64px;
+      font-weight: 300;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--off-white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-visual {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,201,167,0.2) 0%, transparent 70%);
+    }
+    .location-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+    }
+    .location-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .loc-flag { font-size: 28px; }
+    .loc-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 16px;
+    }
+    .loc-role { font-size: 13px; color: var(--gray); margin-top: 2px; }
+    .loc-connector {
+      width: 2px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--accent), var(--blue));
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+    .about-text h2 { color: var(--navy); }
+    .about-text p {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+    .compliance-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .tag {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      color: var(--navy);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .tag.accent { background: rgba(0,201,167,0.1); border-color: rgba(0,201,167,0.3); color: #059669; }
+
+    /* ── SERVICES ── */
+    .services { background: var(--white); }
+    .services-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: var(--off-white);
+      border: 1px solid var(--gray-light);
+      color: #64748B;
+      padding: 10px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .service-panel { display: none; }
+    .service-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .service-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-light);
+      border-radius: 14px;
+      padding: 32px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--blue-light); }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-card p { font-size: 14px; color: #64748B; line-height: 1.7; }
+    .service-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .service-list li {
+      font-size: 13px;
+      color: #64748B;
+      padding: 4px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+    .service-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    /* ── DOMAINS ── */
+    .domains { background: var(--navy); }
+    .domains h2 { color: var(--white); }
+    .domains .section-intro { color: #94A3B8; }
+    .domains-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .domain-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .domain-card:hover {
+      background: rgba(0,201,167,0.08);
+      border-color: rgba(0,201,167,0.3);
+      transform: translateY(-2px);
+    }
+    .domain-icon { font-size: 32px; margin-bottom: 12px; }
+    .domain-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    /* ── DELIVERIES ── */
+    .deliveries { background: var(--off-white); }
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .delivery-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 36px;
+      border: 1px solid var(--gray-light);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.2s;
+    }
+    .delivery-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .delivery-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--gray-light);
+      line-height: 1;
+      min-width: 40px;
+    }
+    .delivery-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .delivery-card p { font-size: 14px; color: #64748B; line-height: 1.7; }
+
+    /* ── BENEFITS ── */
+    .benefits { background: var(--white); }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .benefit-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .benefit-check {
+      width: 32px; height: 32px;
+      background: rgba(0,201,167,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .benefit-item h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .benefit-item p { font-size: 13px; color: #64748B; line-height: 1.6; }
+
+    /* ── PRICING ── */
+    .pricing { background: var(--off-white); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .price-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 16px;
+      padding: 40px 36px;
+      transition: all 0.2s;
+    }
+    .price-card.featured {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+    .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+    .price-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .price-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .price-card.featured h3 { color: var(--white); }
+    .price-amount {
+      font-family: 'Syne', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--blue);
+      margin: 20px 0 8px;
+    }
+    .price-card.featured .price-amount { color: var(--accent); }
+    .price-unit { font-size: 13px; color: #94A3B8; margin-bottom: 24px; }
+    .price-desc { font-size: 14px; color: #64748B; line-height: 1.7; margin-bottom: 24px; }
+    .price-card.featured .price-desc { color: #94A3B8; }
+    .price-divider { height: 1px; background: var(--gray-light); margin: 20px 0; }
+    .price-card.featured .price-divider { background: rgba(255,255,255,0.1); }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--navy); position: relative; overflow: hidden; }
+    .contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(26,86,219,0.25) 0%, transparent 70%);
+    }
+    .contact-inner {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact h2 { color: var(--white); }
+    .contact .section-intro { color: #94A3B8; margin: 0 auto 48px; }
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+    .contact-form .full { grid-column: 1 / -1; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #94A3B8;
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select option { background: var(--navy); }
+    .form-submit {
+      grid-column: 1 / -1;
+      background: var(--accent);
+      color: var(--navy);
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060E1A;
+      padding: 64px 48px 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo { font-size: 20px; }
+    .footer-brand p { font-size: 14px; color: #64748B; margin-top: 16px; line-height: 1.7; max-width: 260px; }
+    .footer-col h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li a { color: #64748B; text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { font-size: 13px; color: #64748B; }
+    .footer-locs { display: flex; gap: 24px; }
+    .footer-loc { font-size: 13px; color: #64748B; display: flex; align-items: center; gap: 6px; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav, .lang-bar { padding: 0 24px; }
+      .lang-bar { padding: 8px 24px; }
+      section { padding: 64px 24px; }
+      .hero { padding: 60px 24px; }
+      .hero-stats { display: none; }
+      .about-grid, .benefits-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .contact-form { grid-template-columns: 1fr; }
+      .contact-form .full { grid-column: 1; }
+      .nav-links { display: none; }
+    }
+
+    /* ── HIDDEN LANG ── */
+    [data-lang="no"] { display: none; }
+    body.lang-no [data-lang="en"] { display: none; }
+    body.lang-no [data-lang="no"] { display: revert; }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇬🇧 English</button>
+  <button class="lang-btn" onclick="setLang('no')" id="btn-no">🇳🇴 Norsk</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Eiken<span>Tech</span></a>
+  <ul class="nav-links">
+    <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="no">Om oss</a></li>
+    <li><a href="#services" data-lang="en">Services</a><a href="#services" data-lang="no">Tjenester</a></li>
+    <li><a href="#domains" data-lang="en">Domains</a><a href="#domains" data-lang="no">Domener</a></li>
+    <li><a href="#deliveries" data-lang="en">Deliveries</a><a href="#deliveries" data-lang="no">Leveranser</a></li>
+    <li><a href="#pricing" data-lang="en">Pricing</a><a href="#pricing" data-lang="no">Priser</a></li>
+    <li><a href="#contact" class="nav-cta" data-lang="en">Contact Us</a><a href="#contact" class="nav-cta" data-lang="no">Kontakt oss</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-lang="en">Norway-based · Global Delivery</div>
+    <div class="hero-badge" data-lang="no">Norsk selskap · Global leveranse</div>
+
+    <h1 data-lang="en">Technology That<br><em>Grows With You</em></h1>
+    <h1 data-lang="no">Teknologi Som<br><em>Vokser Med Deg</em></h1>
+
+    <p class="hero-sub" data-lang="en">EikenTech is a Norway-based Salesforce consulting firm with a global delivery model — local client engagement from Asker, Norway, powered by expert engineering from our India delivery center.</p>
+    <p class="hero-sub" data-lang="no">EikenTech er et norskbasert Salesforce-konsulentfirma med en global leveransemodell — lokal kundekontakt fra Asker, Norge, drevet av ekspertingeniører fra vårt leveransesenter i India.</p>
+
+    <div class="hero-ctas">
+      <a href="#services" class="btn-primary" data-lang="en">Explore Services</a>
+      <a href="#services" class="btn-primary" data-lang="no">Utforsk tjenester</a>
+      <a href="#contact" class="btn-outline" data-lang="en">Get in Touch</a>
+      <a href="#contact" class="btn-outline" data-lang="no">Ta kontakt</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">2<span>+</span></div>
+      <div class="stat-label" data-lang="en">Delivery Centers</div>
+      <div class="stat-label" data-lang="no">Leveransesentre</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24<span>/7</span></div>
+      <div class="stat-label" data-lang="en">Support Capability</div>
+      <div class="stat-label" data-lang="no">Støttekapasitet</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5<span>+</span></div>
+      <div class="stat-label" data-lang="en">Industry Domains</div>
+      <div class="stat-label" data-lang="no">Industribransjer</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="location-pair">
+        <div class="location-card">
+          <div class="loc-flag">🇳🇴</div>
+          <div>
+            <div class="loc-name">Asker, Norway</div>
+            <div class="loc-role" data-lang="en">Client Engagement & Account Management</div>
+            <div class="loc-role" data-lang="no">Kundeengasjement og kontostyring</div>
+          </div>
+        </div>
+        <div class="loc-connector"></div>
+        <div class="location-card">
+          <div class="loc-flag">🇮🇳</div>
+          <div>
+            <div class="loc-name">New Delhi, India</div>
+            <div class="loc-role" data-lang="en">Engineering & Salesforce Delivery Center</div>
+            <div class="loc-role" data-lang="no">Ingeniør- og Salesforce-leveransesenter</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label" data-lang="en">About EikenTech</div>
+      <div class="section-label" data-lang="no">Om EikenTech</div>
+      <h2 data-lang="en">Local Trust.<br>Global Scale.</h2>
+      <h2 data-lang="no">Lokal tillit.<br>Global skala.</h2>
+      <p data-lang="en">EikenTech provides reliable, scalable, and cost-efficient Salesforce support for startups and enterprises across the Nordic region and beyond. Our dual-location model ensures seamless communication with local account management, while our India engineering team delivers world-class technical expertise.</p>
+      <p data-lang="no">EikenTech tilbyr pålitelig, skalerbar og kostnadseffektiv Salesforce-støtte for oppstartsbedrifter og virksomheter i Norden og videre. Vår tolokasjonsmodell sikrer smidig kommunikasjon med lokal kontostyring, mens vårt indiske ingeniørteam leverer teknisk ekspertise i verdensklasse.</p>
+      <p data-lang="en">We serve both mid-market companies (50–500 employees) and large enterprises with complex, multi-country Salesforce setups requiring managed services.</p>
+      <p data-lang="no">Vi betjener både mellomstore bedrifter (50–500 ansatte) og store virksomheter med komplekse, flernasjonale Salesforce-oppsett som krever administrerte tjenester.</p>
+      <div class="compliance-tags">
+        <span class="tag accent">✓ GDPR Compliant</span>
+        <span class="tag accent">✓ HIPAA Aware</span>
+        <span class="tag">EU Servers</span>
+        <span class="tag">Certified Consultants</span>
+        <span class="tag">24/7 Support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label" data-lang="en">What We Do</div>
+  <div class="section-label" data-lang="no">Hva vi gjør</div>
+  <h2 data-lang="en">Our Service Offerings</h2>
+  <h2 data-lang="no">Våre tjenestetilbud</h2>
+  <p class="section-intro" data-lang="en">From Salesforce managed support to CI/CD pipelines and software testing — we cover the full spectrum of IT services your business needs to grow.</p>
+  <p class="section-intro" data-lang="no">Fra Salesforce-administrert støtte til CI/CD-pipelines og programvaretesting — vi dekker hele spekteret av IT-tjenester virksomheten din trenger for å vokse.</p>
+
+  <div class="services-tabs">
+    <button class="tab-btn active" onclick="showTab('salesforce')" data-lang="en">Salesforce</button>
+    <button class="tab-btn active" onclick="showTab('salesforce')" data-lang="no">Salesforce</button>
+    <button class="tab-btn" onclick="showTab('cicd')" data-lang="en">CI/CD</button>
+    <button class="tab-btn" onclick="showTab('cicd')" data-lang="no">CI/CD</button>
+    <button class="tab-btn" onclick="showTab('testing')" data-lang="en">Testing</button>
+    <button class="tab-btn" onclick="showTab('testing')" data-lang="no">Testing</button>
+    <button class="tab-btn" onclick="showTab('cloud')" data-lang="en">Cloud & AI</button>
+    <button class="tab-btn" onclick="showTab('cloud')" data-lang="no">Sky & KI</button>
+  </div>
+
+  <div id="tab-salesforce" class="service-panel active">
+    <div class="service-card">
+      <div class="service-icon">🛡️</div>
+      <h3 data-lang="en">Managed Support</h3>
+      <h3 data-lang="no">Administrert støtte</h3>
+      <p data-lang="en">SLA-driven support with predictable pricing for ongoing Salesforce health.</p>
+      <p data-lang="no">SLA-drevet støtte med forutsigbar prising for løpende Salesforce-helse.</p>
+      <ul class="service-list">
+        <li data-lang="en">Issue resolution & system health</li><li data-lang="no">Feilretting og systemhelse</li>
+        <li data-lang="en">Configuration changes</li><li data-lang="no">Konfigurasjonsendringer</li>
+        <li data-lang="en">Minor enhancements</li><li data-lang="no">Mindre forbedringer</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <h3 data-lang="en">Implementation & Optimization</h3>
+      <h3 data-lang="no">Implementering og optimalisering</h3>
+      <p data-lang="en">Full Salesforce implementation, automation, and enterprise integrations.</p>
+      <p data-lang="no">Full Salesforce-implementering, automatisering og bedriftsintegrasjoner.</p>
+      <ul class="service-list">
+        <li data-lang="en">Workflow automation & Lightning migration</li><li data-lang="no">Arbeidsflytautomatisering og Lightning-migrering</li>
+        <li data-lang="en">ERP & BI tool integrations</li><li data-lang="no">ERP- og BI-verktøyintegrasjoner</li>
+        <li data-lang="en">Salesforce configuration</li><li data-lang="no">Salesforce-konfigurasjon</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3 data-lang="en">Industry-Specific Add-Ons</h3>
+      <h3 data-lang="no">Bransjespesifikke tillegg</h3>
+      <p data-lang="en">Tailored solutions for BFSI, Retail, and Manufacturing verticals.</p>
+      <p data-lang="no">Skreddersydde løsninger for BFSI, Detaljhandel og Produksjon.</p>
+      <ul class="service-list">
+        <li data-lang="en">BFSI compliance workflows</li><li data-lang="no">BFSI-samsvarsprosesser</li>
+        <li data-lang="en">Retail omni-channel dashboards</li><li data-lang="no">Detaljhandel omnikanal-dashbord</li>
+        <li data-lang="en">Manufacturing dealer portal</li><li data-lang="no">Produksjons-forhandlerportal</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="tab-cicd" class="service-panel">
+    <div class="service-card">
+      <div class="service-icon">🔄</div>
+      <h3 data-lang="en">Pipeline Design & Implementation</h3>
+      <h3 data-lang="no">Pipeline-design og implementering</h3>
+      <p data-lang="en">Robust CI/CD pipelines tailored to your development workflow enabling automated builds, testing, and deployments.</p>
+      <p data-lang="no">Robuste CI/CD-pipelines tilpasset arbeidsflyt som muliggjør automatiserte bygg, testing og distribusjoner.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🐳</div>
+      <h3 data-lang="en">Containerization & Orchestration</h3>
+      <h3 data-lang="no">Containerisering og orkestrering</h3>
+      <p data-lang="en">Docker and Kubernetes integration into your CI/CD workflows for enhanced efficiency and scalability.</p>
+      <p data-lang="no">Docker og Kubernetes-integrasjon i CI/CD-arbeidsflyt for økt effektivitet og skalerbarhet.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3 data-lang="en">Infrastructure as Code</h3>
+      <h3 data-lang="no">Infrastruktur som kode</h3>
+      <p data-lang="en">Automate provisioning and management of environments using Terraform and Ansible.</p>
+      <p data-lang="no">Automatiser klargjøring og styring av miljøer med Terraform og Ansible.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3 data-lang="en">Monitoring & Reporting</h3>
+      <h3 data-lang="no">Overvåking og rapportering</h3>
+      <p data-lang="en">Real-time pipeline monitoring and reporting tools to track performance and identify improvement areas.</p>
+      <p data-lang="no">Sanntids pipeline-overvåking og rapporteringsverktøy for å spore ytelse og identifisere forbedringsområder.</p>
+    </div>
+  </div>
+
+  <div id="tab-testing" class="service-panel">
+    <div class="service-card">
+      <div class="service-icon">🧪</div>
+      <h3 data-lang="en">Functional & Automation Testing</h3>
+      <h3 data-lang="no">Funksjonell og automatisert testing</h3>
+      <p data-lang="en">Validate inputs/outputs and automate testing using advanced tools and frameworks to accelerate releases.</p>
+      <p data-lang="no">Valider inn-/utdata og automatiser testing med avanserte verktøy og rammeverk for å akselerere utgivelser.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔒</div>
+      <h3 data-lang="en">Security & Performance Testing</h3>
+      <h3 data-lang="no">Sikkerhets- og ytelsestesting</h3>
+      <p data-lang="en">Simulate attacks, exploit potential weaknesses, and assess responsiveness under diverse load conditions.</p>
+      <p data-lang="no">Simuler angrep, utnytt potensielle svakheter og vurder respons under ulike belastningsforhold.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3 data-lang="en">Mobile App Testing</h3>
+      <h3 data-lang="no">Mobilapp-testing</h3>
+      <p data-lang="en">End-to-end testing for Android and iOS apps, from functionality checks to real-world scenario simulations.</p>
+      <p data-lang="no">Ende-til-ende-testing for Android og iOS-apper, fra funksjonskontroller til virkelighetsnære scenariosimuleringer.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">👥</div>
+      <h3 data-lang="en">UAT & Advisory</h3>
+      <h3 data-lang="no">UAT og rådgivning</h3>
+      <p data-lang="en">User Acceptance Testing and expert consulting to elevate software quality and brand reputation.</p>
+      <p data-lang="no">Brukertesting og ekspertrådgivning for å heve programvarekvalitet og omdømme.</p>
+    </div>
+  </div>
+
+  <div id="tab-cloud" class="service-panel">
+    <div class="service-card">
+      <div class="service-icon">☁️</div>
+      <h3 data-lang="en">Salesforce + AWS Integration</h3>
+      <h3 data-lang="no">Salesforce + AWS-integrasjon</h3>
+      <p data-lang="en">Seamless integration for telephony, chat, and intelligent AI-based document processing.</p>
+      <p data-lang="no">Sømløs integrasjon for telefoni, chat og intelligent KI-basert dokumentbehandling.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3 data-lang="en">AI Document Processing</h3>
+      <h3 data-lang="no">KI-dokumentbehandling</h3>
+      <p data-lang="en">Resume parsing, invoice parsing, and government document parsing using advanced AI models.</p>
+      <p data-lang="no">CV-parsing, fakturabehandling og offentlig dokumentparsing med avanserte KI-modeller.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💬</div>
+      <h3 data-lang="en">Agentic Bots</h3>
+      <h3 data-lang="no">Agentiske bots</h3>
+      <p data-lang="en">24/7 AI-powered bots for customer service and internal monitoring, always online and always on.</p>
+      <p data-lang="no">24/7 KI-drevne bots for kundeservice og intern overvåking — alltid tilgjengelig.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📈</div>
+      <h3 data-lang="en">AI-Based Data Analytics</h3>
+      <h3 data-lang="no">KI-basert dataanalyse</h3>
+      <p data-lang="en">Natural Language Processing powered analytics to unlock actionable business insights from your data.</p>
+      <p data-lang="no">NLP-drevet analyse for å hente frem handlingsrettede forretningsmessige innsikter fra dataene dine.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section class="domains" id="domains">
+  <div class="section-label" data-lang="en">Industry Expertise</div>
+  <div class="section-label" data-lang="no">Bransjeekspertise</div>
+  <h2 data-lang="en">Domains We Serve</h2>
+  <h2 data-lang="no">Domener vi betjener</h2>
+  <p class="section-intro" data-lang="en">Deep domain knowledge across key industries ensures solutions that fit — not just technically, but operationally.</p>
+  <p class="section-intro" data-lang="no">Dyp domenekunnskap på tvers av nøkkelbransjer sikrer løsninger som passer — ikke bare teknisk, men operasjonelt.</p>
+  <div class="domains-grid">
+    <div class="domain-card"><div class="domain-icon">🏦</div><h4 data-lang="en">Banking, Fintech & Insurance</h4><h4 data-lang="no">Bank, Fintech og forsikring</h4></div>
+    <div class="domain-card"><div class="domain-icon">🏥</div><h4 data-lang="en">Healthcare</h4><h4 data-lang="no">Helsevesen</h4></div>
+    <div class="domain-card"><div class="domain-icon">🏭</div><h4 data-lang="en">Manufacturing</h4><h4 data-lang="no">Produksjon</h4></div>
+    <div class="domain-card"><div class="domain-icon">🚚</div><h4 data-lang="en">Logistics</h4><h4 data-lang="no">Logistikk</h4></div>
+    <div class="domain-card"><div class="domain-icon">🏛️</div><h4 data-lang="en">Public Sector</h4><h4 data-lang="no">Offentlig sektor</h4></div>
+    <div class="domain-card"><div class="domain-icon">🤝</div><h4 data-lang="en">Non-Profit</h4><h4 data-lang="no">Ideell organisasjon</h4></div>
+    <div class="domain-card"><div class="domain-icon">🛒</div><h4 data-lang="en">Retail & E-Commerce</h4><h4 data-lang="no">Detaljhandel og netthandel</h4></div>
+    <div class="domain-card"><div class="domain-icon">💼</div><h4 data-lang="en">Service Consultants</h4><h4 data-lang="no">Tjenestekonsulenter</h4></div>
+  </div>
+</section>
+
+<!-- DELIVERIES -->
+<section class="deliveries" id="deliveries">
+  <div class="section-label" data-lang="en">Proven Deliveries</div>
+  <div class="section-label" data-lang="no">Dokumenterte leveranser</div>
+  <h2 data-lang="en">What We've Built</h2>
+  <h2 data-lang="no">Hva vi har bygget</h2>
+  <p class="section-intro" data-lang="en">Real-world implementations that demonstrate the depth and quality of our engineering capabilities.</p>
+  <p class="section-intro" data-lang="no">Virkelige implementeringer som demonstrerer dybden og kvaliteten på våre ingeniørkapasiteter.</p>
+  <div class="delivery-grid">
+    <div class="delivery-card">
+      <div class="delivery-num">01</div>
+      <div>
+        <h3 data-lang="en">Salesforce + AWS Telephony & Chat</h3>
+        <h3 data-lang="no">Salesforce + AWS Telefoni og Chat</h3>
+        <p data-lang="en">End-to-end integration between Salesforce CRM and AWS infrastructure for unified voice and chat communication channels.</p>
+        <p data-lang="no">Ende-til-ende-integrasjon mellom Salesforce CRM og AWS-infrastruktur for samlede tale- og chattkommunikasjonskanaler.</p>
+      </div>
+    </div>
+    <div class="delivery-card">
+      <div class="delivery-num">02</div>
+      <div>
+        <h3 data-lang="en">AI Document Processing Suite</h3>
+        <h3 data-lang="no">KI-dokumentbehandlingssuite</h3>
+        <p data-lang="en">Intelligent parsing of resumes, invoices, and government documents using AWS AI services — reducing manual processing from hours to minutes.</p>
+        <p data-lang="no">Intelligent parsing av CVer, fakturaer og offentlige dokumenter ved hjelp av AWS KI-tjenester — reduserer manuell behandling fra timer til minutter.</p>
+      </div>
+    </div>
+    <div class="delivery-card">
+      <div class="delivery-num">03</div>
+      <div>
+        <h3 data-lang="en">AI-Based NLP Data Analytics</h3>
+        <h3 data-lang="no">KI-basert NLP-dataanalyse</h3>
+        <p data-lang="en">Natural language processing systems that transform unstructured business data into actionable insights and automated reports.</p>
+        <p data-lang="no">NLP-systemer som transformerer ustrukturerte forretningsdata til handlingsrettede innsikter og automatiserte rapporter.</p>
+      </div>
+    </div>
+    <div class="delivery-card">
+      <div class="delivery-num">04</div>
+      <div>
+        <h3 data-lang="en">24/7 Agentic Customer Support Bots</h3>
+        <h3 data-lang="no">24/7 Agentiske kundesupportbots</h3>
+        <p data-lang="en">Always-on AI bots for customer service and internal operational monitoring, integrated with Salesforce Service Cloud.</p>
+        <p data-lang="no">Alltid tilgjengelige KI-bots for kundeservice og intern driftsovervåking, integrert med Salesforce Service Cloud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="benefits">
+  <div class="section-label" data-lang="en">Why EikenTech</div>
+  <div class="section-label" data-lang="no">Hvorfor EikenTech</div>
+  <h2 data-lang="en">Client Benefits</h2>
+  <h2 data-lang="no">Kundefordeler</h2>
+  <p class="section-intro" data-lang="en">We're built to deliver value from day one — with the compliance, flexibility, and expertise your business demands.</p>
+  <p class="section-intro" data-lang="no">Vi er bygget for å levere verdi fra dag én — med samsvar, fleksibilitet og ekspertise virksomheten din krever.</p>
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <div class="benefit-check">✓</div>
+      <div>
+        <h4 data-lang="en">GDPR & HIPAA Compliant</h4>
+        <h4 data-lang="no">GDPR og HIPAA-kompatibel</h4>
+        <p data-lang="en">Secure delivery model running on EU servers — built for Nordic and global regulatory requirements.</p>
+        <p data-lang="no">Sikker leveransemodell på EU-servere — bygget for nordiske og globale regulatoriske krav.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-check">✓</div>
+      <div>
+        <h4 data-lang="en">Increased ROI</h4>
+        <h4 data-lang="no">Økt avkastning</h4>
+        <p data-lang="en">Lower total cost of ownership with our hybrid delivery model — quality engineering at competitive rates.</p>
+        <p data-lang="no">Lavere totale eierkostnader med vår hybride leveransemodell — kvalitetsengineering til konkurransedyktige priser.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-check">✓</div>
+      <div>
+        <h4 data-lang="en">24/7 Support</h4>
+        <h4 data-lang="no">24/7 støtte</h4>
+        <p data-lang="en">Round-the-clock support capability powered by our India delivery center — no issue goes unanswered.</p>
+        <p data-lang="no">Støtte hele døgnet drevet av vårt leveransesenter i India — ingen henvendelse forblir ubesvart.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-check">✓</div>
+      <div>
+        <h4 data-lang="en">Certified Salesforce Team</h4>
+        <h4 data-lang="no">Sertifisert Salesforce-team</h4>
+        <p data-lang="en">Access to certified Salesforce consultants with deep platform expertise and real-world implementation experience.</p>
+        <p data-lang="no">Tilgang til sertifiserte Salesforce-konsulenter med dyp plattformekspertise og erfaring fra virkelige implementeringer.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-check">✓</div>
+      <div>
+        <h4 data-lang="en">Early Assessment & Audit</h4>
+        <h4 data-lang="no">Tidlig vurdering og revisjon</h4>
+        <p data-lang="en">We assess your business use case and existing systems before engagement — ensuring the right fit every time.</p>
+        <p data-lang="no">Vi vurderer din forretningsbruk og eksisterende systemer før engasjement — og sikrer riktig tilpasning hver gang.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-check">✓</div>
+      <div>
+        <h4 data-lang="en">Easy Scalability</h4>
+        <h4 data-lang="no">Enkel skalerbarhet</h4>
+        <p data-lang="en">Scale up or down as demand grows — from startup to enterprise, our model flexes with your needs.</p>
+        <p data-lang="no">Skaler opp eller ned etter behov — fra oppstart til virksomhet, vår modell tilpasser seg dine behov.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-label" data-lang="en">Transparent Pricing</div>
+  <div class="section-label" data-lang="no">Gjennomsiktig prising</div>
+  <h2 data-lang="en">Cost Model</h2>
+  <h2 data-lang="no">Kostnadsmodell</h2>
+  <p class="section-intro" data-lang="en">Flexible, tiered pricing designed to fit businesses of every size — from startups to enterprises.</p>
+  <p class="section-intro" data-lang="no">Fleksibel, nivåbasert prising designet for å passe bedrifter i alle størrelser — fra oppstartsbedrifter til virksomheter.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <span class="price-badge" data-lang="en">Starter</span>
+      <span class="price-badge" data-lang="no">Starter</span>
+      <h3 data-lang="en">Essential Hours</h3>
+      <h3 data-lang="no">Grunnleggende timer</h3>
+      <div class="price-amount">$35</div>
+      <div class="price-unit" data-lang="en">per hour · 75 hours/year contract</div>
+      <div class="price-unit" data-lang="no">per time · 75 timers årskontrakt</div>
+      <div class="price-desc" data-lang="en">Ideal for startups and small teams needing reliable Salesforce support with a predictable annual budget.</div>
+      <div class="price-desc" data-lang="no">Ideelt for oppstartsbedrifter og små team som trenger pålitelig Salesforce-støtte med et forutsigbart årsbudsjett.</div>
+      <div class="price-divider"></div>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;margin-top:8px;" data-lang="en">Get Started</a>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;margin-top:8px;" data-lang="no">Kom i gang</a>
+    </div>
+    <div class="price-card featured">
+      <span class="price-badge" data-lang="en">Most Popular</span>
+      <span class="price-badge" data-lang="no">Mest populær</span>
+      <h3 data-lang="en">Growth Hours</h3>
+      <h3 data-lang="no">Veksttimer</h3>
+      <div class="price-amount">$30</div>
+      <div class="price-unit" data-lang="en">per hour · 150 hours/year contract</div>
+      <div class="price-unit" data-lang="no">per time · 150 timers årskontrakt</div>
+      <div class="price-desc" data-lang="en">Best value for growing companies. More hours, better rate — scale your Salesforce capabilities confidently.</div>
+      <div class="price-desc" data-lang="no">Beste verdi for voksende bedrifter. Flere timer, bedre pris — skaler Salesforce-kapasitetene dine trygt.</div>
+      <div class="price-divider"></div>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;margin-top:8px;background:var(--accent);color:var(--navy);" data-lang="en">Get Started</a>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;margin-top:8px;background:var(--accent);color:var(--navy);" data-lang="no">Kom i gang</a>
+    </div>
+    <div class="price-card">
+      <span class="price-badge" data-lang="en">Enterprise</span>
+      <span class="price-badge" data-lang="no">Virksomhet</span>
+      <h3 data-lang="en">Fixed Cost / Subscription</h3>
+      <h3 data-lang="no">Fast pris / Abonnement</h3>
+      <div class="price-amount" style="font-size:28px;margin:20px 0 8px;" data-lang="en">Custom</div>
+      <div class="price-amount" style="font-size:28px;margin:20px 0 8px;" data-lang="no">Tilpasset</div>
+      <div class="price-unit" data-lang="en">tailored to your use case & scale</div>
+      <div class="price-unit" data-lang="no">tilpasset ditt brukstilfelle og skala</div>
+      <div class="price-desc" data-lang="en">Fixed-cost projects or subscription-based recharge models — whatever works best for your business and budget.</div>
+      <div class="price-desc" data-lang="no">Fastproisprosjekter eller abonnementsbaserte påfyllingsmodeller — det som fungerer best for din virksomhet og budsjett.</div>
+      <div class="price-divider"></div>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;margin-top:8px;" data-lang="en">Contact Us</a>
+      <a href="#contact" class="btn-primary" style="display:block;text-align:center;margin-top:8px;" data-lang="no">Kontakt oss</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label" data-lang="en">Get In Touch</div>
+    <div class="section-label" data-lang="no">Ta kontakt</div>
+    <h2 data-lang="en">Ready to Get Started?</h2>
+    <h2 data-lang="no">Klar til å komme i gang?</h2>
+    <p class="section-intro" data-lang="en">Tell us about your business and Salesforce needs. Our team in Asker, Norway will respond within one business day.</p>
+    <p class="section-intro" data-lang="no">Fortell oss om din virksomhet og Salesforce-behov. Teamet vårt i Asker, Norge, svarer innen én virkedag.</p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label data-lang="en">Full Name</label>
+        <label data-lang="no">Fullt navn</label>
+        <input type="text" placeholder="Your name" required/>
+      </div>
+      <div class="form-group">
+        <label data-lang="en">Company</label>
+        <label data-lang="no">Selskap</label>
+        <input type="text" placeholder="Your company" required/>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@company.com" required/>
+      </div>
+      <div class="form-group">
+        <label data-lang="en">Service Interest</label>
+        <label data-lang="no">Tjenesteinteresse</label>
+        <select>
+          <option data-lang="en">Salesforce Managed Support</option>
+          <option data-lang="no">Salesforce administrert støtte</option>
+          <option data-lang="en">Implementation & Optimization</option>
+          <option data-lang="no">Implementering og optimalisering</option>
+          <option data-lang="en">CI/CD Services</option>
+          <option data-lang="no">CI/CD-tjenester</option>
+          <option data-lang="en">Software Testing</option>
+          <option data-lang="no">Programvaretesting</option>
+          <option data-lang="en">Cloud & AI Integration</option>
+          <option data-lang="no">Sky og KI-integrasjon</option>
+          <option data-lang="en">Other / Not Sure</option>
+          <option data-lang="no">Annet / Usikker</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label data-lang="en">Message</label>
+        <label data-lang="no">Melding</label>
+        <textarea placeholder="Tell us about your project..." data-lang="en"></textarea>
+        <textarea placeholder="Fortell oss om prosjektet ditt..." data-lang="no"></textarea>
+      </div>
+      <button type="submit" class="form-submit" data-lang="en">Send Message →</button>
+      <button type="submit" class="form-submit" data-lang="no">Send melding →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">Eiken<span>Tech</span></a>
+      <p data-lang="en">Technology That Grows With You. Norway-based Salesforce consulting with global delivery excellence.</p>
+      <p data-lang="no">Teknologi som vokser med deg. Norskbasert Salesforce-konsulentvirksomhet med global leveranseeksellens.</p>
+    </div>
+    <div class="footer-col">
+      <h5 data-lang="en">Services</h5>
+      <h5 data-lang="no">Tjenester</h5>
+      <ul>
+        <li><a href="#services" data-lang="en">Salesforce Support</a><a href="#services" data-lang="no">Salesforce-støtte</a></li>
+        <li><a href="#services" data-lang="en">CI/CD Consulting</a><a href="#services" data-lang="no">CI/CD-rådgivning</a></li>
+        <li><a href="#services" data-lang="en">Software Testing</a><a href="#services" data-lang="no">Programvaretesting</a></li>
+        <li><a href="#services" data-lang="en">Cloud & AI</a><a href="#services" data-lang="no">Sky og KI</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 data-lang="en">Company</h5>
+      <h5 data-lang="no">Selskap</h5>
+      <ul>
+        <li><a href="#about" data-lang="en">About Us</a><a href="#about" data-lang="no">Om oss</a></li>
+        <li><a href="#domains" data-lang="en">Domains</a><a href="#domains" data-lang="no">Domener</a></li>
+        <li><a href="#deliveries" data-lang="en">Deliveries</a><a href="#deliveries" data-lang="no">Leveranser</a></li>
+        <li><a href="#pricing" data-lang="en">Pricing</a><a href="#pricing" data-lang="no">Priser</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 data-lang="en">Contact</h5>
+      <h5 data-lang="no">Kontakt</h5>
+      <ul>
+        <li><a href="mailto:hello@eikentech.com">hello@eikentech.com</a></li>
+        <li><a href="#contact" data-lang="en">Asker, Norway</a><a href="#contact" data-lang="no">Asker, Norge</a></li>
+        <li><a href="#contact" data-lang="en">New Delhi, India</a><a href="#contact" data-lang="no">New Delhi, India</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-lang="en">© 2025 EikenTech. All rights reserved.</p>
+    <p data-lang="no">© 2025 EikenTech. Alle rettigheter forbeholdt.</p>
+    <div class="footer-locs">
+      <span class="footer-loc">🇳🇴 <span data-lang="en">Asker, Norway</span><span data-lang="no">Asker, Norge</span></span>
+      <span class="footer-loc">🇮🇳 <span data-lang="en">New Delhi, India</span><span data-lang="no">New Delhi, India</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Language toggle
+  function setLang(lang) {
+    document.body.classList.toggle('lang-no', lang === 'no');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-no').classList.toggle('active', lang === 'no');
+  }
+
+  // Service tabs
+  function showTab(tab) {
+    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+      btn.classList.remove('active');
+    });
+    const tabs = ['salesforce','cicd','testing','cloud'];
+    const idx = tabs.indexOf(tab);
+    const allBtns = document.querySelectorAll('.tab-btn');
+    // Each tab has 2 buttons (EN + NO), so index * 2
+    if(allBtns[idx*2]) allBtns[idx*2].classList.add('active');
+    if(allBtns[idx*2+1]) allBtns[idx*2+1].classList.add('active');
+  }
+
+  // Contact form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit:not([style*="display:none"])') || e.target.querySelector('.form-submit');
+    const orig = btn.textContent;
+    btn.textContent = document.body.classList.contains('lang-no') ? '✓ Sendt!' : '✓ Sent!';
+    btn.style.background = '#059669';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 3000);
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.style.animation = 'fadeUp 0.6s ease both';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .delivery-card, .domain-card, .benefit-item, .price-card').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
