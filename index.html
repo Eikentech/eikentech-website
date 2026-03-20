@@ -579,7 +579,93 @@
     body.lang-no .form-group textarea[data-lang="en"] { display: none; }
     body.lang-no .form-group textarea[data-lang="no"] { display: block; }
 
-    /* ── FOOTER ── */
+    /* ── CAREERS ── */
+    .careers { background: var(--white); }
+    .careers-box {
+      background: var(--fog);
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 56px 40px;
+      text-align: center;
+      margin-bottom: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .careers-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-deep), var(--blue-light));
+    }
+    .careers-icon { font-size: 40px; margin-bottom: 20px; }
+    .careers-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .careers-box p {
+      font-size: 15px;
+      color: var(--text-soft);
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto 28px;
+      font-weight: 300;
+    }
+    .btn-careers {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      padding: 13px 32px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .btn-careers:hover { background: var(--blue-light); }
+    .btn-careers[data-lang="no"] { display: none; }
+    body.lang-no .btn-careers[data-lang="en"] { display: none; }
+    body.lang-no .btn-careers[data-lang="no"] { display: inline-block; }
+    .careers-values {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .careers-value {
+      padding: 32px 28px;
+      border-right: 1px solid var(--rule);
+      transition: background 0.2s;
+    }
+    .careers-value:last-child { border-right: none; }
+    .careers-value:hover { background: var(--fog); }
+    .cv-icon { font-size: 24px; margin-bottom: 14px; }
+    .careers-value h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .careers-value p { font-size: 13px; color: var(--text-soft); line-height: 1.65; }
+
+    /* ── FOOTER ORG ── */
+    .footer-org {
+      font-size: 12px;
+      color: var(--steel);
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+    .footer-org span[data-lang="no"] { display: none; }
+    body.lang-no .footer-org span[data-lang="en"] { display: none; }
+    body.lang-no .footer-org span[data-lang="no"] { display: inline; }
     footer {
       background: var(--ink);
       padding: 72px 60px 40px;
@@ -612,6 +698,7 @@
       .about-grid, .benefits-grid { grid-template-columns: 1fr; }
       .service-panel.active { grid-template-columns: 1fr; }
       .domains-grid { grid-template-columns: repeat(2, 1fr); }
+      .careers-values { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .contact-form { grid-template-columns: 1fr; }
       .contact-form .full { grid-column: 1; }
@@ -643,6 +730,7 @@
     <li><a href="#services" data-lang="en">Services</a><a href="#services" data-lang="no">Tjenester</a></li>
     <li><a href="#domains" data-lang="en">Domains</a><a href="#domains" data-lang="no">Domener</a></li>
     <li><a href="#deliveries" data-lang="en">Deliveries</a><a href="#deliveries" data-lang="no">Leveranser</a></li>
+    <li><a href="#careers" data-lang="en">Careers</a><a href="#careers" data-lang="no">Karriere</a></li>
     <li><a href="#contact" class="nav-cta" data-lang="en">Contact Us</a><a href="#contact" class="nav-cta" data-lang="no">Kontakt oss</a></li>
   </ul>
 </nav>
@@ -1016,6 +1104,54 @@
 </section>
 
 
+<!-- CAREERS -->
+<section class="careers" id="careers">
+  <div class="section-eyebrow"><div class="section-eyebrow-line"></div><div class="section-label" data-lang="en">Join Our Team</div><div class="section-label" data-lang="no">Bli en del av teamet</div></div>
+  <h2 data-lang="en">Careers at EikenTech</h2>
+  <h2 data-lang="no">Karriere hos EikenTech</h2>
+  <p class="section-intro" data-lang="en">We are always looking for talented individuals who are passionate about technology and innovation. While we have no open positions at this time, we'd love to hear from you.</p>
+  <p class="section-intro" data-lang="no">Vi ser alltid etter talentfulle personer som brenner for teknologi og innovasjon. Selv om vi ikke har ledige stillinger for øyeblikket, vil vi gjerne høre fra deg.</p>
+  <div class="careers-box">
+    <div class="careers-icon">💼</div>
+    <h3 data-lang="en">No Open Positions Currently</h3>
+    <h3 data-lang="no">Ingen ledige stillinger for øyeblikket</h3>
+    <p data-lang="en">We don't have any open roles right now, but we're growing fast. Send us your CV and we'll keep you in mind for future opportunities.</p>
+    <p data-lang="no">Vi har ingen ledige stillinger akkurat nå, men vi vokser raskt. Send oss din CV så husker vi deg til fremtidige muligheter.</p>
+    <a href="mailto:surbhi.bansal@eikentech.no?subject=Career%20Enquiry%20—%20EikenTech" class="btn-careers" data-lang="en">Send Your CV →</a>
+    <a href="mailto:surbhi.bansal@eikentech.no?subject=Karrieresøknad%20—%20EikenTech" class="btn-careers" data-lang="no">Send din CV →</a>
+  </div>
+  <div class="careers-values">
+    <div class="careers-value">
+      <div class="cv-icon">🌍</div>
+      <h4 data-lang="en">Global Exposure</h4>
+      <h4 data-lang="no">Global eksponering</h4>
+      <p data-lang="en">Work with clients across Norway and international markets.</p>
+      <p data-lang="no">Arbeid med kunder i Norge og internasjonale markeder.</p>
+    </div>
+    <div class="careers-value">
+      <div class="cv-icon">🚀</div>
+      <h4 data-lang="en">Fast Growth</h4>
+      <h4 data-lang="no">Rask vekst</h4>
+      <p data-lang="en">Be part of a growing team where your impact is visible from day one.</p>
+      <p data-lang="no">Vær en del av et voksende team der din innsats synes fra dag én.</p>
+    </div>
+    <div class="careers-value">
+      <div class="cv-icon">🤝</div>
+      <h4 data-lang="en">Collaborative Culture</h4>
+      <h4 data-lang="no">Samarbeidskultur</h4>
+      <p data-lang="en">A flat, inclusive culture where every voice matters.</p>
+      <p data-lang="no">En flat, inkluderende kultur der alle stemmer teller.</p>
+    </div>
+    <div class="careers-value">
+      <div class="cv-icon">🎓</div>
+      <h4 data-lang="en">Learning & Development</h4>
+      <h4 data-lang="no">Læring og utvikling</h4>
+      <p data-lang="en">Certifications, training, and continuous skill development supported.</p>
+      <p data-lang="no">Sertifiseringer, opplæring og kontinuerlig kompetanseutvikling støttes.</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
@@ -1099,6 +1235,7 @@
         <li><a href="#about" data-lang="en">About Us</a><a href="#about" data-lang="no">Om oss</a></li>
         <li><a href="#domains" data-lang="en">Domains</a><a href="#domains" data-lang="no">Domener</a></li>
         <li><a href="#deliveries" data-lang="en">Deliveries</a><a href="#deliveries" data-lang="no">Leveranser</a></li>
+        <li><a href="#careers" data-lang="en">Careers</a><a href="#careers" data-lang="no">Karriere</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1114,6 +1251,10 @@
   <div class="footer-bottom">
     <p data-lang="en">© 2026 EikenTech. All rights reserved.</p>
     <p data-lang="no">© 2026 EikenTech. Alle rettigheter forbeholdt.</p>
+    <div class="footer-org">
+      <span data-lang="en">Org. No: 937 268 858</span>
+      <span data-lang="no">Org.nr: 937 268 858</span>
+    </div>
     <div class="footer-locs">
       <span class="footer-loc">🇳🇴 <span data-lang="en">Asker, Norway</span><span data-lang="no">Asker, Norge</span></span>
       <span class="footer-loc">🇮🇳 <span data-lang="en">New Delhi, India</span><span data-lang="no">New Delhi, India</span></span>
@@ -1158,10 +1299,7 @@
     btn.style.opacity = '0.7';
     try {
       const data = new FormData(form);
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      });
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
       const json = await res.json();
       if (json.success) {
         btn.textContent = isNo ? '✓ Melding sendt!' : '✓ Message Sent!';
@@ -1195,7 +1333,7 @@
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.service-card, .delivery-card, .domain-card, .benefit-item, .price-card').forEach(el => {
+  document.querySelectorAll('.service-card, .delivery-card, .domain-card, .benefit-item, .price-card, .careers-value').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
   });
