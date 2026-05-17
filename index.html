@@ -684,9 +684,18 @@
     }
 
     /* ── HIDDEN LANG ── */
-    [data-lang="no"] { display: none; }
-    body.lang-no [data-lang="en"] { display: none; }
-    body.lang-no [data-lang="no"] { display: revert; }
+    [data-lang="no"] { display: none !important; }
+    [data-lang="en"] { display: inline !important; }
+    body.lang-no [data-lang="en"] { display: none !important; }
+    body.lang-no [data-lang="no"] { display: inline !important; }
+    body.lang-no [data-lang="no"].section-label { display: block !important; }
+    body.lang-no h1[data-lang="no"],
+    body.lang-no h2[data-lang="no"],
+    body.lang-no p[data-lang="no"] { display: block !important; }
+    [data-lang="en"].section-label { display: block !important; }
+    h1[data-lang="en"],
+    h2[data-lang="en"],
+    p[data-lang="en"] { display: block !important; }
   </style>
 </head>
 <body>
@@ -1197,6 +1206,11 @@
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-no').classList.toggle('active', lang === 'no');
   }
+
+  // Initialize English on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    setLang('en');
+  });
 
   // Service tabs
   function showTab(tab) {
