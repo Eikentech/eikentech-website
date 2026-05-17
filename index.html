@@ -1189,7 +1189,11 @@
 <script>
   // Language toggle
   function setLang(lang) {
-    document.body.classList.toggle('lang-no', lang === 'no');
+    if (lang === 'no') {
+      document.body.classList.add('lang-no');
+    } else {
+      document.body.classList.remove('lang-no');
+    }
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-no').classList.toggle('active', lang === 'no');
   }
