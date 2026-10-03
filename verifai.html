@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VerifAI — The semantic layer for decisions you can defend | EikenTech</title>
+  <meta name="description" content="VerifAI links assets, documents and rules into one graph built on open industry standards, turns standards into executable checks, and answers every question with pass, fail or can't tell — and why."/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #112240;
+      --blue: #1A56DB;
+      --accent: #00C9A7;
+      --accent2: #F59E0B;
+      --white: #FFFFFF;
+      --off-white: #F0F4FF;
+      --gray: #94A3B8;
+      --gray-mid: #64748B;
+      --gray-light: #E2E8F0;
+      --text: #1E293B;
+      --pass: #059669;
+      --fail: #DC4B3A;
+      --unknown: #D97706;
+      --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: 'Syne', 'Arial Narrow', sans-serif; line-height: 1.12; text-wrap: balance; }
+    a { color: var(--blue); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* language: hide the inactive language, keep each element's natural display */
+    body:not(.lang-no) [data-lang="no"] { display: none !important; }
+    body.lang-no [data-lang="en"] { display: none !important; }
+
+    .lang-bar { background: var(--navy); display: flex; justify-content: flex-end; gap: 8px; padding: 8px 48px; }
+    .lang-btn { background: transparent; border: 1px solid rgba(255,255,255,0.25); color: var(--gray); padding: 4px 14px; border-radius: 20px; cursor: pointer; font-family: inherit; font-size: 13px; }
+    .lang-btn.active { background: var(--accent); border-color: var(--accent); color: var(--navy); font-weight: 600; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(10,22,40,0.97); backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 48px; min-height: 68px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; color: var(--white); letter-spacing: -0.5px; text-decoration: none; white-space: nowrap; }
+    .logo span { color: var(--accent); }
+    .logo small { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 13px; color: var(--gray); margin-left: 10px; letter-spacing: 0; }
+    .nav-links { display: flex; gap: 26px; list-style: none; align-items: center; flex-wrap: wrap; }
+    .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--accent); color: var(--navy) !important; padding: 8px 18px; border-radius: 6px; font-weight: 600 !important; }
+
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
+    section { padding: 88px 0; }
+    .section-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 14px; }
+    .section-title { font-size: clamp(28px, 3.6vw, 42px); font-weight: 800; color: var(--navy); margin-bottom: 18px; }
+    .section-sub { font-size: 17px; color: var(--gray-mid); max-width: 66ch; }
+    .tag { font-family: var(--mono); font-size: 12px; border: 1px solid var(--gray-light); border-radius: 4px; padding: 2px 8px; color: var(--gray-mid); white-space: nowrap; display: inline-block; }
+    .badge { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; font-weight: 500; white-space: nowrap; }
+    .b-live { background: #D1FAE5; color: #065F46; }
+    .b-beta { background: #DBEAFE; color: #1E3A8A; }
+    .b-plan { background: #FEF3C7; color: #92400E; }
+    .b-explore { background: var(--gray-light); color: #334155; }
+
+    /* HERO */
+    .hero { background: var(--navy); color: var(--white); position: relative; overflow: hidden; padding: 96px 0 88px; }
+    .hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(0,201,167,0.35); background: rgba(0,201,167,0.08); color: var(--accent); font-size: 13px; padding: 6px 14px; border-radius: 30px; margin-bottom: 26px; }
+    .hero h1 { font-size: clamp(36px, 5.2vw, 62px); font-weight: 800; letter-spacing: -1px; margin-bottom: 22px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 18px; color: #B8C4D6; max-width: 56ch; margin-bottom: 34px; }
+    .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: var(--navy); padding: 14px 26px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; display: inline-block; }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 14px 26px; border-radius: 8px; font-weight: 500; text-decoration: none; font-size: 15px; display: inline-block; }
+    .btn-primary:hover, .btn-outline:hover { opacity: 0.9; }
+    .states { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; font-family: var(--mono); font-size: 13px; color: #B8C4D6; }
+    .states span { display: inline-flex; align-items: center; gap: 7px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+    .d-pass { background: var(--pass); } .d-fail { background: var(--fail); } .d-unk { background: var(--unknown); }
+
+    /* hero console */
+    .console { background: #0F1F38; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; font-size: 14px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); min-width: 0; }
+    .console-head { display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 12px; color: var(--gray); margin-bottom: 14px; gap: 10px; flex-wrap: wrap; }
+    .q { display: grid; grid-template-columns: auto 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.07); }
+    .q .dot { margin-top: 6px; }
+    .q b { color: var(--white); font-weight: 500; display: block; }
+    .q small { color: var(--gray); font-size: 13px; display: block; margin-top: 2px; }
+    .q code { font-family: var(--mono); font-size: 12px; color: #9FE8D8; }
+
+    /* PROBLEM */
+    .problem { background: var(--off-white); }
+    .cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 40px; }
+    .card { background: var(--white); border: 1px solid var(--gray-light); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+    .card h3 { font-size: 19px; color: var(--navy); }
+    .card p { color: var(--gray-mid); font-size: 15px; }
+    .card .num { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+
+    /* HOW */
+    .how-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 44px; }
+    .pillar { border-top: 4px solid var(--accent); background: var(--white); border-left: 1px solid var(--gray-light); border-right: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light); border-radius: 4px 4px 12px 12px; padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .pillar h3 { font-size: 26px; color: var(--navy); }
+    .pillar > p { color: var(--gray-mid); }
+    .pillar ul { list-style: none; display: grid; gap: 10px; margin-top: 4px; }
+    .pillar li { display: flex; gap: 10px; font-size: 15px; align-items: baseline; flex-wrap: wrap; }
+    .pillar li::before { content: "→"; color: var(--accent); font-weight: 600; }
+
+    /* DIFFERENT */
+    .different { background: var(--navy); color: var(--white); }
+    .different .section-title { color: var(--white); }
+    .different .section-sub { color: #B8C4D6; }
+    .diff-grid { display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 44px; background: rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; }
+    .diff { background: var(--navy-mid); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+    .diff h3 { font-size: 19px; }
+    .diff p { color: #B8C4D6; font-size: 15px; }
+
+    /* HARD CALLS */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .ledger { background: #0F1F38; color: #D6E2F0; border-radius: 12px; padding: 24px; font-family: var(--mono); font-size: 13px; line-height: 1.9; overflow-x: auto; min-width: 0; }
+    .ledger .k { color: var(--gray); display: inline-block; min-width: 82px; }
+    .ledger .g { color: #6EE7B7; } .ledger .r { color: #FCA5A5; } .ledger .y { color: #FCD34D; }
+    .ticks { list-style: none; display: grid; gap: 12px; margin-top: 22px; }
+    .ticks li { display: flex; gap: 12px; color: var(--gray-mid); }
+    .ticks li::before { content: ""; width: 8px; height: 8px; margin-top: 9px; border-radius: 50%; background: var(--accent); flex: none; }
+
+    /* SOLUTIONS */
+    .solutions { background: var(--off-white); }
+    .sol-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-top: 40px; }
+    .sol { background: var(--white); border: 1px solid var(--gray-light); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+    .sol-head { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+    .sol h3 { font-size: 21px; color: var(--navy); }
+    .sol p { color: var(--gray-mid); font-size: 15px; }
+    .sol .uses { font-size: 14px; color: var(--text); display: grid; gap: 6px; list-style: none; }
+    .sol .uses li::before { content: "· "; color: var(--accent); font-weight: 700; }
+
+    /* BEYOND */
+    .beyond-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 40px; }
+    .mini { border: 1px solid var(--gray-light); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+    .mini h4 { font-size: 17px; color: var(--navy); }
+    .mini p { font-size: 14px; color: var(--gray-mid); }
+    .mini .rule { font-family: var(--mono); font-size: 12px; color: #334155; background: var(--off-white); border-radius: 6px; padding: 8px 10px; }
+    .pattern { margin-top: 36px; background: var(--off-white); border-radius: 12px; padding: 24px 28px; display: grid; gap: 10px; }
+    .pattern h3 { font-size: 20px; color: var(--navy); }
+    .pattern p { color: var(--gray-mid); }
+
+    /* STANDARDS + INTEGRATIONS */
+    .std-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .std { border: 1px solid var(--gray-light); border-radius: 8px; padding: 10px 14px; display: grid; gap: 2px; min-width: 150px; flex: 1 1 150px; }
+    .std b { font-family: var(--mono); font-size: 13px; color: var(--navy); }
+    .std span { font-size: 13px; color: var(--gray-mid); }
+    .tbl-wrap { overflow-x: auto; margin-top: 30px; border: 1px solid var(--gray-light); border-radius: 12px; }
+    table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 15px; }
+    th, td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--gray-light); vertical-align: top; }
+    th { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-mid); background: var(--off-white); font-weight: 500; }
+    tr:last-child td { border-bottom: 0; }
+    td:first-child { font-weight: 600; color: var(--navy); }
+
+    /* SECURITY */
+    .security { background: var(--off-white); }
+
+    /* PRICING */
+    .price-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 40px; }
+    .price { border: 1px solid var(--gray-light); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px; }
+    .price h3 { font-size: 20px; color: var(--navy); }
+    .price p { color: var(--gray-mid); font-size: 15px; }
+
+    /* FAQ */
+    details { border-bottom: 1px solid var(--gray-light); padding: 18px 0; }
+    summary { cursor: pointer; font-weight: 600; color: var(--navy); font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 22px; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--gray-mid); margin-top: 10px; max-width: 72ch; }
+    .faq { max-width: 860px; margin-top: 30px; }
+
+    /* CTA */
+    .cta { background: var(--navy); color: var(--white); text-align: center; }
+    .cta h2 { font-size: clamp(28px, 4vw, 44px); margin-bottom: 16px; }
+    .cta p { color: #B8C4D6; max-width: 60ch; margin: 0 auto 30px; }
+    .cta .ctas { justify-content: center; }
+    .mail { font-family: var(--mono); color: var(--accent); margin-top: 18px; font-size: 14px; user-select: all; }
+
+    footer { background: #060E1A; color: var(--gray-mid); padding: 40px 0; font-size: 14px; }
+    .foot { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+    footer a { color: var(--gray); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split { grid-template-columns: 1fr; gap: 40px; }
+      nav, .lang-bar { padding-left: 20px; padding-right: 20px; }
+      .wrap { padding: 0 20px; }
+      .nav-links li.hide-sm { display: none; }
+      section { padding: 64px 0; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .card, .sol, .mini { transition: transform .2s ease, box-shadow .2s ease; }
+      .card:hover, .sol:hover, .mini:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(10,22,40,0.08); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇬🇧 English</button>
+  <button class="lang-btn" onclick="setLang('no')" id="btn-no">🇳🇴 Norsk</button>
+</div>
+
+<nav>
+  <a href="index.html" class="logo">Eiken<span>Tech</span><small>VerifAI</small></a>
+  <ul class="nav-links">
+    <li class="hide-sm"><a href="#how"><span data-lang="en">How it works</span><span data-lang="no">Slik virker det</span></a></li>
+    <li class="hide-sm"><a href="#solutions"><span data-lang="en">Industries</span><span data-lang="no">Bransjer</span></a></li>
+    <li class="hide-sm"><a href="#beyond"><span data-lang="en">Beyond industry</span><span data-lang="no">Utover industri</span></a></li>
+    <li class="hide-sm"><a href="#security"><span data-lang="en">Security</span><span data-lang="no">Sikkerhet</span></a></li>
+    <li class="hide-sm"><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta"><span data-lang="en">Book a demo</span><span data-lang="no">Bestill demo</span></a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-badge"><span data-lang="en">VerifAI · Semantic layer · Built in Norway on open standards</span><span data-lang="no">VerifAI · Semantisk lag · Utviklet i Norge på åpne standarder</span></div>
+      <h1 data-lang="en">Know what you know.<br><em>And what you don't.</em></h1>
+      <h1 data-lang="no">Vit hva du vet.<br><em>Og hva du ikke vet.</em></h1>
+      <p class="hero-sub" data-lang="en">VerifAI links your assets, documents and rules into one graph built on open industry standards. It turns standards and regulations into executable checks, and answers every question with pass, fail or can't tell, and why.</p>
+      <p class="hero-sub" data-lang="no">VerifAI kobler eiendeler, dokumenter og regler sammen i én graf bygget på åpne bransjestandarder. Standarder og regelverk blir til kjørbare kontroller, og hvert spørsmål får svaret bestått, ikke bestått eller kan ikke avgjøres, med begrunnelse.</p>
+      <div class="ctas">
+        <a href="#contact" class="btn-primary"><span data-lang="en">Book a demo</span><span data-lang="no">Bestill en demo</span></a>
+        <a href="#how" class="btn-outline"><span data-lang="en">See how it works</span><span data-lang="no">Se hvordan det virker</span></a>
+      </div>
+      <div class="states" aria-label="Three verdict states">
+        <span><i class="dot d-pass"></i><span data-lang="en">Pass</span><span data-lang="no">Bestått</span></span>
+        <span><i class="dot d-fail"></i><span data-lang="en">Fail</span><span data-lang="no">Ikke bestått</span></span>
+        <span><i class="dot d-unk"></i><span data-lang="en">Can't tell, and why</span><span data-lang="no">Kan ikke avgjøres, og hvorfor</span></span>
+      </div>
+    </div>
+
+    <div class="console" role="img" aria-label="Example VerifAI answers for pump P-101">
+      <div class="console-head"><span>P-101 · centrifugal pump</span><span data-lang="en">illustrative example</span><span data-lang="no">illustrerende eksempel</span></div>
+      <div class="q"><i class="dot d-pass"></i><div><b data-lang="en">Has exactly one mechanical seal</b><b data-lang="no">Har nøyaktig én mekanisk tetning</b><small data-lang="en">Datasheet rev C, §4 · rule from spec <code>PS-6.3.2</code></small><small data-lang="no">Datablad rev C, §4 · regel fra spesifikasjon <code>PS-6.3.2</code></small></div></div>
+      <div class="q"><i class="dot d-fail"></i><div><b data-lang="en">Material certificate matches the delivered serial</b><b data-lang="no">Materialsertifikat samsvarer med levert serienummer</b><small data-lang="en">Certificate says <code>SN-4471</code>, delivery note says <code>SN-4417</code></small><small data-lang="no">Sertifikatet sier <code>SN-4471</code>, følgeseddelen sier <code>SN-4417</code></small></div></div>
+      <div class="q"><i class="dot d-unk"></i><div><b data-lang="en">Seal flush plan conforms to the project standard</b><b data-lang="no">Spyleplan for tetning følger prosjektstandarden</b><small data-lang="en">Can't tell: no flush plan found in the handover package. Missing: API plan number.</small><small data-lang="no">Kan ikke avgjøres: ingen spyleplan i overleveringspakken. Mangler: API-plannummer.</small></div></div>
+      <div class="q"><i class="dot d-pass"></i><div><b data-lang="en">Same pump in P&amp;ID, datasheet, PO and work orders</b><b data-lang="no">Samme pumpe i P&amp;ID, datablad, innkjøpsordre og arbeidsordrer</b><small data-lang="en">Linked by tag and serial number · 5 sources, each with evidence</small><small data-lang="no">Koblet via tag og serienummer · 5 kilder, hver med dokumentasjon</small></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">The problem</div><div class="section-label" data-lang="no">Problemet</div>
+    <h2 class="section-title" data-lang="en">Your data is everywhere. Its meaning is nowhere.</h2>
+    <h2 class="section-title" data-lang="no">Dataene er overalt. Betydningen er ingen steder.</h2>
+    <p class="section-sub" data-lang="en">The same pump lives in a drawing, a datasheet, a certificate, a purchase order and a maintenance system, each with its own name for it. The rules it must meet sit in hundreds of pages of standards. When someone asks "are we compliant?" or "why does this keep failing?", the answer takes weeks and nobody can say how sure it is.</p>
+    <p class="section-sub" data-lang="no">Den samme pumpen finnes i en tegning, et datablad, et sertifikat, en innkjøpsordre og et vedlikeholdssystem, med ulike navn. Reglene den må oppfylle står i hundrevis av sider med standarder. Når noen spør «oppfyller vi kravene?» eller «hvorfor feiler dette igjen?», tar svaret uker, og ingen kan si hvor sikkert det er.</p>
+    <div class="cards">
+      <div class="card"><span class="num">01</span><h3 data-lang="en">Disconnected records</h3><h3 data-lang="no">Frakoblede registre</h3><p data-lang="en">One physical asset, many identities across systems, and no reliable link between them.</p><p data-lang="no">Én fysisk eiendel, mange identiteter på tvers av systemer, og ingen pålitelig kobling mellom dem.</p></div>
+      <div class="card"><span class="num">02</span><h3 data-lang="en">Rules locked in documents</h3><h3 data-lang="no">Regler låst i dokumenter</h3><p data-lang="en">Standards, specifications and regulations are read by people, one clause at a time.</p><p data-lang="no">Standarder, spesifikasjoner og regelverk leses manuelt, én klausul om gangen.</p></div>
+      <div class="card"><span class="num">03</span><h3 data-lang="en">Confident wrong answers</h3><h3 data-lang="no">Selvsikre, feil svar</h3><p data-lang="en">Dashboards turn missing data into zero. AI assistants guess. Neither says what it does not know.</p><p data-lang="no">Dashbord gjør manglende data om til null. KI-assistenter gjetter. Ingen av dem sier hva de ikke vet.</p></div>
+      <div class="card"><span class="num">04</span><h3 data-lang="en">Decisions nobody can replay</h3><h3 data-lang="no">Beslutninger ingen kan gjenskape</h3><p data-lang="en">A year later, nobody can show what was known, who decided, and why.</p><p data-lang="no">Et år senere kan ingen vise hva man visste, hvem som besluttet, og hvorfor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">How it works</div><div class="section-label" data-lang="no">Slik virker det</div>
+    <h2 class="section-title" data-lang="en">Connect. Understand. Decide.</h2>
+    <h2 class="section-title" data-lang="no">Koble. Forstå. Beslutte.</h2>
+    <p class="section-sub" data-lang="en">VerifAI is one layer with three jobs. Each one works on its own, and together they give you answers you can trace and defend.</p>
+    <p class="section-sub" data-lang="no">VerifAI er ett lag med tre oppgaver. Hver fungerer for seg, og sammen gir de svar du kan spore og forsvare.</p>
+    <div class="how-grid">
+      <div class="pillar">
+        <h3 data-lang="en">Connect</h3><h3 data-lang="no">Koble</h3>
+        <p data-lang="en">One record per thing, linked across every source.</p><p data-lang="no">Ett register per ting, koblet på tvers av alle kilder.</p>
+        <ul>
+          <li><span data-lang="en">Equipment linked across drawings, documents, supplier files and logistics</span><span data-lang="no">Utstyr koblet på tvers av tegninger, dokumenter, leverandørfiler og logistikk</span> <span class="badge b-beta">beta</span></li>
+          <li><span data-lang="en">P&amp;ID drawings turned into a connected graph (DEXPI)</span><span data-lang="no">P&amp;ID-tegninger gjort om til en sammenkoblet graf (DEXPI)</span> <span class="badge b-beta">beta</span></li>
+          <li><span data-lang="en">Locations, distances and zones with explicit coordinate systems</span><span data-lang="no">Posisjoner, avstander og soner med eksplisitte koordinatsystemer</span> <span class="badge b-beta">beta</span></li>
+          <li><span data-lang="en">Work orders and sensor data</span><span data-lang="no">Arbeidsordrer og sensordata</span> <span class="badge b-plan">planned</span></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3 data-lang="en">Understand</h3><h3 data-lang="no">Forstå</h3>
+        <p data-lang="en">Your standards become a domain pack and executable checks.</p><p data-lang="no">Standardene dine blir en domenepakke og kjørbare kontroller.</p>
+        <ul>
+          <li><span data-lang="en">Domain pack builder: from your documents to a reviewed vocabulary</span><span data-lang="no">Domenepakkebygger: fra dine dokumenter til et gjennomgått vokabular</span> <span class="badge b-beta">beta</span></li>
+          <li><span data-lang="en">Rules like "exactly one seal per pump", traced to the clause</span><span data-lang="no">Regler som «nøyaktig én tetning per pumpe», sporet til klausulen</span> <span class="badge b-beta">beta</span></li>
+          <li><span data-lang="en">Compare specifications and find conflicting clauses</span><span data-lang="no">Sammenlign spesifikasjoner og finn motstridende klausuler</span> <span class="badge b-beta">beta</span></li>
+          <li><span data-lang="en">Aligned with ISO 15926 / IDO, the POSC Caesar reference data</span><span data-lang="no">Tilpasset ISO 15926 / IDO, referansedata fra POSC Caesar</span></li>
+        </ul>
+      </div>
+      <div class="pillar">
+        <h3 data-lang="en">Decide</h3><h3 data-lang="no">Beslutte</h3>
+        <p data-lang="en">Honest answers, and a record of every decision.</p><p data-lang="no">Ærlige svar, og en logg over hver beslutning.</p>
+        <ul>
+          <li><span data-lang="en">Pass, fail or can't tell, always with the reason</span><span data-lang="no">Bestått, ikke bestått eller kan ikke avgjøres, alltid med begrunnelse</span></li>
+          <li><span data-lang="en">AI drafts and suggests; a deterministic engine gives the verdict</span><span data-lang="no">KI lager utkast og forslag; en deterministisk motor gir konklusjonen</span></li>
+          <li><span data-lang="en">Sealed decision records you can replay years later</span><span data-lang="no">Forseglede beslutningslogger du kan gjenskape år senere</span></li>
+          <li><span data-lang="en">Structured judgment for the hard calls</span><span data-lang="no">Strukturert vurdering for de vanskelige beslutningene</span> <span class="badge b-beta">beta</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENT -->
+<section class="different">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">Why VerifAI</div><div class="section-label" data-lang="no">Hvorfor VerifAI</div>
+    <h2 class="section-title" data-lang="en">Built to be trusted, not just to be fast</h2>
+    <h2 class="section-title" data-lang="no">Bygget for å være til å stole på, ikke bare rask</h2>
+    <p class="section-sub" data-lang="en">Data platforms connect data. AI assistants answer questions. VerifAI does both, and tells you exactly how far each answer can be trusted.</p>
+    <p class="section-sub" data-lang="no">Dataplattformer kobler data. KI-assistenter svarer på spørsmål. VerifAI gjør begge deler, og forteller nøyaktig hvor langt hvert svar kan stoles på.</p>
+    <div class="diff-grid">
+      <div class="diff"><h3 data-lang="en">The third answer</h3><h3 data-lang="no">Det tredje svaret</h3><p data-lang="en">When evidence is missing or contradictory, VerifAI says "can't tell", names the gap, and says what would close it. Missing data never becomes a pass.</p><p data-lang="no">Når dokumentasjon mangler eller er motstridende, sier VerifAI «kan ikke avgjøres», navngir hullet og sier hva som skal til. Manglende data blir aldri bestått.</p></div>
+      <div class="diff"><h3 data-lang="en">AI drafts, the engine decides</h3><h3 data-lang="no">KI foreslår, motoren avgjør</h3><p data-lang="en">Language models read documents and propose. Verdicts come from deterministic rules a person can inspect.</p><p data-lang="no">Språkmodeller leser dokumenter og foreslår. Konklusjoner kommer fra deterministiske regler som kan inspiseres.</p></div>
+      <div class="diff"><h3 data-lang="en">Every answer traced</h3><h3 data-lang="no">Hvert svar sporbart</h3><p data-lang="en">Each result points to the clause, document and data snapshot it used, with digests that show nothing changed.</p><p data-lang="no">Hvert resultat peker på klausulen, dokumentet og datagrunnlaget det brukte, med fingeravtrykk som viser at ingenting er endret.</p></div>
+      <div class="diff"><h3 data-lang="en">Open industry standards</h3><h3 data-lang="no">Åpne bransjestandarder</h3><p data-lang="en">Built on ISO 15926 / IDO, CFIHOS, DEXPI, IOF and BFO. Your model is yours, in the industry's own language.</p><p data-lang="no">Bygget på ISO 15926 / IDO, CFIHOS, DEXPI, IOF og BFO. Modellen er din, på bransjens eget språk.</p></div>
+      <div class="diff"><h3 data-lang="en">Built from your documents</h3><h3 data-lang="no">Bygget fra dine dokumenter</h3><p data-lang="en">Domain packs are generated inside your workspace from your own standards. No consultants rebuilding your rules by hand.</p><p data-lang="no">Domenepakker genereres i ditt arbeidsområde fra dine egne standarder. Ingen konsulenter som bygger reglene manuelt.</p></div>
+      <div class="diff"><h3 data-lang="en">Your data, your policy</h3><h3 data-lang="no">Dine data, din policy</h3><p data-lang="en">Data residency and AI provider choice are your settings, recorded and enforceable. Export and erase on your instruction.</p><p data-lang="no">Datalagring og valg av KI-leverandør er dine innstillinger, registrert og håndhevbare. Eksport og sletting etter din instruks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HARD CALLS -->
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="section-label" data-lang="en">For the hard calls</div><div class="section-label" data-lang="no">For de vanskelige beslutningene</div>
+      <h2 class="section-title" data-lang="en">When no rule can decide, record how your experts did</h2>
+      <h2 class="section-title" data-lang="no">Når ingen regel kan avgjøre, dokumenter hvordan ekspertene gjorde det</h2>
+      <p class="section-sub" data-lang="en">Is this risk acceptable? Can this asset run five more years? Should we accept this deviation? VerifAI gives these questions a structured process and a sealed record.</p>
+      <p class="section-sub" data-lang="no">Er denne risikoen akseptabel? Kan denne eiendelen gå fem år til? Skal vi godta dette avviket? VerifAI gir slike spørsmål en strukturert prosess og en forseglet logg.</p>
+      <ul class="ticks">
+        <li data-lang="en">Competing options weighed by the evidence against them, a method from intelligence analysis</li><li data-lang="no">Alternativer vurderes etter dokumentasjonen mot dem, en metode fra etterretningsanalyse</li>
+        <li data-lang="en">Gaps in evidence lower the confidence, and the record says which gap</li><li data-lang="no">Hull i dokumentasjonen senker tilliten, og loggen sier hvilket hull</li>
+        <li data-lang="en">Authors, raters and the decision-maker recorded, with the rationale</li><li data-lang="no">Forfattere, vurderere og beslutningstaker registreres, med begrunnelse</li>
+      </ul>
+    </div>
+    <div class="ledger" role="img" aria-label="Example sealed decision record">
+      <div><span class="k">CASE</span>tailings-raise-north <span style="color:var(--gray)">(illustrative)</span></div>
+      <div><span class="k">EVIDENCE</span><span class="g">freeboard · pass</span></div>
+      <div><span class="k"></span><span class="r">pore-pressure trend · fail</span></div>
+      <div><span class="k"></span><span class="y">seepage inspection · can't tell</span></div>
+      <div><span class="k">OPTION H1</span>continue deposition · <span class="r">contradicted</span></div>
+      <div><span class="k">OPTION H2</span>restrict until inspected · <span class="g">least evidence against</span></div>
+      <div><span class="k">CONFIDENCE</span><span class="y">low · gap: seepage inspection</span></div>
+      <div><span class="k">RULING</span>H2 · Engineer of Record · rationale recorded</div>
+      <div><span class="k">SEALED</span>evidence digest 2de5715…c0cc</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions" id="solutions">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">Industries</div><div class="section-label" data-lang="no">Bransjer</div>
+    <h2 class="section-title" data-lang="en">Made for asset-heavy industries first</h2>
+    <h2 class="section-title" data-lang="no">Laget for anleggstunge bransjer først</h2>
+    <p class="section-sub" data-lang="en">Where one wrong answer costs a shutdown, an incident or a lost licence, the third answer matters most.</p>
+    <p class="section-sub" data-lang="no">Der ett feil svar koster en nedstengning, en hendelse eller en tapt lisens, betyr det tredje svaret mest.</p>
+    <div class="sol-grid">
+      <div class="sol"><div class="sol-head"><h3 data-lang="en">Mining &amp; minerals processing</h3><h3 data-lang="no">Gruvedrift og mineralforedling</h3><span class="badge b-plan">in development</span></div>
+        <ul class="uses"><li data-lang="en">One record for crushers, mills, conveyors and their documents</li><li data-lang="no">Ett register for knusere, møller, transportbånd og dokumentene deres</li><li data-lang="en">Tailings and water decisions on the record</li><li data-lang="no">Beslutninger om avgang og vann i loggen</li><li data-lang="en">Spatial checks: zones, distances, sites</li><li data-lang="no">Romlige kontroller: soner, avstander, lokasjoner</li></ul></div>
+      <div class="sol"><div class="sol-head"><h3 data-lang="en">Power generation</h3><h3 data-lang="no">Kraftproduksjon</h3><span class="badge b-plan">in development</span></div>
+        <ul class="uses"><li data-lang="en">Plant structure and equipment linked across sources</li><li data-lang="no">Anleggsstruktur og utstyr koblet på tvers av kilder</li><li data-lang="en">Life-extension calls with a defensible record</li><li data-lang="no">Levetidsforlengelse med forsvarlig dokumentasjon</li><li data-lang="en">Handover of new capacity, gaps named</li><li data-lang="no">Overlevering av ny kapasitet, med hull navngitt</li></ul></div>
+      <div class="sol"><div class="sol-head"><h3 data-lang="en">Process plants</h3><h3 data-lang="no">Prosessanlegg</h3><span class="badge b-beta">beta</span></div>
+        <ul class="uses"><li data-lang="en">P&amp;ID to graph, composition rules per equipment class</li><li data-lang="no">P&amp;ID til graf, sammensetningsregler per utstyrsklasse</li><li data-lang="en">Compare specifications, find conflicting clauses</li><li data-lang="no">Sammenlign spesifikasjoner, finn motstridende klausuler</li><li data-lang="en">Engineering checks traced to the clause</li><li data-lang="no">Ingeniørkontroller sporet til klausulen</li></ul></div>
+      <div class="sol"><div class="sol-head"><h3 data-lang="en">Oil, gas &amp; subsea</h3><h3 data-lang="no">Olje, gass og subsea</h3><span class="badge b-beta">beta</span></div>
+        <ul class="uses"><li data-lang="en">NCS regulations and standards as executable checks</li><li data-lang="no">Regelverk og standarder for norsk sokkel som kjørbare kontroller</li><li data-lang="en">Subsea equipment against project specifications</li><li data-lang="no">Subsea-utstyr mot prosjektspesifikasjoner</li><li data-lang="en">Offshore logistics plans checked (Guideline 146)</li><li data-lang="no">Offshore logistikkplaner kontrollert (retningslinje 146)</li></ul></div>
+      <div class="sol"><div class="sol-head"><h3 data-lang="en">EPC &amp; handover</h3><h3 data-lang="no">EPC og overlevering</h3><span class="badge b-beta">beta</span></div>
+        <ul class="uses"><li data-lang="en">CFIHOS document types and status per tag</li><li data-lang="no">CFIHOS-dokumenttyper og status per tag</li><li data-lang="en">Concessions carried into operations by policy</li><li data-lang="no">Avvik overført til drift etter policy</li><li data-lang="en">Supplier certificates and VDRL tracked</li><li data-lang="no">Leverandørsertifikater og VDRL fulgt opp</li></ul></div>
+      <div class="sol"><div class="sol-head"><h3 data-lang="en">Industrial equipment &amp; suppliers</h3><h3 data-lang="no">Industrielt utstyr og leverandører</h3><span class="badge b-plan">in development</span></div>
+        <ul class="uses"><li data-lang="en">Equipment passports from datasheets and certificates</li><li data-lang="no">Utstyrspass fra datablad og sertifikater</li><li data-lang="en">Deliveries checked against customer specifications</li><li data-lang="no">Leveranser kontrollert mot kundens spesifikasjoner</li><li data-lang="en">Asset Administration Shell identifiers mapped</li><li data-lang="no">Asset Administration Shell-identifikatorer kartlagt</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND -->
+<section id="beyond">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">Beyond heavy industry</div><div class="section-label" data-lang="no">Utover tungindustri</div>
+    <h2 class="section-title" data-lang="en">Anywhere rules meet records and mistakes are costly</h2>
+    <h2 class="section-title" data-lang="no">Overalt der regler møter registre og feil er kostbare</h2>
+    <p class="section-sub" data-lang="en">The same engine works wherever written rules must be applied to real things and someone must be able to defend the answer. Some of these have early domain packs today; others we are exploring with partners.</p>
+    <p class="section-sub" data-lang="no">Den samme motoren virker overalt der skrevne regler skal anvendes på virkelige ting og noen må kunne forsvare svaret. Noen av disse har tidlige domenepakker i dag; andre utforsker vi med partnere.</p>
+    <div class="beyond-grid">
+      <div class="mini"><span class="badge b-beta" style="align-self:flex-start">early pack</span><h4 data-lang="en">Medical devices &amp; life sciences</h4><h4 data-lang="no">Medisinsk utstyr og livsvitenskap</h4><p data-lang="en">Technical files against regulations and harmonised standards, with every gap named before the auditor finds it.</p><p data-lang="no">Teknisk dokumentasjon mot regelverk og harmoniserte standarder, med hvert hull navngitt før revisor finner det.</p><span class="rule">requirement → evidence → pass / fail / can't tell</span></div>
+      <div class="mini"><span class="badge b-beta" style="align-self:flex-start">early pack</span><h4 data-lang="en">Environmental &amp; safety regulation</h4><h4 data-lang="no">Miljø- og sikkerhetsregelverk</h4><p data-lang="en">Overlapping programmes compared, duplicate duties found, deadlines and conditions listed in plain words.</p><p data-lang="no">Overlappende program sammenlignet, dupliserte plikter funnet, frister og vilkår listet i klartekst.</p><span class="rule">duty A ≡ duty B · "whichever is earlier"</span></div>
+      <div class="mini"><span class="badge b-beta" style="align-self:flex-start">early pack</span><h4 data-lang="en">Software &amp; systems engineering</h4><h4 data-lang="no">Programvare- og systemutvikling</h4><p data-lang="en">Requirements traced to code and tests; API specifications checked; systems-engineering rules applied.</p><p data-lang="no">Krav sporet til kode og tester; API-spesifikasjoner kontrollert; systemutviklingsregler anvendt.</p><span class="rule">requirement → code → test → result</span></div>
+      <div class="mini"><span class="badge b-explore" style="align-self:flex-start">exploring</span><h4 data-lang="en">AI governance</h4><h4 data-lang="no">KI-styring</h4><p data-lang="en">AI systems checked against the EU AI Act and internal policies: which obligations apply, which are evidenced, which can't be told yet.</p><p data-lang="no">KI-systemer kontrollert mot EUs KI-forordning og interne retningslinjer: hvilke plikter gjelder, hvilke er dokumentert, hvilke kan ikke avgjøres ennå.</p><span class="rule">system → risk class → obligations → evidence</span></div>
+      <div class="mini"><span class="badge b-explore" style="align-self:flex-start">exploring</span><h4 data-lang="en">Construction &amp; buildings</h4><h4 data-lang="no">Bygg og anlegg</h4><p data-lang="en">BIM models and documents checked against building codes and project requirements, with objects linked to their checks.</p><p data-lang="no">BIM-modeller og dokumenter kontrollert mot byggeforskrifter og prosjektkrav, med objekter koblet til kontrollene.</p><span class="rule">IFC object → code clause → result</span></div>
+      <div class="mini"><span class="badge b-explore" style="align-self:flex-start">exploring</span><h4 data-lang="en">Maritime &amp; shipping</h4><h4 data-lang="no">Maritim og shipping</h4><p data-lang="en">Vessel equipment and documentation against class rules and conventions; voyage plans against zones.</p><p data-lang="no">Skipsutstyr og dokumentasjon mot klasseregler og konvensjoner; seilingsplaner mot soner.</p><span class="rule">vessel → rule set → certificate → status</span></div>
+      <div class="mini"><span class="badge b-explore" style="align-self:flex-start">exploring</span><h4 data-lang="en">Tenders &amp; public procurement</h4><h4 data-lang="no">Anbud og offentlige anskaffelser</h4><p data-lang="en">Bids checked against every requirement in the tender, for buyers scoring them and for suppliers writing them.</p><p data-lang="no">Tilbud kontrollert mot hvert krav i konkurransegrunnlaget, for innkjøpere som evaluerer og leverandører som skriver.</p><span class="rule">tender requirement → bid evidence → met / not met / unclear</span></div>
+      <div class="mini"><span class="badge b-explore" style="align-self:flex-start">exploring</span><h4 data-lang="en">Sustainability &amp; supply chains</h4><h4 data-lang="no">Bærekraft og leverandørkjeder</h4><p data-lang="en">Reported figures traced to their source page; product passports and origin claims checked against the rules that require them.</p><p data-lang="no">Rapporterte tall sporet til kildesiden; produktpass og opprinnelsespåstander kontrollert mot reglene som krever dem.</p><span class="rule">reported figure → source page → digest</span></div>
+      <div class="mini"><span class="badge b-explore" style="align-self:flex-start">exploring</span><h4 data-lang="en">Contracts &amp; obligations</h4><h4 data-lang="no">Kontrakter og forpliktelser</h4><p data-lang="en">Obligations extracted from contracts, linked to the work that fulfils them, and tracked: met, missed, or not yet evidenced.</p><p data-lang="no">Forpliktelser hentet ut av kontrakter, koblet til arbeidet som oppfyller dem, og fulgt opp: oppfylt, brutt eller ennå ikke dokumentert.</p><span class="rule">clause "shall" → deliverable → status</span></div>
+    </div>
+    <div class="pattern">
+      <h3 data-lang="en">The pattern behind every use</h3><h3 data-lang="no">Mønsteret bak alle bruksområder</h3>
+      <p data-lang="en">Written rules, real things described in many sources, and a decision someone must stand behind. If your work fits that pattern, VerifAI can probably help. Tell us about it.</p>
+      <p data-lang="no">Skrevne regler, virkelige ting beskrevet i mange kilder, og en beslutning noen må stå for. Passer arbeidet ditt i det mønsteret, kan VerifAI sannsynligvis hjelpe. Fortell oss om det.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARDS & INTEGRATIONS -->
+<section style="background:var(--off-white)">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">Standards &amp; integrations</div><div class="section-label" data-lang="no">Standarder og integrasjoner</div>
+    <h2 class="section-title" data-lang="en">Speaks the industry's language</h2>
+    <h2 class="section-title" data-lang="no">Snakker bransjens språk</h2>
+    <p class="section-sub" data-lang="en">VerifAI is aligned with the open standards the industry built together, so your knowledge stays portable.</p>
+    <p class="section-sub" data-lang="no">VerifAI er tilpasset de åpne standardene bransjen har utviklet sammen, slik at kunnskapen din forblir flyttbar.</p>
+    <div class="std-row">
+      <div class="std"><b>ISO 15926 / IDO</b><span data-lang="en">Industrial data ontology (POSC Caesar)</span><span data-lang="no">Industriell dataontologi (POSC Caesar)</span></div>
+      <div class="std"><b>CFIHOS</b><span data-lang="en">Handover information</span><span data-lang="no">Overleveringsinformasjon</span></div>
+      <div class="std"><b>DEXPI</b><span data-lang="en">P&amp;ID exchange</span><span data-lang="no">P&amp;ID-utveksling</span></div>
+      <div class="std"><b>IOF · BFO</b><span data-lang="en">Industrial and upper ontologies</span><span data-lang="no">Industri- og toppontologier</span></div>
+      <div class="std"><b>GeoSPARQL</b><span data-lang="en">Spatial data</span><span data-lang="no">Romlige data</span></div>
+      <div class="std"><b>IDTA / AAS</b><span data-lang="en">Asset Administration Shell identifiers</span><span data-lang="no">Asset Administration Shell-identifikatorer</span></div>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th data-lang="en">Source</th><th data-lang="no">Kilde</th><th data-lang="en">What VerifAI reads</th><th data-lang="no">Hva VerifAI leser</th><th data-lang="en">Status</th><th data-lang="no">Status</th></tr></thead>
+      <tbody>
+        <tr><td data-lang="en">Documents</td><td data-lang="no">Dokumenter</td><td data-lang="en">Standards, specifications, datasheets, certificates (PDF, Word, XML, scanned with OCR)</td><td data-lang="no">Standarder, spesifikasjoner, datablad, sertifikater (PDF, Word, XML, skannet med OCR)</td><td><span class="badge b-live">available</span></td></tr>
+        <tr><td data-lang="en">Drawings</td><td data-lang="no">Tegninger</td><td data-lang="en">P&amp;IDs and tag recovery</td><td data-lang="no">P&amp;ID-er og gjenkjenning av tagger</td><td><span class="badge b-beta">beta</span></td></tr>
+        <tr><td data-lang="en">Supply chain &amp; logistics files</td><td data-lang="no">Leverandørkjede- og logistikkfiler</td><td data-lang="en">Purchase orders, VDRL, document registers, logistics plans</td><td data-lang="no">Innkjøpsordrer, VDRL, dokumentregistre, logistikkplaner</td><td><span class="badge b-beta">beta</span></td></tr>
+        <tr><td data-lang="en">Maintenance systems</td><td data-lang="no">Vedlikeholdssystemer</td><td data-lang="en">Work-order exports from SAP PM and Maximo</td><td data-lang="no">Eksport av arbeidsordrer fra SAP PM og Maximo</td><td><span class="badge b-plan">planned</span></td></tr>
+        <tr><td data-lang="en">Sensor &amp; historian data</td><td data-lang="no">Sensor- og historikkdata</td><td data-lang="en">Time series as supporting analysis (trends, anomalies)</td><td data-lang="no">Tidsserier som støtteanalyse (trender, avvik)</td><td><span class="badge b-plan">planned</span></td></tr>
+        <tr><td data-lang="en">AI assistants</td><td data-lang="no">KI-assistenter</td><td data-lang="en">Read and propose through a secure MCP endpoint</td><td data-lang="no">Lese og foreslå via et sikkert MCP-endepunkt</td><td><span class="badge b-beta">beta</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="security" id="security" style="background:var(--white)">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">Security &amp; control</div><div class="section-label" data-lang="no">Sikkerhet og kontroll</div>
+    <h2 class="section-title" data-lang="en">You stay in control of your data and your decisions</h2>
+    <h2 class="section-title" data-lang="no">Du har kontroll over data og beslutninger</h2>
+    <div class="cards">
+      <div class="card"><h3 data-lang="en">Separate workspaces</h3><h3 data-lang="no">Separate arbeidsområder</h3><p data-lang="en">Each customer's data and domain packs are isolated in their own tenant.</p><p data-lang="no">Hver kundes data og domenepakker er isolert i egen tenant.</p></div>
+      <div class="card"><h3 data-lang="en">Data residency as policy</h3><h3 data-lang="no">Datalagring som policy</h3><p data-lang="en">Choose where data and AI processing may happen; the choice is recorded and can be enforced.</p><p data-lang="no">Velg hvor data og KI-behandling kan skje; valget registreres og kan håndheves.</p></div>
+      <div class="card"><h3 data-lang="en">Approvals that fit your team</h3><h3 data-lang="no">Godkjenning tilpasset teamet</h3><p data-lang="en">Two-person approval by default, or single-person for small teams, recorded honestly either way.</p><p data-lang="no">Tomannsgodkjenning som standard, eller énpersons for små team, ærlig registrert uansett.</p></div>
+      <div class="card"><h3 data-lang="en">Export and exit</h3><h3 data-lang="no">Eksport og avslutning</h3><p data-lang="en">Full export of your data, then offboarding and deletion with a second person confirming.</p><p data-lang="no">Full eksport av dataene dine, deretter avslutning og sletting bekreftet av en annen person.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="background:var(--off-white)">
+  <div class="wrap">
+    <div class="section-label" data-lang="en">Getting started</div><div class="section-label" data-lang="no">Kom i gang</div>
+    <h2 class="section-title" data-lang="en">Simple to start, priced on use</h2>
+    <h2 class="section-title" data-lang="no">Enkelt å starte, priset etter bruk</h2>
+    <div class="price-grid">
+      <div class="price"><h3 data-lang="en">1 · Discovery call</h3><h3 data-lang="no">1 · Innledende samtale</h3><p data-lang="en">We look at one decision you make often and the documents behind it.</p><p data-lang="no">Vi ser på én beslutning dere tar ofte og dokumentene bak den.</p></div>
+      <div class="price"><h3 data-lang="en">2 · Onboarding</h3><h3 data-lang="no">2 · Oppstart</h3><p data-lang="en">Your workspace, sign-in, first domain pack from your documents, and training. Delivered by EikenTech or a certified partner.</p><p data-lang="no">Arbeidsområde, innlogging, første domenepakke fra dine dokumenter, og opplæring. Levert av EikenTech eller en sertifisert partner.</p></div>
+      <div class="price"><h3 data-lang="en">3 · Subscription</h3><h3 data-lang="no">3 · Abonnement</h3><p data-lang="en">A platform subscription plus metered AI usage with a cap you set. Ask us for pricing for your sites and users.</p><p data-lang="no">Et plattformabonnement pluss målt KI-bruk med et tak du setter. Be om pris for dine anlegg og brukere.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title" data-lang="en">Questions we hear</h2><h2 class="section-title" data-lang="no">Spørsmål vi ofte får</h2>
+    <div class="faq">
+      <details><summary><span data-lang="en">We already use Cognite, SAP or Maximo. Why VerifAI?</span><span data-lang="no">Vi bruker allerede Cognite, SAP eller Maximo. Hvorfor VerifAI?</span></summary><p data-lang="en">Keep them. VerifAI treats them as sources, links the same equipment across all of them, and adds what they don't: your standards as executable checks, honest three-state answers, and a record of every decision.</p><p data-lang="no">Behold dem. VerifAI bruker dem som kilder, kobler samme utstyr på tvers av alle, og legger til det de mangler: standardene dine som kjørbare kontroller, ærlige svar i tre tilstander og en logg over hver beslutning.</p></details>
+      <details><summary><span data-lang="en">Does AI make the decisions?</span><span data-lang="no">Er det KI som tar beslutningene?</span></summary><p data-lang="en">No. Language models read documents and suggest. Verdicts come from deterministic rules, and judgment calls are made and signed by people.</p><p data-lang="no">Nei. Språkmodeller leser dokumenter og foreslår. Konklusjoner kommer fra deterministiske regler, og skjønnsmessige vurderinger gjøres og signeres av mennesker.</p></details>
+      <details><summary><span data-lang="en">How long does it take to get started?</span><span data-lang="no">Hvor lang tid tar det å komme i gang?</span></summary><p data-lang="en">The first domain pack is built from your own documents inside the product, so first results usually come from one document set or one export, not a long project.</p><p data-lang="no">Den første domenepakken bygges fra dine egne dokumenter i produktet, så de første resultatene kommer vanligvis fra ett dokumentsett eller én eksport, ikke et langt prosjekt.</p></details>
+      <details><summary><span data-lang="en">Where is our data stored?</span><span data-lang="no">Hvor lagres dataene våre?</span></summary><p data-lang="en">In your own isolated workspace, in a region agreed for your deployment. Data residency and AI provider choice are your policy settings.</p><p data-lang="no">I ditt eget isolerte arbeidsområde, i en region avtalt for din løsning. Datalagring og valg av KI-leverandør er dine policyinnstillinger.</p></details>
+      <details><summary><span data-lang="en">Is VerifAI only for heavy industry?</span><span data-lang="no">Er VerifAI bare for tungindustri?</span></summary><p data-lang="en">We start where the stakes are highest, but the engine works anywhere written rules meet real records. Early packs exist for medical devices, environmental regulation and software engineering.</p><p data-lang="no">Vi starter der innsatsen er høyest, men motoren virker overalt der skrevne regler møter virkelige registre. Det finnes tidlige pakker for medisinsk utstyr, miljøregelverk og programvareutvikling.</p></details>
+      <details><summary><span data-lang="en">Are you affiliated with POSC Caesar or ISO?</span><span data-lang="no">Er dere tilknyttet POSC Caesar eller ISO?</span></summary><p data-lang="en">VerifAI is aligned with their published standards and reference data. It is not endorsed or certified by them.</p><p data-lang="no">VerifAI er tilpasset deres publiserte standarder og referansedata. Den er ikke godkjent eller sertifisert av dem.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2 data-lang="en">Bring one hard question. We'll show you the three answers.</h2>
+    <h2 data-lang="no">Ta med ett vanskelig spørsmål. Vi viser deg de tre svarene.</h2>
+    <p data-lang="en">Book a 30-minute demo with your own example: a piece of equipment, a specification or a decision you make often.</p>
+    <p data-lang="no">Bestill en 30-minutters demo med ditt eget eksempel: et utstyr, en spesifikasjon eller en beslutning dere tar ofte.</p>
+    <div class="ctas">
+      <a href="mailto:surbhi.bansal@eikentech.no?subject=VerifAI%20demo" class="btn-primary"><span data-lang="en">Book a demo</span><span data-lang="no">Bestill demo</span></a>
+      <a href="index.html#contact" class="btn-outline"><span data-lang="en">Contact EikenTech</span><span data-lang="no">Kontakt EikenTech</span></a>
+    </div>
+    <p class="mail">surbhi.bansal@eikentech.no</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="logo">Eiken<span>Tech</span></a>
+    <span>© 2026 EikenTech · <span data-lang="en">Org. No</span><span data-lang="no">Org.nr</span> 937 268 858 · <span data-lang="en">Asker, Norway · New Delhi, India</span><span data-lang="no">Asker, Norge · New Delhi, India</span></span>
+    <a href="index.html"><span data-lang="en">← Back to EikenTech</span><span data-lang="no">← Tilbake til EikenTech</span></a>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.classList.toggle('lang-no', lang === 'no');
+    document.documentElement.lang = lang === 'no' ? 'nb' : 'en';
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-no').classList.toggle('active', lang === 'no');
+    try { localStorage.setItem('eikentech-lang', lang); } catch (e) {}
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    var saved = null;
+    try { saved = localStorage.getItem('eikentech-lang'); } catch (e) {}
+    setLang(saved === 'no' ? 'no' : 'en');
+  });
+</script>
+</body>
+</html>
