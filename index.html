@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EikenTech — Enterprise Salesforce & AI Architecture for Nordic Businesses</title>
-  <meta name="description" content="EikenTech is a Norway-based Salesforce, AWS and AI consultancy in Asker with an engineering delivery center in New Delhi. Managed Salesforce support, CI/CD, testing and AI automation for Nordic businesses."/>
+  <title>SINAPS by EikenTech — specifications for one valve package</title>
+  <meta name="description" content="Give us the specifications for one valve package. You get the purchase request, the datasheet and the test matrix. Every line shows the clause it came from. SINAPS is the product. EikenTech is the product company."/>
   <link rel="canonical" href="https://eikentech.no/"/>
   <meta name="theme-color" content="#0A1628"/>
   <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://eikentech.no/"/>
   <meta property="og:site_name" content="EikenTech"/>
-  <meta property="og:title" content="EikenTech — Enterprise Salesforce & AI Architecture for Nordic Businesses"/>
-  <meta property="og:description" content="Local consulting in Asker. World-class delivery from India. Salesforce, AWS integrations and AI automation for Nordic businesses."/>
+  <meta property="og:title" content="SINAPS by EikenTech — specifications for one valve package"/>
+  <meta property="og:description" content="Give us the specifications for one valve package. You get the purchase request, the datasheet and the test matrix. Every line shows the clause it came from."/>
   <meta property="og:locale" content="en_GB"/>
   <meta property="og:locale:alternate" content="nb_NO"/>
   <meta name="twitter:card" content="summary"/>
@@ -21,16 +21,20 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "EikenTech",
+    "description": "EikenTech is a product company. It builds SINAPS. Give us the specifications for one valve package. You get the purchase request, the datasheet and the test matrix. Every line shows the clause it came from.",
     "url": "https://eikentech.no/",
     "email": "surbhi.bansal@eikentech.no",
     "taxID": "937268858",
     "identifier": { "@type": "PropertyValue", "propertyID": "Organisasjonsnummer", "value": "937268858" },
+    "brand": { "@type": "Brand", "name": "SINAPS" },
     "address": { "@type": "PostalAddress", "addressLocality": "Asker", "addressCountry": "NO" },
-    "areaServed": ["NO", "SE", "DK", "FI"],
-    "knowsAbout": ["Salesforce", "AWS", "Artificial Intelligence", "CI/CD", "Software Testing"]
+    "location": [
+      { "@type": "Place", "name": "Asker", "address": { "@type": "PostalAddress", "addressLocality": "Asker", "addressCountry": "NO" } },
+      { "@type": "Place", "name": "New Delhi", "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressCountry": "IN" } }
+    ]
   }
   </script>
-  <link rel="stylesheet" href="fonts/fonts.css"/>
+  <link rel="stylesheet" href="fonts.css"/>
   <style>
     :root {
       --navy: #0A1628;
@@ -263,7 +267,7 @@
     .stat-label { font-size: 13px; color: var(--gray); margin-top: 4px; }
 
     /* ── SECTION COMMON ── */
-    section { padding: 96px 48px; }
+    section { padding: 96px 48px; scroll-margin-top: 80px; }
     .section-label {
       font-size: 12px;
       font-weight: 700;
@@ -508,6 +512,14 @@
       line-height: 1;
       min-width: 40px;
     }
+    .delivery-num.label {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      min-width: 64px;
+      padding-top: 4px;
+    }
     .delivery-card h3 {
       font-family: 'Syne', sans-serif;
       font-size: 17px;
@@ -630,12 +642,19 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 48px;
       margin-bottom: 48px;
     }
+    .brand-lockup { display: flex; flex-direction: column; text-decoration: none; line-height: 1.05; }
+    .brand-by { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--gray); margin-top: 3px; }
+    .hero .hero-sub { margin-bottom: 18px; }
+    .hero-line { font-size: 16px; line-height: 1.65; color: #CBD5E1; max-width: 640px; margin: 0 0 8px; }
+    .hero-lockup { margin: 4px 0 28px; }
+    .hero-lockup .logo { font-size: 28px; }
+    .hero-lockup .brand-by { color: rgba(255,255,255,0.72); font-size: 13px; }
     .footer-brand .logo { font-size: 20px; }
-    .footer-brand p { font-size: 14px; color: var(--gray); margin-top: 16px; line-height: 1.7; max-width: 260px; }
+    .footer-brand p { font-size: 14px; color: var(--gray); margin-top: 16px; line-height: 1.7; max-width: 360px; }
     .footer-col h5 {
       font-family: 'Syne', sans-serif;
       font-size: 14px;
@@ -665,7 +684,7 @@
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       nav, .lang-bar { padding: 0 24px; }
       .lang-bar { padding: 8px 24px; }
       section { padding: 64px 24px; }
@@ -690,6 +709,8 @@
     @media (max-width: 560px) {
       .footer-grid { grid-template-columns: 1fr; }
       .delivery-grid, .service-panel.active { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; letter-spacing: -0.8px; }
+      .hero { padding: 48px 20px 56px; min-height: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -712,398 +733,197 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">Eiken<span>Tech</span></a>
+  <a href="#top" class="brand-lockup">
+    <span class="logo">SINAPS</span>
+    <span class="brand-by">by EikenTech</span>
+  </a>
   <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">☰</button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="no" lang="nb">Om oss</a></li>
-    <li><a href="#services" data-lang="en">Services</a><a href="#services" data-lang="no" lang="nb">Tjenester</a></li>
-    <li><a href="#domains" data-lang="en">Domains</a><a href="#domains" data-lang="no" lang="nb">Domener</a></li>
-    <li><a href="#deliveries" data-lang="en">Deliveries</a><a href="#deliveries" data-lang="no" lang="nb">Leveranser</a></li>
-    <li><a href="#contact" class="nav-cta" data-lang="en">Contact Us</a><a href="#contact" class="nav-cta" data-lang="no" lang="nb">Kontakt oss</a></li>
+    <li><a href="#job" data-lang="en">The job</a><a href="#job" data-lang="no" lang="nb">Jobben</a></li>
+    <li><a href="#model" data-lang="en">The model</a><a href="#model" data-lang="no" lang="nb">Modellen</a></li>
+    <li><a href="#difference" data-lang="en">The difference</a><a href="#difference" data-lang="no" lang="nb">Forskjellen</a></li>
+    <li><a href="#next" data-lang="en">Next</a><a href="#next" data-lang="no" lang="nb">Neste</a></li>
+    <li><a href="#company" data-lang="en">Company</a><a href="#company" data-lang="no" lang="nb">Selskapet</a></li>
+    <li><a href="#contact" class="nav-cta" data-lang="en">Book a demo</a><a href="#contact" class="nav-cta" data-lang="no" lang="nb">Bestill en demo</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-badge" data-lang="en">Norway-based · Global Delivery</div>
-    <div class="hero-badge" data-lang="no" lang="nb">Norsk selskap · Global leveranse</div>
+    <div class="hero-badge" data-lang="en">Starting with engineering and procurement</div>
+    <div class="hero-badge" data-lang="no" lang="nb">Vi starter med ingeniørarbeid og innkjøp</div>
 
-    <h1 data-lang="en">Enterprise Salesforce &<br><em>AI Architecture</em><br>for Nordic Businesses</h1>
-    <h1 data-lang="no" lang="nb">Salesforce- og<br><em>KI-arkitektur</em><br>for nordiske bedrifter</h1>
+    <h1 data-lang="en">Give us the specifications for one valve package.</h1>
+    <h1 data-lang="no" lang="nb">Gi oss spesifikasjonene for én ventilpakke.</h1>
 
-    <p class="hero-sub" data-lang="en">Local consulting in Asker. World-class delivery from India. Scale your CRM, AWS integrations, and AI automation cost-effectively — with 24/7 support, GDPR compliance, and proven expertise across 5+ industry domains.</p>
-    <p class="hero-sub" data-lang="no" lang="nb">Lokal rådgivning i Asker. Verdensklasse-leveranse fra India. Skaler din CRM, AWS-integrasjoner og AI-automatisering kostnadseffektivt — med 24/7-støtte, GDPR-samsvar og dokumentert ekspertise i 5+ bransjer.</p>
+    <p class="hero-sub" data-lang="en">You get the purchase request, the datasheet and the test matrix. Every line shows the clause it came from.</p>
+    <p class="hero-sub" data-lang="no" lang="nb">Du får innkjøpsforespørselen, databladet og testmatrisen. Hver linje viser klausulen den kom fra.</p>
+
+    <p class="hero-line" data-lang="en">A semantic layer for the organisation that reads, reasons and acts, with people approving every action and every fact traceable to its source.</p>
+    <p class="hero-line" data-lang="no" lang="nb">Et semantisk lag for organisasjonen som leser, resonnerer og handler, der mennesker godkjenner hver handling og hvert faktum kan spores til kilden.</p>
+
+    <div class="hero-lockup brand-lockup">
+      <span class="logo">SINAPS</span>
+      <span class="brand-by">by EikenTech</span>
+    </div>
 
     <div class="hero-ctas">
-      <a href="#contact" class="btn-primary" data-lang="en">Get a Free Architecture Audit</a>
-      <a href="#contact" class="btn-primary" data-lang="no" lang="nb">Få en gratis arkitekturgjennomgang</a>
-      <a href="#services" class="btn-outline" data-lang="en">Explore Services</a>
-      <a href="#services" class="btn-outline" data-lang="no" lang="nb">Utforsk tjenester</a>
-    </div>
-  </div>
-
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-num">2<span>+</span></div>
-      <div class="stat-label" data-lang="en">Delivery Centers</div>
-      <div class="stat-label" data-lang="no" lang="nb">Leveransesentre</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">24<span>/7</span></div>
-      <div class="stat-label" data-lang="en">Support Capability</div>
-      <div class="stat-label" data-lang="no" lang="nb">Støttekapasitet</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">5<span>+</span></div>
-      <div class="stat-label" data-lang="en">Industry Domains</div>
-      <div class="stat-label" data-lang="no" lang="nb">Bransjer</div>
+      <a href="#contact" class="btn-primary" data-lang="en">Book a demo</a>
+      <a href="#contact" class="btn-primary" data-lang="no" lang="nb">Bestill en demo</a>
+      <a href="#job" class="btn-outline" data-lang="en">See the valve job</a>
+      <a href="#job" class="btn-outline" data-lang="no" lang="nb">Se ventiljobben</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-grid">
-    <div class="about-visual">
-      <div class="location-pair">
-        <div class="location-card">
-          <div class="loc-flag" aria-hidden="true">🇳🇴</div>
-          <div>
-            <div class="loc-name">Asker, Norway</div>
-            <div class="loc-role" data-lang="en">Client Engagement & Account Management</div>
-            <div class="loc-role" data-lang="no" lang="nb">Kundeengasjement og kontostyring</div>
-          </div>
-        </div>
-        <div class="loc-connector"></div>
-        <div class="location-card">
-          <div class="loc-flag" aria-hidden="true">🇮🇳</div>
-          <div>
-            <div class="loc-name">New Delhi, India</div>
-            <div class="loc-role" data-lang="en">Engineering & Salesforce Delivery Center</div>
-            <div class="loc-role" data-lang="no" lang="nb">Ingeniør- og Salesforce-leveransesenter</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="about-text">
-      <div class="section-label" data-lang="en">About EikenTech</div>
-      <div class="section-label" data-lang="no" lang="nb">Om EikenTech</div>
-      <h2 data-lang="en">Local Expertise.<br>Global Scale.<br>Competitive Cost.</h2>
-      <h2 data-lang="no" lang="nb">Lokal ekspertise.<br>Global skala.<br>Konkurransedyktig kostnad.</h2>
-      <p data-lang="en">EikenTech's unique advantage: Norway-based account management combined with India's deep engineering talent. This model lets you get world-class Salesforce, AWS, and AI expertise without the premium price tag of pure Nordic delivery.</p>
-      <p data-lang="no" lang="nb">EikenTechs unike fordel: norskbasert kontostyring kombinert med Indias dype ingeniørtalent. Denne modellen lar deg få verdensklasse Salesforce-, AWS- og AI-ekspertise uten premiumprisen for rent nordisk leveranse.</p>
-      <p data-lang="en">We partner with companies tackling complex Salesforce integrations, CI/CD challenges, and AI automation. You get 24/7 support, a small time zone gap (3.5–4.5 hours) that lets work progress while you sleep, and a team that understands Nordic business culture.</p>
-      <p data-lang="no" lang="nb">Vi samarbeider med bedrifter som håndterer komplekse Salesforce-integrasjoner, CI/CD-utfordringer og AI-automatisering. Du får 24/7-støtte, liten tidsforskjell (3,5–4,5 timer) som gjør at arbeidet går videre mens du sover, og et team som forstår nordisk forretningskultur.</p>
-      <div class="compliance-tags">
-        <span class="tag accent"><span aria-hidden="true">✓ </span><span data-lang="en">GDPR Compliant</span><span data-lang="no" lang="nb">GDPR-samsvar</span></span>
-        <span class="tag accent"><span aria-hidden="true">✓ </span><span data-lang="en">HIPAA Aware</span><span data-lang="no" lang="nb">HIPAA-bevisst</span></span>
-        <span class="tag accent"><span aria-hidden="true">✓ </span><span data-lang="en">Salesforce Certified</span><span data-lang="no" lang="nb">Salesforce-sertifisert</span></span>
-        <span class="tag"><span data-lang="en">EU Servers</span><span data-lang="no" lang="nb">EU-servere</span></span>
-        <span class="tag">AWS Partner Ready</span>
-        <span class="tag"><span data-lang="en">24/7 Support</span><span data-lang="no" lang="nb">24/7-støtte</span></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-label" data-lang="en">What We Do</div>
-  <div class="section-label" data-lang="no" lang="nb">Hva vi gjør</div>
-  <h2 data-lang="en">Solutions for Scaling, Integration & Growth</h2>
-  <h2 data-lang="no" lang="nb">Løsninger for skalering, integrasjon og vekst</h2>
-  <p class="section-intro" data-lang="en">Whether you need Salesforce managed support, seamless cloud integrations, rapid CI/CD pipelines, or AI-driven automation — we solve the critical challenges holding your business back: cost, complexity, and time-to-value.</p>
-  <p class="section-intro" data-lang="no" lang="nb">Enten du trenger Salesforce-administrert støtte, sømløs sky-integrasjon, raske CI/CD-pipelines, eller AI-drevet automatisering — vi løser de kritiske utfordringene som hemmer virksomheten din: kostnad, kompleksitet og tid til verdi.</p>
-
-  <div class="services-tabs" role="tablist">
-    <button class="tab-btn active" role="tab" id="tabbtn-salesforce" data-tab="salesforce" aria-controls="tab-salesforce" aria-selected="true"><span data-lang="en">Salesforce</span><span data-lang="no" lang="nb">Salesforce</span></button>
-    <button class="tab-btn" role="tab" id="tabbtn-cicd" data-tab="cicd" aria-controls="tab-cicd" aria-selected="false" tabindex="-1"><span data-lang="en">CI/CD</span><span data-lang="no" lang="nb">CI/CD</span></button>
-    <button class="tab-btn" role="tab" id="tabbtn-testing" data-tab="testing" aria-controls="tab-testing" aria-selected="false" tabindex="-1"><span data-lang="en">Testing</span><span data-lang="no" lang="nb">Testing</span></button>
-    <button class="tab-btn" role="tab" id="tabbtn-cloud" data-tab="cloud" aria-controls="tab-cloud" aria-selected="false" tabindex="-1"><span data-lang="en">Cloud & AI</span><span data-lang="no" lang="nb">Sky & KI</span></button>
-  </div>
-
-  <div id="tab-salesforce" class="service-panel active" role="tabpanel" aria-labelledby="tabbtn-salesforce">
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🛡️</div>
-      <h3 data-lang="en">Managed Support</h3>
-      <h3 data-lang="no" lang="nb">Administrert støtte</h3>
-      <p data-lang="en">SLA-driven support with predictable pricing for ongoing Salesforce health.</p>
-      <p data-lang="no" lang="nb">SLA-drevet støtte med forutsigbar prising for løpende Salesforce-helse.</p>
-      <ul class="service-list">
-        <li data-lang="en">Issue resolution & system health</li><li data-lang="no" lang="nb">Feilretting og systemhelse</li>
-        <li data-lang="en">Configuration changes</li><li data-lang="no" lang="nb">Konfigurasjonsendringer</li>
-        <li data-lang="en">Minor enhancements</li><li data-lang="no" lang="nb">Mindre forbedringer</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">⚡</div>
-      <h3 data-lang="en">Implementation & Optimization</h3>
-      <h3 data-lang="no" lang="nb">Implementering og optimalisering</h3>
-      <p data-lang="en">Full Salesforce implementation, automation, and enterprise integrations.</p>
-      <p data-lang="no" lang="nb">Full Salesforce-implementering, automatisering og bedriftsintegrasjoner.</p>
-      <ul class="service-list">
-        <li data-lang="en">Workflow automation & Lightning migration</li><li data-lang="no" lang="nb">Arbeidsflytautomatisering og Lightning-migrering</li>
-        <li data-lang="en">ERP & BI tool integrations</li><li data-lang="no" lang="nb">ERP- og BI-verktøyintegrasjoner</li>
-        <li data-lang="en">Salesforce configuration</li><li data-lang="no" lang="nb">Salesforce-konfigurasjon</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🏗️</div>
-      <h3 data-lang="en">Industry-Specific Add-Ons</h3>
-      <h3 data-lang="no" lang="nb">Bransjespesifikke tillegg</h3>
-      <p data-lang="en">Tailored solutions for BFSI, Retail, and Manufacturing verticals.</p>
-      <p data-lang="no" lang="nb">Skreddersydde løsninger for BFSI, Detaljhandel og Produksjon.</p>
-      <ul class="service-list">
-        <li data-lang="en">BFSI compliance workflows</li><li data-lang="no" lang="nb">BFSI-samsvarsprosesser</li>
-        <li data-lang="en">Retail omni-channel dashboards</li><li data-lang="no" lang="nb">Detaljhandel omnikanal-dashbord</li>
-        <li data-lang="en">Manufacturing dealer portal</li><li data-lang="no" lang="nb">Produksjons-forhandlerportal</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="tab-cicd" class="service-panel" role="tabpanel" aria-labelledby="tabbtn-cicd">
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🔄</div>
-      <h3 data-lang="en">Pipeline Design & Implementation</h3>
-      <h3 data-lang="no" lang="nb">Pipeline-design og implementering</h3>
-      <p data-lang="en">Robust CI/CD pipelines tailored to your development workflow enabling automated builds, testing, and deployments.</p>
-      <p data-lang="no" lang="nb">Robuste CI/CD-pipelines tilpasset arbeidsflyt som muliggjør automatiserte bygg, testing og distribusjoner.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🐳</div>
-      <h3 data-lang="en">Containerization & Orchestration</h3>
-      <h3 data-lang="no" lang="nb">Containerisering og orkestrering</h3>
-      <p data-lang="en">Docker and Kubernetes integration into your CI/CD workflows for enhanced efficiency and scalability.</p>
-      <p data-lang="no" lang="nb">Docker og Kubernetes-integrasjon i CI/CD-arbeidsflyt for økt effektivitet og skalerbarhet.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🏗️</div>
-      <h3 data-lang="en">Infrastructure as Code</h3>
-      <h3 data-lang="no" lang="nb">Infrastruktur som kode</h3>
-      <p data-lang="en">Automate provisioning and management of environments using Terraform and Ansible.</p>
-      <p data-lang="no" lang="nb">Automatiser klargjøring og styring av miljøer med Terraform og Ansible.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">📊</div>
-      <h3 data-lang="en">Monitoring & Reporting</h3>
-      <h3 data-lang="no" lang="nb">Overvåking og rapportering</h3>
-      <p data-lang="en">Real-time pipeline monitoring and reporting tools to track performance and identify improvement areas.</p>
-      <p data-lang="no" lang="nb">Sanntids pipeline-overvåking og rapporteringsverktøy for å spore ytelse og identifisere forbedringsområder.</p>
-    </div>
-  </div>
-
-  <div id="tab-testing" class="service-panel" role="tabpanel" aria-labelledby="tabbtn-testing">
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🧪</div>
-      <h3 data-lang="en">Functional & Automation Testing</h3>
-      <h3 data-lang="no" lang="nb">Funksjonell og automatisert testing</h3>
-      <p data-lang="en">Validate inputs/outputs and automate testing using advanced tools and frameworks to accelerate releases.</p>
-      <p data-lang="no" lang="nb">Valider inn-/utdata og automatiser testing med avanserte verktøy og rammeverk for å akselerere utgivelser.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🔒</div>
-      <h3 data-lang="en">Security & Performance Testing</h3>
-      <h3 data-lang="no" lang="nb">Sikkerhets- og ytelsestesting</h3>
-      <p data-lang="en">Simulate attacks, exploit potential weaknesses, and assess responsiveness under diverse load conditions.</p>
-      <p data-lang="no" lang="nb">Simuler angrep, utnytt potensielle svakheter og vurder respons under ulike belastningsforhold.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">📱</div>
-      <h3 data-lang="en">Mobile App Testing</h3>
-      <h3 data-lang="no" lang="nb">Mobilapp-testing</h3>
-      <p data-lang="en">End-to-end testing for Android and iOS apps, from functionality checks to real-world scenario simulations.</p>
-      <p data-lang="no" lang="nb">Ende-til-ende-testing for Android og iOS-apper, fra funksjonskontroller til virkelighetsnære scenariosimuleringer.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">👥</div>
-      <h3 data-lang="en">UAT & Advisory</h3>
-      <h3 data-lang="no" lang="nb">UAT og rådgivning</h3>
-      <p data-lang="en">User Acceptance Testing and expert consulting to elevate software quality and brand reputation.</p>
-      <p data-lang="no" lang="nb">Brukertesting og ekspertrådgivning for å heve programvarekvalitet og omdømme.</p>
-    </div>
-  </div>
-
-  <div id="tab-cloud" class="service-panel" role="tabpanel" aria-labelledby="tabbtn-cloud">
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">☁️</div>
-      <h3 data-lang="en">Salesforce + AWS Integration</h3>
-      <h3 data-lang="no" lang="nb">Salesforce + AWS-integrasjon</h3>
-      <p data-lang="en">Seamless integration for telephony, chat, and intelligent AI-based document processing.</p>
-      <p data-lang="no" lang="nb">Sømløs integrasjon for telefoni, chat og intelligent KI-basert dokumentbehandling.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">🤖</div>
-      <h3 data-lang="en">AI Document Processing</h3>
-      <h3 data-lang="no" lang="nb">KI-dokumentbehandling</h3>
-      <p data-lang="en">Resume parsing, invoice parsing, and government document parsing using advanced AI models.</p>
-      <p data-lang="no" lang="nb">CV-parsing, fakturabehandling og offentlig dokumentparsing med avanserte KI-modeller.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">💬</div>
-      <h3 data-lang="en">Agentic Bots</h3>
-      <h3 data-lang="no" lang="nb">Agentiske bots</h3>
-      <p data-lang="en">24/7 AI-powered bots for customer service and internal monitoring, always online and always on.</p>
-      <p data-lang="no" lang="nb">24/7 KI-drevne bots for kundeservice og intern overvåking — alltid tilgjengelig.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon" aria-hidden="true">📈</div>
-      <h3 data-lang="en">AI-Based Data Analytics</h3>
-      <h3 data-lang="no" lang="nb">KI-basert dataanalyse</h3>
-      <p data-lang="en">Natural Language Processing powered analytics to unlock actionable business insights from your data.</p>
-      <p data-lang="no" lang="nb">NLP-drevet analyse for å hente frem handlingsrettede forretningsmessige innsikter fra dataene dine.</p>
-    </div>
-  </div>
-</section>
-
-<!-- DOMAINS -->
-<section class="domains" id="domains">
-  <div class="section-label" data-lang="en">Industry Expertise</div>
-  <div class="section-label" data-lang="no" lang="nb">Bransjeekspertise</div>
-  <h2 data-lang="en">Domains We Serve</h2>
-  <h2 data-lang="no" lang="nb">Domener vi betjener</h2>
-  <p class="section-intro" data-lang="en">Deep domain knowledge across key industries ensures solutions that fit — not just technically, but operationally.</p>
-  <p class="section-intro" data-lang="no" lang="nb">Dyp domenekunnskap på tvers av nøkkelbransjer sikrer løsninger som passer — ikke bare teknisk, men operasjonelt.</p>
-  <div class="domains-grid">
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">🏦</div><h4 data-lang="en">Banking, Fintech & Insurance</h4><h4 data-lang="no" lang="nb">Bank, Fintech og forsikring</h4></div>
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">🏥</div><h4 data-lang="en">Healthcare</h4><h4 data-lang="no" lang="nb">Helsevesen</h4></div>
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">🏭</div><h4 data-lang="en">Manufacturing</h4><h4 data-lang="no" lang="nb">Produksjon</h4></div>
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">🚚</div><h4 data-lang="en">Logistics</h4><h4 data-lang="no" lang="nb">Logistikk</h4></div>
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">🏛️</div><h4 data-lang="en">Public Sector</h4><h4 data-lang="no" lang="nb">Offentlig sektor</h4></div>
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">🤝</div><h4 data-lang="en">Non-Profit</h4><h4 data-lang="no" lang="nb">Ideell organisasjon</h4></div>
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">🛒</div><h4 data-lang="en">Retail & E-Commerce</h4><h4 data-lang="no" lang="nb">Detaljhandel og netthandel</h4></div>
-    <div class="domain-card"><div class="domain-icon" aria-hidden="true">💼</div><h4 data-lang="en">Service Consultants</h4><h4 data-lang="no" lang="nb">Tjenestekonsulenter</h4></div>
-  </div>
-</section>
-
-<!-- DELIVERIES -->
-<section class="deliveries" id="deliveries">
-  <div class="section-label" data-lang="en">Real Business Impact</div>
-  <div class="section-label" data-lang="no" lang="nb">Reell forretningspåvirkning</div>
-  <h2 data-lang="en">Delivered Results That Matter</h2>
-  <h2 data-lang="no" lang="nb">Resultater som har betydning</h2>
-  <p class="section-intro" data-lang="en">Proven implementations across Salesforce, AWS, and AI integration. Each project solved a real business challenge—from automation to cost savings to deployment speed.</p>
-  <p class="section-intro" data-lang="no" lang="nb">Dokumenterte implementeringer på tvers av Salesforce, AWS og AI-integrasjon. Hvert prosjekt løste en reell forretningsutfordring—fra automatisering til kostnadsbesparelser til implementeringshastighet.</p>
+<!-- JOB -->
+<section class="deliveries" id="job">
+  <div class="section-label" data-lang="en">The job</div>
+  <div class="section-label" data-lang="no" lang="nb">Jobben</div>
+  <h2 data-lang="en">Specifications in. Three documents out.</h2>
+  <h2 data-lang="no" lang="nb">Spesifikasjoner inn. Tre dokumenter ut.</h2>
+  <p class="section-intro" data-lang="en">This is where the work starts.</p>
+  <p class="section-intro" data-lang="no" lang="nb">Her starter arbeidet.</p>
   <div class="delivery-grid">
     <div class="delivery-card">
-      <div class="delivery-num">01</div>
+      <div class="delivery-num label" data-lang="en">In</div>
+      <div class="delivery-num label" data-lang="no" lang="nb">Inn</div>
       <div>
-        <h3 data-lang="en">Salesforce + AWS Telephony & Chat</h3>
-        <h3 data-lang="no" lang="nb">Salesforce + AWS Telefoni og Chat</h3>
-        <p data-lang="en">End-to-end integration between Salesforce CRM and AWS infrastructure for unified voice and chat communication channels.</p>
-        <p data-lang="no" lang="nb">Ende-til-ende-integrasjon mellom Salesforce CRM og AWS-infrastruktur for samlede tale- og chattkommunikasjonskanaler.</p>
+        <h3 data-lang="en">The specifications for one valve package</h3>
+        <h3 data-lang="no" lang="nb">Spesifikasjonene for én ventilpakke</h3>
+        <p data-lang="en">The organisation’s own documents for that package.</p>
+        <p data-lang="no" lang="nb">Organisasjonens egne dokumenter for den pakken.</p>
       </div>
     </div>
     <div class="delivery-card">
-      <div class="delivery-num">02</div>
+      <div class="delivery-num label" data-lang="en">Out</div>
+      <div class="delivery-num label" data-lang="no" lang="nb">Ut</div>
       <div>
-        <h3 data-lang="en">AI Document Processing Suite</h3>
-        <h3 data-lang="no" lang="nb">KI-dokumentbehandlingssuite</h3>
-        <p data-lang="en">Intelligent parsing of resumes, invoices, and government documents using AWS AI services — reducing manual processing from hours to minutes.</p>
-        <p data-lang="no" lang="nb">Intelligent parsing av CVer, fakturaer og offentlige dokumenter ved hjelp av AWS KI-tjenester — reduserer manuell behandling fra timer til minutter.</p>
-      </div>
-    </div>
-    <div class="delivery-card">
-      <div class="delivery-num">03</div>
-      <div>
-        <h3 data-lang="en">AI-Based NLP Data Analytics</h3>
-        <h3 data-lang="no" lang="nb">KI-basert NLP-dataanalyse</h3>
-        <p data-lang="en">Natural language processing systems that transform unstructured business data into actionable insights and automated reports.</p>
-        <p data-lang="no" lang="nb">NLP-systemer som transformerer ustrukturerte forretningsdata til handlingsrettede innsikter og automatiserte rapporter.</p>
-      </div>
-    </div>
-    <div class="delivery-card">
-      <div class="delivery-num">04</div>
-      <div>
-        <h3 data-lang="en">24/7 Agentic Customer Support Bots</h3>
-        <h3 data-lang="no" lang="nb">24/7 Agentiske kundesupportbots</h3>
-        <p data-lang="en">Always-on AI bots for customer service and internal operational monitoring, integrated with Salesforce Service Cloud.</p>
-        <p data-lang="no" lang="nb">Alltid tilgjengelige KI-bots for kundeservice og intern driftsovervåking, integrert med Salesforce Service Cloud.</p>
+        <h3 data-lang="en">Purchase request, datasheet, test matrix</h3>
+        <h3 data-lang="no" lang="nb">Innkjøpsforespørsel, datablad, testmatrise</h3>
+        <p data-lang="en">Every line shows the clause it came from.</p>
+        <p data-lang="no" lang="nb">Hver linje viser klausulen den kom fra.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="benefits" id="benefits">
-  <div class="section-label" data-lang="en">Why EikenTech</div>
-  <div class="section-label" data-lang="no" lang="nb">Hvorfor EikenTech</div>
-  <h2 data-lang="en">Why Companies Choose Us</h2>
-  <h2 data-lang="no" lang="nb">Hvorfor selskaper velger oss</h2>
-  <p class="section-intro" data-lang="en">We solve the real challenges that keep you up at night: scaling without spiraling costs, integrating complex systems, reducing manual work, and staying compliant. Local partnership + global delivery = fast results.</p>
-  <p class="section-intro" data-lang="no" lang="nb">Vi løser de virkelige utfordringene som holder deg våken: skalering uten å øke kostnadene, integrering av komplekse systemer, reduksjon av manuelt arbeid og sikring av overholdelse. Lokalt partnerskap + global leveranse = raske resultater.</p>
+<!-- MODEL -->
+<section class="domains" id="model">
+  <div class="section-label" data-lang="en">The model</div>
+  <div class="section-label" data-lang="no" lang="nb">Modellen</div>
+  <h2 data-lang="en">It reads the organisation’s own documents into one model.</h2>
+  <h2 data-lang="no" lang="nb">Den leser organisasjonens egne dokumenter inn i én modell.</h2>
+  <p class="section-intro" data-lang="en">This model is what makes the valve job possible. Six axes.</p>
+  <p class="section-intro" data-lang="no" lang="nb">Denne modellen gjør ventiljobben mulig. Seks akser.</p>
+  <div class="domains-grid">
+    <div class="domain-card"><h4 data-lang="en">Asset</h4><h4 data-lang="no" lang="nb">Anleggsobjekt</h4></div>
+    <div class="domain-card"><h4 data-lang="en">Requirements</h4><h4 data-lang="no" lang="nb">Krav</h4></div>
+    <div class="domain-card"><h4 data-lang="en">Applicability</h4><h4 data-lang="no" lang="nb">Anvendbarhet</h4></div>
+    <div class="domain-card"><h4 data-lang="en">Lifecycle</h4><h4 data-lang="no" lang="nb">Livsløp</h4></div>
+    <div class="domain-card"><h4 data-lang="en">Party</h4><h4 data-lang="no" lang="nb">Part</h4></div>
+    <div class="domain-card"><h4 data-lang="en">Location</h4><h4 data-lang="no" lang="nb">Sted</h4></div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="benefits" id="difference">
+  <div class="section-label" data-lang="en">The difference</div>
+  <div class="section-label" data-lang="no" lang="nb">Forskjellen</div>
+  <h2 data-lang="en">What is different</h2>
+  <h2 data-lang="no" lang="nb">Det som er annerledes</h2>
   <div class="benefits-grid">
     <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">✓</div>
+      <div class="benefit-check" aria-hidden="true">1</div>
       <div>
-        <h4 data-lang="en">GDPR Compliant & HIPAA Aware</h4>
-        <h4 data-lang="no" lang="nb">GDPR-samsvar og HIPAA-bevisst</h4>
-        <p data-lang="en">Secure delivery model running on EU servers — built for Nordic and global regulatory requirements.</p>
-        <p data-lang="no" lang="nb">Sikker leveransemodell på EU-servere — bygget for nordiske og globale regulatoriske krav.</p>
+        <h4 data-lang="en">It acts</h4>
+        <h4 data-lang="no" lang="nb">Den handler</h4>
+        <p data-lang="en">Prepared work goes into the client’s systems after a person approves.</p>
+        <p data-lang="no" lang="nb">Ferdig arbeid går inn i kundens systemer etter at en person har godkjent.</p>
       </div>
     </div>
     <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">✓</div>
+      <div class="benefit-check" aria-hidden="true">2</div>
       <div>
-        <h4 data-lang="en">Increased ROI</h4>
-        <h4 data-lang="no" lang="nb">Økt avkastning</h4>
-        <p data-lang="en">Lower total cost of ownership with our hybrid delivery model — quality engineering at competitive rates.</p>
-        <p data-lang="no" lang="nb">Lavere totale eierkostnader med vår hybride leveransemodell — kvalitetsengineering til konkurransedyktige priser.</p>
+        <h4 data-lang="en">People and agents, one place</h4>
+        <h4 data-lang="no" lang="nb">Mennesker og agenter, ett sted</h4>
+        <p data-lang="en">People and AI agents work in the same place, and every decision is remembered.</p>
+        <p data-lang="no" lang="nb">Mennesker og KI-agenter arbeider på samme sted, og hver beslutning blir husket.</p>
       </div>
     </div>
     <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">✓</div>
+      <div class="benefit-check" aria-hidden="true">3</div>
       <div>
-        <h4 data-lang="en">24/7 Support</h4>
-        <h4 data-lang="no" lang="nb">24/7 støtte</h4>
-        <p data-lang="en">Round-the-clock support capability powered by our India delivery center — no issue goes unanswered.</p>
-        <p data-lang="no" lang="nb">Støtte hele døgnet drevet av vårt leveransesenter i India — ingen henvendelse forblir ubesvart.</p>
+        <h4 data-lang="en">It says “cannot tell”</h4>
+        <h4 data-lang="no" lang="nb">Den sier «kan ikke si»</h4>
+        <p data-lang="en">When the documents do not say, it says “cannot tell”.</p>
+        <p data-lang="no" lang="nb">Når dokumentene ikke sier det, sier den «kan ikke si».</p>
       </div>
     </div>
-    <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">✓</div>
+  </div>
+</section>
+
+<!-- NEXT -->
+<section class="deliveries" id="next">
+  <div class="section-label" data-lang="en">Next</div>
+  <div class="section-label" data-lang="no" lang="nb">Neste</div>
+  <h2 data-lang="en">The next use case runs on the same model.</h2>
+  <h2 data-lang="no" lang="nb">Neste brukstilfelle kjører på den samme modellen.</h2>
+  <p class="section-intro" data-lang="en">That is the reason to buy the layer and not a single tool.</p>
+  <p class="section-intro" data-lang="no" lang="nb">Det er grunnen til å kjøpe laget, og ikke ett enkelt verktøy.</p>
+  <div class="delivery-grid">
+    <div class="delivery-card">
+      <div class="delivery-num label" data-lang="en">Now</div>
+      <div class="delivery-num label" data-lang="no" lang="nb">Nå</div>
       <div>
-        <h4 data-lang="en">Certified Salesforce Team</h4>
-        <h4 data-lang="no" lang="nb">Sertifisert Salesforce-team</h4>
-        <p data-lang="en">Access to certified Salesforce consultants with deep platform expertise and real-world implementation experience.</p>
-        <p data-lang="no" lang="nb">Tilgang til sertifiserte Salesforce-konsulenter med dyp plattformekspertise og erfaring fra virkelige implementeringer.</p>
+        <h3 data-lang="en">Engineering and procurement</h3>
+        <h3 data-lang="no" lang="nb">Ingeniørarbeid og innkjøp</h3>
+        <p data-lang="en">This is where it starts. The valve package is the first job.</p>
+        <p data-lang="no" lang="nb">Her starter det. Ventilpakken er den første jobben.</p>
       </div>
     </div>
-    <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">✓</div>
+    <div class="delivery-card">
+      <div class="delivery-num label" data-lang="en">Next</div>
+      <div class="delivery-num label" data-lang="no" lang="nb">Neste</div>
       <div>
-        <h4 data-lang="en">Early Assessment & Audit</h4>
-        <h4 data-lang="no" lang="nb">Tidlig vurdering og revisjon</h4>
-        <p data-lang="en">We assess your business use case and existing systems before engagement — ensuring the right fit every time.</p>
-        <p data-lang="no" lang="nb">Vi vurderer din forretningsbruk og eksisterende systemer før engasjement — og sikrer riktig tilpasning hver gang.</p>
+        <h3 data-lang="en">Finance and legal</h3>
+        <h3 data-lang="no" lang="nb">Finans og juss</h3>
+        <p data-lang="en">These come next.</p>
+        <p data-lang="no" lang="nb">Disse kommer etterpå.</p>
       </div>
     </div>
-    <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">✓</div>
-      <div>
-        <h4 data-lang="en">Easy Scalability</h4>
-        <h4 data-lang="no" lang="nb">Enkel skalerbarhet</h4>
-        <p data-lang="en">Scale up or down as demand grows — from startup to enterprise, our model flexes with your needs.</p>
-        <p data-lang="no" lang="nb">Skaler opp eller ned etter behov — fra oppstart til virksomhet, vår modell tilpasser seg dine behov.</p>
-      </div>
-    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="section-label" data-lang="en">Company</div>
+  <div class="section-label" data-lang="no" lang="nb">Selskapet</div>
+  <h2 data-lang="en">EikenTech builds SINAPS.</h2>
+  <h2 data-lang="no" lang="nb">EikenTech bygger SINAPS.</h2>
+  <p class="section-intro" data-lang="en">EikenTech is a product company. SINAPS is the product. Asker, Norway. New Delhi, India.</p>
+  <p class="section-intro" data-lang="no" lang="nb">EikenTech er et produktselskap. SINAPS er produktet. Asker, Norge. New Delhi, India.</p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary" data-lang="en">Book a demo</a>
+    <a href="#contact" class="btn-primary" data-lang="no" lang="nb">Bestill en demo</a>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <div class="section-label" data-lang="en">Let's Talk</div>
-    <div class="section-label" data-lang="no" lang="nb">La oss snakke</div>
-    <h2 data-lang="en">Ready to Scale Your Systems?</h2>
-    <h2 data-lang="no" lang="nb">Klar til å skalere systemene dine?</h2>
-    <p class="section-intro" data-lang="en">Drop us a note about your project, and our team in Asker will get back to you within one business day with a time slot to chat. Share your architecture challenges and get insights from Salesforce and AWS experts.</p>
-    <p class="section-intro" data-lang="no" lang="nb">Send oss en melding om prosjektet ditt, og teamet vårt i Asker vil kontakte deg innen én virkedag med et tidspunkt å snakke. Del dine arkitekturutfordringer og få innsikt fra Salesforce- og AWS-eksperter.</p>
+    <div class="section-label" data-lang="en">Book a demo</div>
+    <div class="section-label" data-lang="no" lang="nb">Bestill en demo</div>
+    <h2 data-lang="en">Bring one valve package.</h2>
+    <h2 data-lang="no" lang="nb">Ta med én ventilpakke.</h2>
+    <p class="section-intro" data-lang="en">Tell us which specifications you have. We reply within one business day.</p>
+    <p class="section-intro" data-lang="no" lang="nb">Fortell oss hvilke spesifikasjoner du har. Vi svarer innen én virkedag.</p>
 
     <form class="contact-form" id="contact-form" action="https://formsubmit.co/surbhi.bansal@eikentech.no" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="New enquiry from eikentech.no"/>
+      <input type="hidden" name="_subject" value="SINAPS demo from eikentech.no"/>
       <input type="hidden" name="_template" value="table"/>
       <div class="form-hp" aria-hidden="true"><label for="f-honey">Leave empty</label><input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off"/></div>
       <div class="form-group">
@@ -1119,25 +939,23 @@
         <input type="email" id="f-email" name="email" autocomplete="email" placeholder="you@company.com" data-ph-en="you@company.com" data-ph-no="deg@selskap.no" required/>
       </div>
       <div class="form-group">
-        <label for="f-service"><span data-lang="en">Service Interest</span><span data-lang="no" lang="nb">Tjenesteinteresse</span></label>
-        <select id="f-service" name="service">
-          <option value="Salesforce Managed Support" data-en="Salesforce Managed Support" data-no="Salesforce administrert støtte">Salesforce Managed Support</option>
-          <option value="Implementation & Optimization" data-en="Implementation & Optimization" data-no="Implementering og optimalisering">Implementation & Optimization</option>
-          <option value="CI/CD Services" data-en="CI/CD Services" data-no="CI/CD-tjenester">CI/CD Services</option>
-          <option value="Software Testing" data-en="Software Testing" data-no="Programvaretesting">Software Testing</option>
-          <option value="Cloud & AI Integration" data-en="Cloud & AI Integration" data-no="Sky og KI-integrasjon">Cloud & AI Integration</option>
-          <option value="Other / Not Sure" data-en="Other / Not Sure" data-no="Annet / Usikker">Other / Not Sure</option>
+        <label for="f-topic"><span data-lang="en">What do you want to talk about?</span><span data-lang="no" lang="nb">Hva vil du snakke om?</span></label>
+        <select id="f-topic" name="topic">
+          <option value="Valve package, engineering and procurement" data-en="Valve package, engineering and procurement" data-no="Ventilpakke, ingeniørarbeid og innkjøp">Valve package, engineering and procurement</option>
+          <option value="A later domain, finance or legal" data-en="A later domain, finance or legal" data-no="Et senere område, finans eller juss">A later domain, finance or legal</option>
+          <option value="Partnership" data-en="Partnership" data-no="Partnerskap">Partnership</option>
+          <option value="Other" data-en="Other" data-no="Annet">Other</option>
         </select>
       </div>
       <div class="form-group full">
         <label for="f-message"><span data-lang="en">Message</span><span data-lang="no" lang="nb">Melding</span></label>
-        <textarea id="f-message" name="message" placeholder="Tell us about your project..." data-ph-en="Tell us about your project..." data-ph-no="Fortell oss om prosjektet ditt..."></textarea>
+        <textarea id="f-message" name="message" placeholder="The specifications you can bring" data-ph-en="The specifications you can bring" data-ph-no="Spesifikasjonene du kan ta med"></textarea>
       </div>
       <p class="form-consent">
         <span data-lang="en">We use your details only to reply to your enquiry. See our <a href="privacy.html">privacy policy</a>.</span>
         <span data-lang="no" lang="nb">Vi bruker opplysningene dine kun til å svare på henvendelsen. Se vår <a href="privacy.html#no">personvernerklæring</a>.</span>
       </p>
-      <button type="submit" class="form-submit"><span data-lang="en">Send Message →</span><span data-lang="no" lang="nb">Send melding →</span></button>
+      <button type="submit" class="form-submit"><span data-lang="en">Book a demo →</span><span data-lang="no" lang="nb">Bestill en demo →</span></button>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -1147,27 +965,21 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="logo">Eiken<span>Tech</span></a>
-      <p data-lang="en">Technology That Grows With You. Norway-based Salesforce consulting with global delivery excellence.</p>
-      <p data-lang="no" lang="nb">Teknologi som vokser med deg. Norskbasert Salesforce-konsulentvirksomhet med leveranse i verdensklasse.</p>
+      <a href="#top" class="brand-lockup">
+        <span class="logo">SINAPS</span>
+        <span class="brand-by">by EikenTech</span>
+      </a>
+      <p data-lang="en">EikenTech builds SINAPS. A product company. Asker and New Delhi.</p>
+      <p data-lang="no" lang="nb">EikenTech bygger SINAPS. Et produktselskap. Asker og New Delhi.</p>
     </div>
     <div class="footer-col">
-      <h5 data-lang="en">Services</h5>
-      <h5 data-lang="no" lang="nb">Tjenester</h5>
+      <h5 data-lang="en">Product</h5>
+      <h5 data-lang="no" lang="nb">Produkt</h5>
       <ul>
-        <li><a href="#services" data-lang="en">Salesforce Support</a><a href="#services" data-lang="no" lang="nb">Salesforce-støtte</a></li>
-        <li><a href="#services" data-lang="en">CI/CD Consulting</a><a href="#services" data-lang="no" lang="nb">CI/CD-rådgivning</a></li>
-        <li><a href="#services" data-lang="en">Software Testing</a><a href="#services" data-lang="no" lang="nb">Programvaretesting</a></li>
-        <li><a href="#services" data-lang="en">Cloud & AI</a><a href="#services" data-lang="no" lang="nb">Sky og KI</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5 data-lang="en">Company</h5>
-      <h5 data-lang="no" lang="nb">Selskap</h5>
-      <ul>
-        <li><a href="#about" data-lang="en">About Us</a><a href="#about" data-lang="no" lang="nb">Om oss</a></li>
-        <li><a href="#domains" data-lang="en">Domains</a><a href="#domains" data-lang="no" lang="nb">Domener</a></li>
-        <li><a href="#deliveries" data-lang="en">Deliveries</a><a href="#deliveries" data-lang="no" lang="nb">Leveranser</a></li>
+        <li><a href="#job" data-lang="en">The job</a><a href="#job" data-lang="no" lang="nb">Jobben</a></li>
+        <li><a href="#model" data-lang="en">The model</a><a href="#model" data-lang="no" lang="nb">Modellen</a></li>
+        <li><a href="#difference" data-lang="en">The difference</a><a href="#difference" data-lang="no" lang="nb">Forskjellen</a></li>
+        <li><a href="#next" data-lang="en">Next</a><a href="#next" data-lang="no" lang="nb">Neste</a></li>
         <li><a href="privacy.html" data-lang="en">Privacy Policy</a><a href="privacy.html#no" data-lang="no" lang="nb">Personvern</a></li>
       </ul>
     </div>
@@ -1176,9 +988,9 @@
       <h5 data-lang="no" lang="nb">Kontakt</h5>
       <ul>
         <li><a href="mailto:surbhi.bansal@eikentech.no">surbhi.bansal@eikentech.no</a></li>
-        <li><a href="#contact" data-lang="en">Send a Message</a><a href="#contact" data-lang="no" lang="nb">Send melding</a></li>
-        <li><a href="#about" data-lang="en">Asker, Norway</a><a href="#about" data-lang="no" lang="nb">Asker, Norge</a></li>
-        <li><a href="#about">New Delhi, India</a></li>
+        <li><a href="#contact" data-lang="en">Book a demo</a><a href="#contact" data-lang="no" lang="nb">Bestill en demo</a></li>
+        <li><a href="#company" data-lang="en">Asker, Norway</a><a href="#company" data-lang="no" lang="nb">Asker, Norge</a></li>
+        <li><a href="#company">New Delhi, India</a></li>
       </ul>
     </div>
   </div>
@@ -1205,6 +1017,8 @@
     });
     document.querySelectorAll('option[data-en]').forEach(o => { o.textContent = o.dataset[lang]; });
     document.querySelectorAll('[data-ph-en]').forEach(el => { el.placeholder = no ? el.dataset.phNo : el.dataset.phEn; });
+    const toggle = document.getElementById('nav-toggle');
+    if (toggle) toggle.setAttribute('aria-label', no ? 'Meny' : 'Menu');
     try { localStorage.setItem('lang', lang); } catch (e) {}
   }
 
@@ -1229,28 +1043,6 @@
       navLinks.classList.remove('open');
       navToggle.setAttribute('aria-expanded', 'false');
     }
-  });
-
-  // ── Service tabs ──
-  const tabBtns = [...document.querySelectorAll('.tab-btn')];
-  function showTab(tab) {
-    document.querySelectorAll('.service-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tab));
-    tabBtns.forEach(btn => {
-      const on = btn.dataset.tab === tab;
-      btn.classList.toggle('active', on);
-      btn.setAttribute('aria-selected', String(on));
-      btn.tabIndex = on ? 0 : -1;
-    });
-  }
-  tabBtns.forEach((btn, i) => {
-    btn.addEventListener('click', () => showTab(btn.dataset.tab));
-    btn.addEventListener('keydown', e => {
-      const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (!step) return;
-      const next = tabBtns[(i + step + tabBtns.length) % tabBtns.length];
-      showTab(next.dataset.tab);
-      next.focus();
-    });
   });
 
   // ── Contact form ── (delivered by FormSubmit to the address in the form action)
@@ -1287,8 +1079,8 @@
       statusEl.textContent = t('✓ Thank you! We will get back to you within one business day.',
                                '✓ Takk! Vi kontakter deg innen én virkedag.');
     } catch (err) {
-      const body = encodeURIComponent(`Name: ${data.name}\nCompany: ${data.company}\nService: ${data.service}\n\n${data.message}`);
-      const href = `mailto:${MAILTO}?subject=${encodeURIComponent('Enquiry from eikentech.no')}&body=${body}`;
+      const body = encodeURIComponent(`Name: ${data.name}\nCompany: ${data.company}\nTopic: ${data.topic}\n\n${data.message}`);
+      const href = `mailto:${MAILTO}?subject=${encodeURIComponent('SINAPS demo from eikentech.no')}&body=${body}`;
       statusEl.classList.add('error');
       statusEl.innerHTML = t('Sorry, the message could not be sent. ', 'Beklager, meldingen kunne ikke sendes. ') +
         `<a href="${href}">${t('Email us directly instead', 'Send oss en e-post direkte')}</a>.`;
