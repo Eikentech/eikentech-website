@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 384">
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="384" viewBox="0 0 384 384">
   <rect width="384" height="384" fill="#0A1628"/>
-  <g transform="translate(192 192) scale(0.1612 -0.1612) translate(-1055 -320)">
+  <g transform="translate(192 192) scale(0.118 -0.118) translate(-1055 -320)">
     <path fill="#FFFFFF" transform="translate(-70 0)" d="M320 270V190H1080V0H70V640H1078V450H320V370H940V270Z"/>
     <path fill="#00C9A7" transform="translate(1040 0)" d="M30 640H1070V450H30ZM425 463H675V0H425Z"/>
   </g>
