@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SINAPS by EikenTech — enterprise semantic layer</title>
-  <meta name="description" content="SINAPS reads an organisation’s own documents into one shared model of domain knowledge. A person approves every action. Every fact traces to its source."/>
+  <title>SINAPSET by EikenTech — semantic layer for documents and AI agents</title>
+  <meta name="description" content="SINAPSET by EikenTech is a semantic layer that reads your standards, contracts and specifications into one traceable model for people and AI agents."/>
   <link rel="canonical" href="https://eikentech.no/"/>
-  <meta name="theme-color" content="#0A1628"/>
+  <meta name="theme-color" content="#F6F7F4"/>
   <link rel="icon" href="favicon.png" type="image/png" sizes="384x384"/>
   <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://eikentech.no/"/>
   <meta property="og:site_name" content="EikenTech"/>
-  <meta property="og:title" content="SINAPS by EikenTech — enterprise semantic layer"/>
-  <meta property="og:description" content="SINAPS reads an organisation’s own documents into one shared model of domain knowledge. A person approves every action. Every fact traces to its source."/>
+  <meta property="og:title" content="SINAPSET by EikenTech — semantic layer for documents and AI agents"/>
+  <meta property="og:description" content="SINAPSET by EikenTech is a semantic layer that reads your standards, contracts and specifications into one traceable model for people and AI agents."/>
   <meta property="og:locale" content="en_GB"/>
   <meta property="og:locale:alternate" content="nb_NO"/>
   <meta name="twitter:card" content="summary"/>
@@ -22,12 +22,12 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "EikenTech",
-    "description": "EikenTech builds SINAPS, an enterprise semantic layer. SINAPS reads an organisation’s own documents into one shared model of domain knowledge. A person approves every action. Every fact traces to its source.",
+    "description": "EikenTech is a Norwegian product company in Asker that builds SINAPSET, an enterprise semantic layer.",
     "url": "https://eikentech.no/",
-    "email": "surbhi.bansal@eikentech.no",
+    "email": "hello@eikentech.no",
     "taxID": "937268858",
     "identifier": { "@type": "PropertyValue", "propertyID": "Organisasjonsnummer", "value": "937268858" },
-    "brand": { "@type": "Brand", "name": "SINAPS" },
+    "brand": { "@type": "Brand", "name": "SINAPSET" },
     "address": { "@type": "PostalAddress", "addressLocality": "Asker", "addressCountry": "NO" },
     "location": [
       { "@type": "Place", "name": "Asker", "address": { "@type": "PostalAddress", "addressLocality": "Asker", "addressCountry": "NO" } },
@@ -35,713 +35,387 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SINAPSET",
+    "alternateName": "Semantic INtegration of Assets, Processes and Systems",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://eikentech.no/",
+    "publisher": { "@type": "Organization", "name": "EikenTech", "url": "https://eikentech.no/" },
+    "description": "SINAPSET is an enterprise semantic layer. It reads an organisation's standards, contracts, specifications and supplier documents into one shared model of assets, requirements and where each requirement applies. Every fact points to the clause it came from. When a document is replaced, SINAPSET shows which clauses, assets and open work are affected. AI agents prepare the work, and a person approves it before anything goes into the organisation's systems. When the documents do not give an answer, SINAPSET says it cannot tell.",
+    "featureList": [
+      "Change impact analysis: what a revised standard or contract change affects in documents, assets and open orders",
+      "Specification harmonisation: clause-by-clause comparison across overlapping standards and internal specifications",
+      "Supplier compliance: checks supplier quotes, datasheets and claims against requirements",
+      "Requirement applicability per asset: applies, does not apply, applies if selected, or cannot tell",
+      "Requirements traceability: every fact traces to its source clause",
+      "Prepared work (deviations, technical queries, specification revisions, purchase requests) approved by a person",
+      "Decision record with clause, evidence and approver",
+      "Grounded context for AI agents over MCP; connects to Cognite Data Fusion and Microsoft Fabric"
+    ],
+    "audience": { "@type": "BusinessAudience", "audienceType": "Engineering, quality and product assurance, procurement and supplier quality, document control and compliance teams in space, aerospace and defence, oil and gas and offshore, energy and manufacturing" },
+    "keywords": "semantic layer, knowledge graph, requirements traceability, standards compliance, change impact analysis, specification comparison, supplier compliance, requirement applicability, engineering documents, AI agents, decision support"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is SINAPSET?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SINAPSET is an enterprise semantic layer from EikenTech. It reads an organisation's standards, contracts, specifications and supplier documents into one shared model of assets, requirements and where each requirement applies. Every fact points to the clause it came from. AI agents prepare work from that model, and a person approves it before anything goes into the organisation's systems." } },
+      { "@type": "Question", "name": "What problems does SINAPSET solve?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It answers the questions that otherwise take days of reading: what a revised standard or contract change affects, where your specification disagrees with the standards it claims, whether a supplier's quote or datasheet meets your requirements, which requirements apply to a piece of equipment, and why a past decision was made." } },
+      { "@type": "Question", "name": "Who is SINAPSET for?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Engineering, quality and product assurance, procurement and supplier quality, document control and compliance teams in industries run on standards, such as space, aerospace and defence, oil and gas and offshore, energy and manufacturing." } },
+      { "@type": "Question", "name": "How is it different from a chatbot or document search?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A chatbot or search tool finds text and lets a model guess. SINAPSET builds a structured model of requirements, assets and editions, shows the clause behind every line, and says 'cannot tell' when the documents do not give an answer. A person approves the work, and the decision is kept." } },
+      { "@type": "Question", "name": "Which documents can it read?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Standards and their amendments, contracts and contract changes, internal specifications, supplier quotes, datasheets and registers, as PDF, Word or Excel. You bring your own licensed copies of standards; SINAPSET ships none." } },
+      { "@type": "Question", "name": "Does it replace engineers or our existing systems?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. SINAPSET is decision support. It prepares the work and a qualified person decides. It sits over the systems you already run, which stay the system of record." } }
+    ]
+  }
+  </script>
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="SINAPSET summary for AI assistants"/>
   <link rel="stylesheet" href="fonts.css"/>
   <style>
+    /* Nordic: snow and white surfaces, fjord-blue ink, one pine-teal accent from the ET mark, hairlines instead of shadows. */
     :root {
-      --navy: #0A1628;
-      --navy-mid: #112240;
-      --blue: #1A56DB;
-      --blue-light: #3B82F6;
-      --accent: #00C9A7;
-      --accent2: #F59E0B;
+      --snow: #F6F7F4;
       --white: #FFFFFF;
-      --off-white: #F0F4FF;
-      --gray: #94A3B8;
-      --gray-light: #E2E8F0;
-      --text: #1E293B;
+      --birch: #ECE8DF;
+      --ink: #14222C;
+      --muted: #55636C;
+      --line: #DAE0DD;
+      --fjord: #13262F;
+      --fjord-2: #1C3440;
+      --fjord-line: rgba(255,255,255,0.12);
+      --frost: #B9C7CC;
+      --teal: #00C9A7;
+      --teal-ink: #0A7D6C;
+      --teal-wash: rgba(0,168,140,0.10);
+      --amber: #7a4e00; /* brand book 'differ' */
+      --clause-mark: rgba(30,84,112,0.16);
+      /* SINAPSET brand book: agent = square, stamp = a person's approval (docs/product/design/sinapset-theme.md) */
+      --agent: #1e5470;
+      --stamp: #b92c16;
+      --agent-wash: rgba(30,84,112,0.08);
+      --mark-agent: var(--agent);
+      --mark-stamp: var(--stamp);
+      --r: 4px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--white);
-      color: var(--text);
+      font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--snow);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.65;
       overflow-x: hidden;
     }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--teal-ink); outline-offset: 2px; }
 
-    /* ── LANGUAGE TOGGLE ── */
-    .lang-bar {
-      background: var(--navy);
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 8px 48px;
-      gap: 8px;
-    }
+    /* ── WORDMARK ── one face for SINAPSET and EikenTech: DM Sans Medium; the symbol carries the colour */
+    .wm { display: inline-flex; align-items: baseline; font-family: 'DM Sans', sans-serif; font-weight: 500; letter-spacing: 0.12em; font-size: 22px; line-height: 1; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .on-dark .wm { color: var(--white); }
+    .on-dark { --mark-agent: #8fbdd3; --mark-stamp: #f0694a; }
+    .lockup { display: inline-flex; align-items: center; gap: 0.45em; font-size: 22px; }
+    .lockup .mk { height: 0.95em; width: auto; aspect-ratio: 100 / 64; flex: none; overflow: visible; }
+    .lockup .wm { font-size: 1em; }
+    .brand-lockup { display: inline-flex; flex-direction: column; gap: 5px; text-decoration: none; }
+    .brand-by { font-size: 12px; color: var(--muted); letter-spacing: 0.02em; }
+    .on-dark .brand-by { color: var(--frost); }
+
+    /* ── LANGUAGE ── */
+    .lang-bar { display: flex; justify-content: flex-end; gap: 4px; padding: 8px 48px 0; }
     .lang-btn {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.25);
-      color: var(--gray);
-      padding: 4px 14px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      transition: all 0.2s;
+      background: transparent; border: 0; border-bottom: 2px solid transparent;
+      color: var(--muted); padding: 2px 6px; cursor: pointer;
+      font: 500 12px/1.4 'DM Sans', sans-serif; letter-spacing: 0.1em; text-transform: uppercase;
     }
-    .lang-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--navy);
-      font-weight: 600;
-    }
+    .lang-btn.active { color: var(--ink); border-bottom-color: var(--teal-ink); }
 
     /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,22,40,0.97);
-      backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      height: 68px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(246,247,244,0.94);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; min-height: 72px;
+      border-bottom: 1px solid var(--line);
     }
-    .logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 22px;
-      color: var(--white);
-      letter-spacing: -0.5px;
-      text-decoration: none;
-    }
-    .logo span { color: var(--accent); }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      align-items: center;
-    }
-    .nav-links a {
-      color: var(--gray);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links { display: flex; gap: 26px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--ink); }
     .nav-cta {
-      background: var(--accent);
-      color: var(--navy) !important;
-      padding: 8px 20px;
-      border-radius: 6px;
-      font-weight: 600 !important;
-      font-size: 14px;
-      text-decoration: none;
-      transition: opacity 0.2s;
+      background: var(--ink); color: var(--white) !important;
+      padding: 9px 18px; border-radius: var(--r); font-weight: 500 !important;
     }
-    .nav-cta:hover { opacity: 0.85; }
+    .nav-cta:hover { background: var(--fjord-2); }
     .nav-toggle {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 6px;
-      color: var(--white);
-      font-size: 20px;
-      line-height: 1;
-      padding: 6px 10px;
-      cursor: pointer;
+      display: none; background: transparent; border: 1px solid var(--line); border-radius: var(--r);
+      color: var(--ink); font-size: 18px; line-height: 1; padding: 7px 10px; cursor: pointer;
     }
+
+    /* ── LAYOUT ── */
+    section { padding: 104px 48px; scroll-margin-top: 80px; }
+    .inner { max-width: 1160px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--teal-ink); margin-bottom: 18px;
+    }
+    h1, h2, h3, h4 { font-family: 'DM Sans', sans-serif; font-weight: 500; text-wrap: balance; }
+    h1 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 24px; }
+    h2 { font-size: clamp(28px, 3.3vw, 42px); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px; }
+    h3 { font-size: 18px; line-height: 1.35; letter-spacing: -0.005em; margin-bottom: 8px; }
+    h4 { font-size: 16px; line-height: 1.4; margin-bottom: 6px; }
+    .section-intro { font-size: 18px; font-weight: 300; color: var(--muted); max-width: 640px; line-height: 1.7; margin-bottom: 56px; }
+    .small { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .dark { background: var(--fjord); color: var(--white); }
+    .dark .section-label { color: var(--teal); }
+    .dark .section-intro, .dark .small { color: var(--frost); }
+    .band-birch { background: var(--birch); }
+    .band-white { background: var(--white); }
+    .rule { border-top: 1px solid var(--line); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: var(--r); text-decoration: none;
+      font: 500 15px/1.2 'DM Sans', sans-serif; border: 1px solid var(--ink); cursor: pointer;
+    }
+    .btn-primary { background: var(--ink); color: var(--white); }
+    .btn-primary:hover { background: var(--fjord-2); }
+    .btn-outline { background: transparent; color: var(--ink); }
+    .btn-outline:hover { border-color: var(--teal-ink); color: var(--teal-ink); }
+    .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ── DIAGRAM PRIMITIVES ── */
+    .box { background: var(--white); border: 1px solid var(--line); border-radius: var(--r); }
+    .doc {
+      flex: none; width: 24px; height: 30px; border: 1px solid var(--frost); border-radius: 2px; background: var(--white);
+      background-image: linear-gradient(var(--frost), var(--frost)), linear-gradient(var(--frost), var(--frost)), linear-gradient(var(--frost), var(--frost)), linear-gradient(var(--frost), var(--frost));
+      background-size: 13px 1px, 11px 1px, 13px 1px, 8px 1px;
+      background-position: 5px 8px, 5px 12px, 5px 16px, 5px 20px;
+      background-repeat: no-repeat;
+    }
+    .sq { flex: none; width: 14px; height: 14px; border: 2px solid var(--agent); border-radius: 2px; }
+    .ci { flex: none; width: 16px; height: 16px; border: 2px solid var(--stamp); border-radius: 50%; }
+    .sys { flex: none; width: 22px; height: 18px; border: 2px solid var(--muted); border-radius: 2px; box-shadow: inset 0 4px 0 -2px var(--muted); }
+    .item { display: flex; gap: 12px; align-items: center; padding: 11px 14px; font-size: 14.5px; line-height: 1.35; }
+    .item small { display: block; font-size: 12.5px; color: var(--muted); }
+    .col-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .arrow { color: var(--muted); font-size: 22px; text-align: center; line-height: 1; }
+    .arrow::before { content: "→"; }
 
     /* ── HERO ── */
-    .hero {
-      background: var(--navy);
-      min-height: 0;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 72px 48px 80px;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,86,219,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,201,167,0.1) 0%, transparent 60%);
-    }
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-content {
-      position: relative;
-      max-width: 680px;
-      animation: fadeUp 0.9s ease both;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(0,201,167,0.12);
-      border: 1px solid rgba(0,201,167,0.3);
-      color: var(--accent);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 28px;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 7px; height: 7px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 3vw, 40px);
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.25;
-      letter-spacing: -0.6px;
-      margin-bottom: 24px;
-    }
-    h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-    .hero-sub {
-      font-size: 18px;
-      color: #94A3B8;
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 560px;
-      font-weight: 300;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      background: var(--blue);
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 15px;
-      border: 1px solid rgba(255,255,255,0.2);
-      transition: all 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero { padding: 88px 48px 104px; }
+    .hero .section-intro { margin-bottom: 36px; }
+    .hero-flow { display: grid; grid-template-columns: 1fr auto 1.2fr auto 1fr; gap: 18px; align-items: start; margin-top: 72px; }
+    .hero-flow > .arrow, .hero-flow > .core { align-self: center; }
+    .stack { display: grid; gap: 10px; min-width: 0; }
+    .core { padding: 28px 24px; display: grid; gap: 16px; justify-items: center; text-align: center; border-color: var(--ink); }
+    .core .lockup { font-size: 26px; }
+    .axes3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; width: 100%; }
+    .axes3 > span { padding: 7px 4px; border: 1px solid var(--line); border-radius: 2px; font-size: 12.5px; background: var(--snow); }
+    .trace { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted); }
+    .trace i { font-style: normal; padding: 2px 8px; background: var(--clause-mark); border-left: 2px solid var(--agent); color: var(--ink); }
 
-    .hero-stats {
-      position: absolute;
-      right: 48px;
-      bottom: 80px;
-      display: flex;
-      gap: 40px;
-      animation: fadeUp 0.9s 0.3s ease both;
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--white);
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label { font-size: 13px; color: var(--gray); margin-top: 4px; }
+    /* ── PROBLEMS ── */
+    .problems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .prob { padding: 26px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+    .prob .ask { font-size: 18px; line-height: 1.4; letter-spacing: -0.005em; }
+    .prob .ask::before { content: "“"; color: var(--teal-ink); }
+    .prob .ask::after { content: "”"; color: var(--teal-ink); }
+    .prob .does { font-size: 14.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+    .prob .does b { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--teal-ink); margin-bottom: 4px; }
+    .who-for { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+    .who-for div { padding-top: 16px; border-top: 1px solid var(--ink); }
+    .who-for p { font-size: 15px; color: var(--muted); }
 
-    /* ── SECTION COMMON ── */
-    section { padding: 96px 48px; scroll-margin-top: 80px; }
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(28px, 3.5vw, 44px);
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-      margin-bottom: 16px;
-    }
-    .section-intro {
-      font-size: 17px;
-      color: #64748B;
-      max-width: 600px;
-      line-height: 1.7;
-      margin-bottom: 64px;
-      font-weight: 300;
-    }
+    /* ── FAQ ── */
+    .faq { max-width: 820px; }
+    .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-size: 18px; font-weight: 500; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--teal-ink); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details p { margin-top: 10px; color: var(--muted); max-width: 70ch; }
 
-    /* ── ABOUT ── */
-    .about { background: var(--off-white); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
+    /* ── STEPS ── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--r); background: var(--white); }
+    .step { padding: 30px 26px; position: relative; min-width: 0; }
+    .step + .step { border-left: 1px solid var(--line); }
+    .step + .step::before {
+      content: "→"; position: absolute; left: 0; top: 34px; transform: translateX(-50%);
+      background: var(--white); color: var(--teal-ink); font-size: 15px; padding: 2px 0; line-height: 1;
     }
-    .about-visual {
-      background: var(--navy);
-      border-radius: 16px;
-      padding: 48px;
-      position: relative;
-      overflow: hidden;
-    }
-    .about-visual::before {
-      content: '';
-      position: absolute;
-      top: -30%;
-      right: -20%;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(0,201,167,0.2) 0%, transparent 70%);
-    }
-    .location-pair {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      position: relative;
-    }
-    .location-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .loc-flag { font-size: 28px; }
-    .loc-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      color: var(--white);
-      font-size: 16px;
-    }
-    .loc-role { font-size: 13px; color: var(--gray); margin-top: 2px; }
-    .loc-connector {
-      width: 2px;
-      height: 32px;
-      background: linear-gradient(to bottom, var(--accent), var(--blue));
-      margin: 0 auto;
-      border-radius: 2px;
-    }
-    .about-text h2 { color: var(--navy); }
-    .about-text p {
-      font-size: 16px;
-      color: #475569;
-      line-height: 1.8;
-      margin-bottom: 16px;
-      font-weight: 300;
-    }
-    .compliance-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-    }
-    .tag {
-      background: var(--white);
-      border: 1px solid var(--gray-light);
-      color: var(--navy);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-    .tag.accent { background: rgba(0,201,167,0.1); border-color: rgba(0,201,167,0.3); color: #059669; }
+    .step-num { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 18px; display: block; }
+    .step p { font-size: 14.5px; color: var(--muted); }
+    .glyph { height: 44px; margin-bottom: 18px; display: flex; align-items: flex-end; gap: 5px; }
+    .glyph .doc { width: 28px; height: 36px; }
+    .glyph .hl { width: 46px; height: 36px; border: 1px solid var(--frost); border-radius: 2px; position: relative; background: var(--white); }
+    .glyph .hl::after { content: ""; position: absolute; left: 5px; right: 5px; top: 14px; height: 8px; background: var(--clause-mark); border-left: 2px solid var(--agent); }
+    .glyph .fan { display: grid; gap: 4px; }
+    .glyph .fan i { display: block; height: 8px; width: 40px; border: 1px solid var(--frost); border-radius: 2px; }
+    .glyph .fan i.re { border-color: var(--amber); width: 40px; }
 
-    /* ── SERVICES ── */
-    .services { background: var(--white); }
-    .services-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      background: var(--off-white);
-      border: 1px solid var(--gray-light);
-      color: #64748B;
-      padding: 10px 22px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-    .tab-btn.active {
-      background: var(--navy);
-      color: var(--white);
-      border-color: var(--navy);
-    }
-    .service-panel { display: none; }
-    .service-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-    .service-card {
-      background: var(--off-white);
-      border: 1px solid var(--gray-light);
-      border-radius: 14px;
-      padding: 32px;
-      transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--blue), var(--accent));
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--blue-light); }
-    .service-card:hover::before { opacity: 1; }
-    .service-icon {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--blue), var(--accent));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-    .service-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-    .service-card p { font-size: 14px; color: #64748B; line-height: 1.7; }
-    .service-list {
-      list-style: none;
-      margin-top: 12px;
-    }
-    .service-list li {
-      font-size: 13px;
-      color: #64748B;
-      padding: 4px 0;
-      padding-left: 18px;
-      position: relative;
-    }
-    .service-list li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 12px;
-    }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .service-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--blue);
-      background: rgba(26,86,219,0.08);
-      padding: 4px 10px;
-      border-radius: 12px;
-      margin-bottom: 14px;
-    }
-    .services { background: var(--white); }
+    /* ── CHANGE TRACE ── */
+    .change { display: grid; grid-template-columns: 0.9fr auto 1.4fr; gap: 28px; align-items: center; margin-bottom: 64px; }
+    .editions { display: grid; gap: 10px; }
+    .ed { display: flex; gap: 12px; align-items: center; padding: 14px 16px; }
+    .ed.old { color: var(--muted); background: transparent; border-style: dashed; }
+    .ed.old b { text-decoration: line-through; text-decoration-color: var(--frost); }
+    .ed b { font-weight: 500; }
+    .ed small { display: block; font-size: 12.5px; color: var(--muted); }
+    .impact { display: grid; gap: 8px; }
+    .imp { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center; padding: 12px 16px; font-size: 14.5px; }
+    .imp small { display: block; color: var(--muted); font-size: 12.5px; }
+    .flag { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+    .flag.re { border-color: var(--amber); color: var(--amber); }
+    .flag.ok { border-color: var(--teal-ink); color: var(--teal-ink); }
 
-    /* ── DOMAINS ── */
-    .domains { background: var(--navy); }
-    .domains h2 { color: var(--white); }
-    .domains .section-intro { color: #94A3B8; }
-    .domains-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-    }
-    .domain-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 28px 24px;
-      text-align: left;
-      transition: all 0.2s;
-    }
-    .domain-card:hover {
-      background: rgba(0,201,167,0.08);
-      border-color: rgba(0,201,167,0.3);
-      transform: translateY(-2px);
-    }
-    .domain-icon { font-size: 32px; margin-bottom: 12px; }
-    .domain-card h4 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-    .domain-card p { font-size: 13px; color: var(--gray); line-height: 1.5; }
+    /* ── SAMPLES ── */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { padding: 30px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+    .card-tag { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-ink); }
+    .card p { font-size: 14.5px; color: var(--muted); }
+    .list { list-style: none; display: grid; gap: 8px; margin-top: 4px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .list li { font-size: 14px; color: var(--ink); padding-left: 18px; position: relative; line-height: 1.55; }
+    .list li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 1px; background: var(--teal-ink); }
 
-    /* ── DELIVERIES ── */
-    .deliveries { background: var(--off-white); }
-    .delivery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 24px;
+    /* ── MODEL (six axes) ── */
+    .axes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
+    .axis { padding: 24px; border: 1px solid var(--fjord-line); border-radius: var(--r); background: var(--fjord-2); min-width: 0; }
+    .axis h4 { color: var(--white); }
+    .axis p { font-size: 14px; color: var(--frost); }
+    .axis .k { font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 10px; }
+    .hub {
+      grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center;
+      padding: 26px 28px; border: 1px solid var(--teal); border-radius: var(--r);
     }
-    .delivery-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 28px;
-      border: 1px solid var(--gray-light);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-start;
-      transition: all 0.2s;
-      min-width: 0;
-    }
-    .delivery-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); transform: translateY(-2px); }
-    .delivery-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--gray-light);
-      line-height: 1;
-      min-width: 40px;
-    }
-    .delivery-num.label {
-      color: var(--accent);
-      font-size: 13px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      min-width: 0;
-      padding-top: 0;
-    }
-    .delivery-card h3, .delivery-card p { min-width: 0; }
-    .delivery-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .delivery-card p { font-size: 14px; color: #64748B; line-height: 1.7; }
+    .hub .fact { font-size: 17px; color: var(--white); }
+    .hub .src { display: flex; gap: 12px; align-items: center; justify-content: flex-end; color: var(--frost); font-size: 14px; text-align: right; }
+    .hub .src .doc { border-color: var(--frost); background-color: transparent; }
+    .hub .link { color: var(--teal); font-size: 22px; }
+    .hub .fact small, .hub .src small { display: block; font-size: 12.5px; color: var(--frost); }
 
-    /* ── BENEFITS ── */
-    .benefits { background: var(--white); }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+    /* ── CONNECT ── */
+    .connect { display: grid; grid-template-columns: 1fr 200px 1fr; align-items: center; }
+    .side { display: grid; gap: 10px; min-width: 0; }
+    .conn { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 12px 16px; font-size: 14.5px; position: relative; line-height: 1.35; }
+    .conn small { display: block; font-size: 12.5px; color: var(--muted); }
+    .side.l .conn::after, .side.r .conn::before { content: ""; position: absolute; top: 50%; width: 34px; border-top: 1px solid var(--frost); }
+    .side.l .conn::after { right: -35px; }
+    .side.r .conn::before { left: -35px; }
+    .mark-ring {
+      margin: 0 34px; aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--ink); background: var(--white);
+      display: grid; place-items: center; text-align: center;
     }
-    .benefit-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-    .benefit-check {
-      width: 32px; height: 32px;
-      background: rgba(0,201,167,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .benefit-item h4 {
-      font-family: 'Syne', sans-serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-    .benefit-item p { font-size: 13px; color: #64748B; line-height: 1.6; }
+    .mark-ring .lockup { font-size: 14px; flex-direction: column; gap: 8px; }
+    .mark-ring .lockup .mk { height: 22px; }
+
+    /* ── APPROVAL ── */
+    .approve { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 18px; align-items: stretch; margin-bottom: 64px; }
+    .ap { padding: 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+    .ap.agent { border-style: dashed; border-color: var(--agent); background: var(--agent-wash); }
+    .ap.person { border-color: var(--ink); }
+    .ap .who { display: flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .ap p { font-size: 14.5px; color: var(--muted); }
+    .ap .note { font-size: 13px; color: var(--ink); border-top: 1px solid var(--line); padding-top: 10px; }
+    .approve .arrow { align-self: center; }
+    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .benefit { padding: 28px 28px 0 0; }
+    .benefit + .benefit { padding-left: 28px; border-left: 1px solid var(--line); }
+    .benefit p { font-size: 14.5px; color: var(--muted); }
 
     /* ── CONTACT ── */
-    .contact { background: var(--navy); position: relative; overflow: hidden; }
-    .contact::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(26,86,219,0.25) 0%, transparent 70%);
-    }
-    .contact-inner {
-      position: relative;
-      max-width: 640px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .contact h2 { color: var(--white); }
-    .contact .section-intro { color: #94A3B8; margin: 0 auto 48px; }
-    .contact-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      text-align: left;
-    }
+    .contact-inner { max-width: 680px; margin: 0 auto; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .contact-form .full { grid-column: 1 / -1; }
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 500;
-      color: #94A3B8;
-      margin-bottom: 8px;
+    .form-group label { display: block; font-size: 13px; font-weight: 500; color: var(--frost); margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; background: var(--fjord-2); border: 1px solid var(--fjord-line); color: var(--white);
+      padding: 12px 14px; border-radius: var(--r); font: 400 15px/1.4 'DM Sans', sans-serif; outline: none;
     }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--white);
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-color: var(--accent); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #8197A0; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--teal); }
     .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-group select option { background: var(--navy); }
+    .form-group select option { background: var(--fjord); }
     .form-submit {
-      grid-column: 1 / -1;
-      background: var(--accent);
-      color: var(--navy);
-      border: none;
-      padding: 16px;
-      border-radius: 8px;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-top: 8px;
+      grid-column: 1 / -1; background: var(--white); color: var(--ink); border: 0; padding: 15px;
+      border-radius: var(--r); font: 500 16px/1.2 'DM Sans', sans-serif; cursor: pointer; margin-top: 8px;
     }
-    .form-submit:hover { opacity: 0.85; transform: translateY(-1px); }
-    .form-submit:disabled { opacity: 0.6; cursor: wait; transform: none; }
-    .form-status { grid-column: 1 / -1; font-size: 14px; min-height: 20px; color: #94A3B8; }
-    .form-status.ok { color: var(--accent); }
-    .form-status.error { color: #FCA5A5; }
-    .form-status a { color: inherit; }
-    .form-consent { grid-column: 1 / -1; font-size: 12px; color: #94A3B8; line-height: 1.6; }
-    .form-consent a { color: var(--accent); }
+    .form-submit:hover { background: var(--snow); }
+    .form-submit:disabled { opacity: 0.6; cursor: wait; }
+    .form-status { grid-column: 1 / -1; font-size: 14px; min-height: 20px; color: var(--frost); }
+    .form-status.ok { color: var(--teal); }
+    .form-status.error { color: #F3B4A6; }
+    .form-consent { grid-column: 1 / -1; font-size: 12.5px; color: var(--frost); line-height: 1.6; }
+    .form-consent a { color: var(--white); }
     .form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
     /* ── FOOTER ── */
-    footer {
-      background: #060E1A;
-      padding: 64px 48px 40px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    .brand-lockup { display: flex; flex-direction: column; text-decoration: none; line-height: 1.05; }
-    .brand-by { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--gray); margin-top: 3px; }
-    .hero .hero-sub { margin-bottom: 18px; }
-    .hero-line { font-size: 16px; line-height: 1.65; color: #CBD5E1; max-width: 640px; margin: 0 0 8px; }
-    .hero-lockup { margin: 4px 0 28px; }
-    .hero-lockup .logo { font-size: 28px; }
-    .hero-lockup .brand-by { color: rgba(255,255,255,0.72); font-size: 13px; }
-    .footer-brand .logo { font-size: 20px; }
-    .footer-brand p { font-size: 14px; color: var(--gray); margin-top: 16px; line-height: 1.7; max-width: 360px; }
-    .footer-col h5 {
-      font-family: 'Syne', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
+    footer { background: var(--fjord); color: var(--frost); padding: 64px 48px 40px; border-top: 1px solid var(--fjord-line); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand p { font-size: 14px; margin-top: 16px; line-height: 1.7; max-width: 360px; }
+    .footer-col h5 { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: var(--white); margin-bottom: 18px; }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 12px; }
-    .footer-col ul li a { color: var(--gray); text-decoration: none; font-size: 14px; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: var(--accent); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-bottom p { font-size: 13px; color: var(--gray); }
-    .footer-locs { display: flex; gap: 24px; }
-    .footer-loc { font-size: 13px; color: var(--gray); display: flex; align-items: center; gap: 6px; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { color: var(--frost); text-decoration: none; font-size: 14px; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-legal { font-size: 12.5px; line-height: 1.65; max-width: 92ch; border-top: 1px solid var(--fjord-line); padding-top: 24px; margin-bottom: 20px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1280px) {
-      nav, .lang-bar { padding: 0 24px; }
-      .lang-bar { padding: 8px 24px; }
-      section { padding: 64px 24px; }
-      .hero { padding: 60px 24px; }
-      .hero-stats { display: none; }
-      .about-grid, .benefits-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .contact-form { grid-template-columns: 1fr; }
-      .contact-form .full { grid-column: 1; }
-      nav { flex-wrap: wrap; height: auto; min-height: 68px; padding-top: 14px; padding-bottom: 14px; }
+    @media (max-width: 1100px) {
+      nav, .lang-bar { padding-left: 24px; padding-right: 24px; }
+      section, .hero { padding-left: 24px; padding-right: 24px; }
+      section { padding-top: 72px; padding-bottom: 72px; }
       .nav-toggle { display: block; }
+      nav { flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
       .nav-links { display: none; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        width: 100%;
-        padding: 8px 0 24px;
-      }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .nav-links.open { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; padding: 16px 0 12px; }
+      .hero-flow { grid-template-columns: 1fr; }
+      .arrow::before { content: "↓"; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .step:nth-child(3) { border-left: 0; }
+      .step:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .step:nth-child(3)::before { display: none; }
+      .change { grid-template-columns: 1fr; }
+      .problems { grid-template-columns: 1fr 1fr; }
+      .who-for { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .connect { grid-template-columns: 1fr; gap: 20px; }
+      .side.l .conn::after, .side.r .conn::before { display: none; }
+      .mark-ring { width: 170px; margin: 0 auto; }
+      .approve { grid-template-columns: 1fr; }
+      .benefits { grid-template-columns: 1fr; }
+      .benefit, .benefit + .benefit { padding: 22px 0; border-left: 0; }
+      .benefit + .benefit { border-top: 1px solid var(--line); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 560px) {
+    @media (max-width: 640px) {
+      section, .hero { padding-left: 16px; padding-right: 16px; }
+      nav, .lang-bar { padding-left: 16px; padding-right: 16px; }
+      .problems { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .step + .step { border-left: 0; border-top: 1px solid var(--line); }
+      .step + .step::before { display: none; }
+      .axes { grid-template-columns: 1fr; }
+      .hub { grid-template-columns: 1fr; }
+      .hub .src { justify-content: flex-start; text-align: left; }
+      .hub .link { transform: rotate(90deg); justify-self: start; }
+      .contact-form { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      .delivery-grid, .service-panel.active { grid-template-columns: 1fr; }
-      h1 { font-size: 26px; letter-spacing: -0.4px; line-height: 1.3; }
-      .hero { padding: 48px 20px 56px; min-height: 0; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-    }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
     /* ── LANGUAGE ── only hide the inactive language; never force a display value */
     body:not(.lang-no) [data-lang="no"],
@@ -749,299 +423,470 @@
   </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="sinapset-mark" viewBox="0 0 100 64">
+    <rect x="3" y="3" width="58" height="58" rx="5" fill="none" stroke-width="6" style="stroke: var(--mark-agent)"/>
+    <circle cx="68" cy="32" r="29" fill="none" stroke-width="6" style="stroke: var(--mark-stamp)"/>
+  </symbol>
+</svg>
 
 <!-- LANGUAGE BAR -->
 <div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('en')" id="btn-en" aria-pressed="true" lang="en"><span aria-hidden="true">🇬🇧</span> English</button>
-  <button class="lang-btn" onclick="setLang('no')" id="btn-no" aria-pressed="false" lang="nb"><span aria-hidden="true">🇳🇴</span> Norsk</button>
+  <button class="lang-btn active" onclick="setLang('en')" id="btn-en" aria-pressed="true" lang="en">English</button>
+  <button class="lang-btn" onclick="setLang('no')" id="btn-no" aria-pressed="false" lang="nb">Norsk</button>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="#top" class="brand-lockup">
-    <span class="logo">SINAPS</span>
-    <span class="brand-by">by EikenTech</span>
+  <a href="#top" class="brand-lockup" aria-label="SINAPSET by EikenTech">
+    <span class="lockup"><svg class="mk" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#sinapset-mark"/></svg><span class="wm" aria-hidden="true">SINAPSET</span></span>
+    <span class="brand-by" aria-hidden="true">by EikenTech</span>
   </a>
   <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">☰</button>
   <ul class="nav-links" id="nav-links">
+    <li><a href="#problems" data-lang="en">Problems we solve</a><a href="#problems" data-lang="no" lang="nb">Problemer vi løser</a></li>
     <li><a href="#flow" data-lang="en">How it works</a><a href="#flow" data-lang="no" lang="nb">Slik fungerer det</a></li>
     <li><a href="#example" data-lang="en">Examples</a><a href="#example" data-lang="no" lang="nb">Eksempler</a></li>
     <li><a href="#model" data-lang="en">The model</a><a href="#model" data-lang="no" lang="nb">Modellen</a></li>
-    <li><a href="#work" data-lang="en">The work</a><a href="#work" data-lang="no" lang="nb">Arbeidet</a></li>
-    <li><a href="#difference" data-lang="en">Why SINAPS</a><a href="#difference" data-lang="no" lang="nb">Hvorfor SINAPS</a></li>
-    <li><a href="#company" data-lang="en">Company</a><a href="#company" data-lang="no" lang="nb">Selskapet</a></li>
+    <li><a href="#connect" data-lang="en">Connect</a><a href="#connect" data-lang="no" lang="nb">Tilkobling</a></li>
+    <li><a href="#faq" data-lang="en">FAQ</a><a href="#faq" data-lang="no" lang="nb">Spørsmål</a></li>
     <li><a href="#contact" class="nav-cta" data-lang="en">Book a demo</a><a href="#contact" class="nav-cta" data-lang="no" lang="nb">Bestill en demo</a></li>
   </ul>
 </nav>
 
+<main id="top">
+
 <!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
+<section class="hero">
+  <div class="inner">
+    <div class="section-label" data-lang="en">The semantic layer for your organisation</div>
+    <div class="section-label" data-lang="no" lang="nb">Det semantiske laget for organisasjonen</div>
     <h1 data-lang="en">Work prepared from your own documents, approved by a person.</h1>
-    <h1 data-lang="no" lang="nb">Arbeid utarbeidet fra deres egne dokumenter, godkjent av et menneske.</h1>
-
-    <p class="hero-sub" data-lang="en">SINAPS reads them into one shared model. Every fact traces to its source, and the next job uses the same model.</p>
-    <p class="hero-sub" data-lang="no" lang="nb">SINAPS leser dem inn i én felles modell. Hvert faktum kan spores til kilden, og neste jobb bruker den samme modellen.</p>
-
-    <div class="hero-lockup brand-lockup">
-      <span class="logo">SINAPS</span>
-      <span class="brand-by">by EikenTech</span>
+    <h1 data-lang="no" lang="nb">Arbeid klargjort fra deres egne dokumenter, godkjent av en person.</h1>
+    <p class="section-intro" data-lang="en">SINAPSET reads them into one shared model. Every fact traces to its source, and the next job uses the same model.</p>
+    <p class="section-intro" data-lang="no" lang="nb">SINAPSET leser dem inn i én felles modell. Hvert faktum kan spores til kilden, og neste jobb bruker den samme modellen.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn btn-primary" data-lang="en">Book a demo</a>
+      <a href="#contact" class="btn btn-primary" data-lang="no" lang="nb">Bestill en demo</a>
+      <a href="#flow" class="btn btn-outline" data-lang="en">See how it works</a>
+      <a href="#flow" class="btn btn-outline" data-lang="no" lang="nb">Se hvordan det fungerer</a>
     </div>
 
-    <div class="hero-ctas">
-      <a href="#contact" class="btn-primary" data-lang="en">Book a demo</a>
-      <a href="#contact" class="btn-primary" data-lang="no" lang="nb">Bestill en demo</a>
-      <a href="#example" class="btn-outline" data-lang="en">See the examples</a>
-      <a href="#example" class="btn-outline" data-lang="no" lang="nb">Se eksemplene</a>
+    <div class="hero-flow" role="img" aria-label="Documents are read into the SINAPSET model; an agent prepares work, a person approves it, and it goes into your systems.">
+      <div class="stack">
+        <div class="col-label"><span data-lang="en">Your documents</span><span data-lang="no" lang="nb">Deres dokumenter</span></div>
+        <div class="item box"><span class="doc"></span><span><span data-lang="en">Standards and amendments</span><span data-lang="no" lang="nb">Standarder og endringer</span></span></div>
+        <div class="item box"><span class="doc"></span><span><span data-lang="en">Contracts</span><span data-lang="no" lang="nb">Kontrakter</span></span></div>
+        <div class="item box"><span class="doc"></span><span><span data-lang="en">Internal specifications</span><span data-lang="no" lang="nb">Interne spesifikasjoner</span></span></div>
+        <div class="item box"><span class="doc"></span><span><span data-lang="en">Supplier documents</span><span data-lang="no" lang="nb">Leverandørdokumenter</span></span></div>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="core box">
+        <span class="lockup"><svg class="mk" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#sinapset-mark"/></svg><span class="wm" aria-hidden="true">SINAPSET</span></span>
+        <div class="small"><span data-lang="en">One shared model</span><span data-lang="no" lang="nb">Én felles modell</span></div>
+        <div class="axes3">
+          <span><span data-lang="en">Asset</span><span data-lang="no" lang="nb">Objekt</span></span>
+          <span><span data-lang="en">Requirements</span><span data-lang="no" lang="nb">Krav</span></span>
+          <span><span data-lang="en">Applicability</span><span data-lang="no" lang="nb">Virkeområde</span></span>
+        </div>
+        <div class="trace"><span data-lang="en">Every fact</span><span data-lang="no" lang="nb">Hvert faktum</span> → <i><span data-lang="en">its clause</span><span data-lang="no" lang="nb">klausulen</span></i></div>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="stack">
+        <div class="col-label"><span data-lang="en">Prepared work</span><span data-lang="no" lang="nb">Klargjort arbeid</span></div>
+        <div class="item box"><span class="sq"></span><span><span data-lang="en">An agent prepares</span><span data-lang="no" lang="nb">En agent forbereder</span><small><span data-lang="en">Each line with its clause</span><span data-lang="no" lang="nb">Hver linje med sin klausul</span></small></span></div>
+        <div class="item box"><span class="ci"></span><span><span data-lang="en">A person approves</span><span data-lang="no" lang="nb">En person godkjenner</span><small><span data-lang="en">Nothing moves before that</span><span data-lang="no" lang="nb">Ingenting skjer før det</span></small></span></div>
+        <div class="item box"><span class="sys"></span><span><span data-lang="en">Into your systems</span><span data-lang="no" lang="nb">Inn i deres systemer</span><small><span data-lang="en">And the decision is kept</span><span data-lang="no" lang="nb">Og beslutningen lagres</span></small></span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- JOB -->
-<section class="deliveries" id="flow">
-  <div class="section-label" data-lang="en">How it works</div>
-  <div class="section-label" data-lang="no" lang="nb">Slik fungerer det</div>
-  <h2 data-lang="en">From the documents you have to work a person can approve.</h2>
-  <h2 data-lang="no" lang="nb">Fra dokumentene du har, til arbeid en person kan godkjenne.</h2>
-  <p class="section-intro" data-lang="en">The same four steps apply whatever the documents are. A standard, a contract, a requirements package, or the file that replaces one of them.</p>
-  <p class="section-intro" data-lang="no" lang="nb">De samme fire trinnene gjelder uansett hvilke dokumenter det er. En standard, en kontrakt, en kravpakke, eller filen som erstatter en av dem.</p>
-  <div class="delivery-grid">
-    <div class="delivery-card">
-      <div class="delivery-num label" data-lang="en">01 Read</div>
-      <div class="delivery-num label" data-lang="no" lang="nb">01 Les</div>
+<!-- PROBLEMS -->
+<section class="band-white rule" id="problems">
+  <div class="inner">
+    <div class="section-label" data-lang="en">Problems SINAPSET solves</div>
+    <div class="section-label" data-lang="no" lang="nb">Problemer SINAPSET løser</div>
+    <h2 data-lang="en">Do you recognise these questions?</h2>
+    <h2 data-lang="no" lang="nb">Kjenner du igjen disse spørsmålene?</h2>
+    <p class="section-intro" data-lang="en">They come up wherever work is governed by standards, contracts and specifications. Today they are answered by reading hundreds of pages by hand.</p>
+    <p class="section-intro" data-lang="no" lang="nb">De dukker opp overalt der arbeidet styres av standarder, kontrakter og spesifikasjoner. I dag besvares de ved å lese hundrevis av sider for hånd.</p>
+    <div class="problems">
+      <div class="prob box">
+        <p class="ask" data-lang="en">A standard was revised. What in our documents, hardware and open orders is affected?</p>
+        <p class="ask" data-lang="no" lang="nb">En standard er revidert. Hva i dokumentene, utstyret og de åpne ordrene våre berøres?</p>
+        <p class="does" data-lang="en"><b>Change impact</b>SINAPSET marks every clause, asset and open order that rests on the old edition, and shows what carries over.</p>
+        <p class="does" data-lang="no" lang="nb"><b>Konsekvens av endring</b>SINAPSET markerer hver klausul, hvert objekt og hver åpen ordre som bygger på den gamle utgaven, og viser hva som fortsatt gjelder.</p>
+      </div>
+      <div class="prob box">
+        <p class="ask" data-lang="en">Our specification claims several standards. Where does it actually disagree with them?</p>
+        <p class="ask" data-lang="no" lang="nb">Spesifikasjonen vår viser til flere standarder. Hvor er den faktisk uenig med dem?</p>
+        <p class="does" data-lang="en"><b>Specification harmonisation</b>A clause-by-clause comparison across overlapping standards and your own documents, quoting both sides.</p>
+        <p class="does" data-lang="no" lang="nb"><b>Harmonisering av spesifikasjoner</b>En sammenligning klausul for klausul på tvers av overlappende standarder og egne dokumenter, med sitat fra begge.</p>
+      </div>
+      <div class="prob box">
+        <p class="ask" data-lang="en">Does this supplier’s quote or datasheet really meet our requirements?</p>
+        <p class="ask" data-lang="no" lang="nb">Oppfyller tilbudet eller databladet fra leverandøren virkelig kravene våre?</p>
+        <p class="does" data-lang="en"><b>Supplier compliance</b>Each claim is checked against the requirement it answers. Unsupported claims are flagged, and a deviation or technical query is prepared.</p>
+        <p class="does" data-lang="no" lang="nb"><b>Leverandørsamsvar</b>Hver påstand kontrolleres mot kravet den svarer på. Påstander uten grunnlag markeres, og et avvik eller en teknisk forespørsel klargjøres.</p>
+      </div>
+      <div class="prob box">
+        <p class="ask" data-lang="en">Which requirements apply to this equipment, in this service?</p>
+        <p class="ask" data-lang="no" lang="nb">Hvilke krav gjelder for dette utstyret, i denne bruken?</p>
+        <p class="does" data-lang="en"><b>Requirement applicability</b>Applies, does not apply, applies if selected, or cannot tell, each with the clause behind it.</p>
+        <p class="does" data-lang="no" lang="nb"><b>Kravenes virkeområde</b>Gjelder, gjelder ikke, gjelder hvis valgt, eller kan ikke avgjøres, hver med klausulen bak.</p>
+      </div>
+      <div class="prob box">
+        <p class="ask" data-lang="en">Our AI assistant answers confidently, but cannot show where the answer came from.</p>
+        <p class="ask" data-lang="no" lang="nb">KI-assistenten vår svarer sikkert, men kan ikke vise hvor svaret kom fra.</p>
+        <p class="does" data-lang="en"><b>Grounded AI</b>Agents work from the same model as your people, and every answer points to its source clause.</p>
+        <p class="does" data-lang="no" lang="nb"><b>KI med kildegrunnlag</b>Agentene bruker den samme modellen som medarbeiderne, og hvert svar peker til kildeklausulen.</p>
+      </div>
+      <div class="prob box">
+        <p class="ask" data-lang="en">Two years later, the auditor asks why we accepted it.</p>
+        <p class="ask" data-lang="no" lang="nb">To år senere spør revisoren hvorfor vi godtok det.</p>
+        <p class="does" data-lang="en"><b>Decision record</b>Every approved decision is kept with the clause, the evidence and the person who approved it.</p>
+        <p class="does" data-lang="no" lang="nb"><b>Beslutningslogg</b>Hver godkjent beslutning lagres med klausulen, grunnlaget og personen som godkjente den.</p>
+      </div>
+    </div>
+    <div class="who-for">
       <div>
+        <h4 data-lang="en">Who it is for</h4><h4 data-lang="no" lang="nb">Hvem det er for</h4>
+        <p data-lang="en">Engineering, quality and product assurance, procurement and supplier quality, document control and compliance teams.</p>
+        <p data-lang="no" lang="nb">Team innen prosjektering, kvalitet og produktsikring, innkjøp og leverandørkvalitet, dokumentkontroll og samsvar.</p>
+      </div>
+      <div>
+        <h4 data-lang="en">Where it fits</h4><h4 data-lang="no" lang="nb">Hvor det passer</h4>
+        <p data-lang="en">Industries run on standards and long-lived assets: space, aerospace and defence, oil and gas and offshore, energy and manufacturing.</p>
+        <p data-lang="no" lang="nb">Bransjer som styres av standarder og langlivede anlegg: romfart, luftfart og forsvar, olje og gass og offshore, energi og industri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="rule" id="flow">
+  <div class="inner">
+    <div class="section-label" data-lang="en">How it works</div>
+    <div class="section-label" data-lang="no" lang="nb">Slik fungerer det</div>
+    <h2 data-lang="en">From the documents you have to work a person can approve.</h2>
+    <h2 data-lang="no" lang="nb">Fra dokumentene du har, til arbeid en person kan godkjenne.</h2>
+    <p class="section-intro" data-lang="en">The same four steps apply whatever the documents are. A standard, a contract, a requirements package, or the file that replaces one of them.</p>
+    <p class="section-intro" data-lang="no" lang="nb">De samme fire trinnene gjelder uansett hvilke dokumenter det er. En standard, en kontrakt, en kravpakke, eller filen som erstatter en av dem.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="glyph" aria-hidden="true"><span class="doc"></span><span class="doc" style="margin-left:-18px;margin-bottom:-4px"></span><span class="doc" style="margin-left:-18px;margin-bottom:-8px"></span></div>
+        <span class="step-num"><span data-lang="en">01 Read</span><span data-lang="no" lang="nb">01 Les</span></span>
         <h3 data-lang="en">Which text is in force</h3>
         <h3 data-lang="no" lang="nb">Hvilken tekst som gjelder</h3>
-        <p data-lang="en">SINAPS reads overlapping standards, amendments, internal documents and supplier documents into one model.</p>
-        <p data-lang="no" lang="nb">SINAPS leser overlappende standarder, endringer, interne dokumenter og leverandørdokumenter inn i én modell.</p>
+        <p data-lang="en">SINAPSET reads overlapping standards, amendments, internal documents and supplier documents into one model.</p>
+        <p data-lang="no" lang="nb">SINAPSET leser overlappende standarder, endringer, interne dokumenter og leverandørdokumenter inn i én modell.</p>
       </div>
-    </div>
-    <div class="delivery-card">
-      <div class="delivery-num label" data-lang="en">02 Trace</div>
-      <div class="delivery-num label" data-lang="no" lang="nb">02 Spor</div>
-      <div>
+      <div class="step">
+        <div class="glyph" aria-hidden="true"><span class="doc"></span><span class="fan"><i class="re"></i><i class="re"></i><i></i></span></div>
+        <span class="step-num"><span data-lang="en">02 Trace</span><span data-lang="no" lang="nb">02 Spor</span></span>
         <h3 data-lang="en">What the change touches</h3>
         <h3 data-lang="no" lang="nb">Hva endringen berører</h3>
-        <p data-lang="en">When a document is replaced, SINAPS marks the clauses, assets and open work that have to be looked at again.</p>
-        <p data-lang="no" lang="nb">Når et dokument erstattes, markerer SINAPS klausulene, objektene og det åpne arbeidet som må ses på nytt.</p>
+        <p data-lang="en">When a document is replaced, SINAPSET marks the clauses, assets and open work that have to be looked at again.</p>
+        <p data-lang="no" lang="nb">Når et dokument erstattes, markerer SINAPSET klausulene, objektene og det åpne arbeidet som må ses på nytt.</p>
       </div>
-    </div>
-    <div class="delivery-card">
-      <div class="delivery-num label" data-lang="en">03 Show</div>
-      <div class="delivery-num label" data-lang="no" lang="nb">03 Vis</div>
-      <div>
+      <div class="step">
+        <div class="glyph" aria-hidden="true"><span class="hl"></span></div>
+        <span class="step-num"><span data-lang="en">03 Show</span><span data-lang="no" lang="nb">03 Vis</span></span>
         <h3 data-lang="en">The clause, or nothing</h3>
         <h3 data-lang="no" lang="nb">Klausulen, eller ingenting</h3>
-        <p data-lang="en">Every line shows the clause it came from. When the documents do not say, SINAPS says it cannot tell.</p>
-        <p data-lang="no" lang="nb">Hver linje viser klausulen den kom fra. Når dokumentene ikke gir svar, sier SINAPS fra om at det ikke kan avgjøres.</p>
+        <p data-lang="en">Every line shows the clause it came from. When the documents do not say, SINAPSET says it cannot tell.</p>
+        <p data-lang="no" lang="nb">Hver linje viser klausulen den kom fra. Når dokumentene ikke gir svar, sier SINAPSET fra om at det ikke kan avgjøres.</p>
       </div>
-    </div>
-    <div class="delivery-card">
-      <div class="delivery-num label" data-lang="en">04 Act</div>
-      <div class="delivery-num label" data-lang="no" lang="nb">04 Utfør</div>
-      <div>
+      <div class="step">
+        <div class="glyph" aria-hidden="true"><span class="sq" style="width:28px;height:28px"></span><span class="ci" style="width:30px;height:30px;margin-left:-12px"></span></div>
+        <span class="step-num"><span data-lang="en">04 Act</span><span data-lang="no" lang="nb">04 Utfør</span></span>
         <h3 data-lang="en">Prepared work, then a person</h3>
         <h3 data-lang="no" lang="nb">Klargjort arbeid, så en person</h3>
-        <p data-lang="en">SINAPS prepares the work. It goes into the client’s systems only after a person approves.</p>
-        <p data-lang="no" lang="nb">SINAPS forbereder arbeidet. Det går inn i kundens systemer først etter at en person har godkjent.</p>
+        <p data-lang="en">SINAPSET prepares the work. It goes into the client’s systems only after a person approves.</p>
+        <p data-lang="no" lang="nb">SINAPSET forbereder arbeidet. Det går inn i kundens systemer først etter at en person har godkjent.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXAMPLE -->
-<section class="services" id="example">
-  <div class="section-label" data-lang="en">Examples</div>
-  <div class="section-label" data-lang="no" lang="nb">Eksempler</div>
-  <h2 data-lang="en">Three sample jobs. Not finished projects.</h2>
-  <h2 data-lang="no" lang="nb">Tre eksempeljobber. Ikke ferdige prosjekter.</h2>
-  <p class="section-intro" data-lang="en">All three use the same model. No customer is named, and no result is claimed.</p>
-  <p class="section-intro" data-lang="no" lang="nb">Alle tre bruker den samme modellen. Ingen kunde er navngitt, og ingen resultat er oppgitt.</p>
-  <div class="service-grid">
-    <div class="service-card">
-      <span class="service-tag" data-lang="en">01 · The baseline changes</span>
-      <span class="service-tag" data-lang="no" lang="nb">01 · Grunnlaget endres</span>
-      <h3 data-lang="en">What does the change do to the hardware and the open orders?</h3>
-      <h3 data-lang="no" lang="nb">Hva gjør endringen med utstyret og de åpne ordrene?</h3>
-      <p data-lang="en">In this sample, a contract modification updates the baseline across overlapping specifications, for example a NASA standard, an ECSS standard and an internal specification.</p>
-      <p data-lang="no" lang="nb">I dette eksempelet oppdaterer en kontraktsendring grunnlaget på tvers av overlappende spesifikasjoner, for eksempel en NASA-standard, en ECSS-standard og en intern spesifikasjon.</p>
-      <ul class="service-list">
-        <li data-lang="en">Marks the stored lots that need another inspection, without taking built hardware apart.</li>
-        <li data-lang="no" lang="nb">Markerer lagrede partier som trenger en ny inspeksjon, uten å ta bygget utstyr fra hverandre.</li>
-        <li data-lang="en">Checks supplier quotes against the shelf-life, qualification and plating rules in the documents.</li>
-        <li data-lang="no" lang="nb">Kontrollerer leverandørtilbud mot holdbarhets-, kvalifikasjons- og beleggsreglene i dokumentene.</li>
-        <li data-lang="en">Prepares a supplier change, a deviation or a specification revision for a person to approve.</li>
-        <li data-lang="no" lang="nb">Forbereder et leverandørbytte, et avvik eller en spesifikasjonsrevisjon som en person skal godkjenne.</li>
-      </ul>
+<!-- EXAMPLES -->
+<section id="example">
+  <div class="inner">
+    <div class="section-label" data-lang="en">Examples</div>
+    <div class="section-label" data-lang="no" lang="nb">Eksempler</div>
+    <h2 data-lang="en">When a document is replaced, see what it touches.</h2>
+    <h2 data-lang="no" lang="nb">Når et dokument erstattes, ser du hva det berører.</h2>
+    <p class="section-intro" data-lang="en">Three sample jobs, not finished projects. All three use the same model. No customer is named, and no result is claimed.</p>
+    <p class="section-intro" data-lang="no" lang="nb">Tre eksempeljobber, ikke ferdige prosjekter. Alle tre bruker den samme modellen. Ingen kunde er navngitt, og ingen resultat er oppgitt.</p>
+
+    <div class="change" role="img" aria-label="A new edition replaces the old one; SINAPSET marks affected clauses, stored items and open orders for re-check, and shows what carries over.">
+      <div class="editions">
+        <div class="ed box old"><span class="doc"></span><span><b data-lang="en">Edition A</b><b data-lang="no" lang="nb">Utgave A</b><small><span data-lang="en">The standard your work was built on</span><span data-lang="no" lang="nb">Standarden arbeidet bygde på</span></small></span></div>
+        <div class="ed box"><span class="doc"></span><span><b data-lang="en">Edition B replaces it</b><b data-lang="no" lang="nb">Utgave B erstatter den</b><small><span data-lang="en">Arrives with a contract change</span><span data-lang="no" lang="nb">Kommer med en kontraktsendring</span></small></span></div>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="impact">
+        <div class="imp box"><span><span data-lang="en">Clauses in your own specification</span><span data-lang="no" lang="nb">Klausuler i deres egen spesifikasjon</span><small><span data-lang="en">That claimed edition A</span><span data-lang="no" lang="nb">Som viste til utgave A</span></small></span><span class="flag re"><span data-lang="en">Re-check</span><span data-lang="no" lang="nb">Kontroller</span></span></div>
+        <div class="imp box"><span><span data-lang="en">Stored items and lots</span><span data-lang="no" lang="nb">Lagrede enheter og partier</span><small><span data-lang="en">Inspected to the old rules</span><span data-lang="no" lang="nb">Kontrollert etter de gamle reglene</span></small></span><span class="flag re"><span data-lang="en">Re-check</span><span data-lang="no" lang="nb">Kontroller</span></span></div>
+        <div class="imp box"><span><span data-lang="en">Open orders and quotes</span><span data-lang="no" lang="nb">Åpne ordrer og tilbud</span><small><span data-lang="en">Checked against edition B</span><span data-lang="no" lang="nb">Kontrollert mot utgave B</span></small></span><span class="flag re"><span data-lang="en">Re-check</span><span data-lang="no" lang="nb">Kontroller</span></span></div>
+        <div class="imp box"><span><span data-lang="en">Work the change does not touch</span><span data-lang="no" lang="nb">Arbeid endringen ikke berører</span><small><span data-lang="en">With the clause that says so</span><span data-lang="no" lang="nb">Med klausulen som sier det</span></small></span><span class="flag ok"><span data-lang="en">Carries over</span><span data-lang="no" lang="nb">Gjelder fortsatt</span></span></div>
+      </div>
     </div>
-    <div class="service-card">
-      <span class="service-tag" data-lang="en">02 · A revision lands</span>
-      <span class="service-tag" data-lang="no" lang="nb">02 · En revisjon kommer</span>
-      <h3 data-lang="en">Which designs and test plans still hold?</h3>
-      <h3 data-lang="no" lang="nb">Hvilke design og testplaner gjelder fortsatt?</h3>
-      <p data-lang="en">In this sample, a base standard and its amendment notices, for example MIL-STD-889B and its notices, are read against the newer revision.</p>
-      <p data-lang="no" lang="nb">I dette eksempelet leses en grunnstandard og endringsmeldingene til den, for eksempel MIL-STD-889B og meldingene, mot den nyere revisjonen.</p>
-      <ul class="service-list">
-        <li data-lang="en">Finds where “should” became “shall”.</li>
-        <li data-lang="no" lang="nb">Finner hvor «bør» er blitt «skal».</li>
-        <li data-lang="en">Finds where the specification asks for test evidence, for example to ASTM B117, and the evidence is missing.</li>
-        <li data-lang="no" lang="nb">Finner hvor spesifikasjonen ber om testbevis, for eksempel etter ASTM B117, og beviset mangler.</li>
-        <li data-lang="en">Flags a supplier material claim that the standard’s tables do not support.</li>
-        <li data-lang="no" lang="nb">Markerer en materialpåstand fra en leverandør som standardens tabeller ikke støtter.</li>
-      </ul>
-    </div>
-    <div class="service-card">
-      <span class="service-tag" data-lang="en">03 · One package</span>
-      <span class="service-tag" data-lang="no" lang="nb">03 · Én pakke</span>
-      <h3 data-lang="en">Specifications for one valve package in, three documents out.</h3>
-      <h3 data-lang="no" lang="nb">Spesifikasjoner for én ventilpakke inn, tre dokumenter ut.</h3>
-      <p data-lang="en">In this sample, SINAPS prepares a purchase request, a datasheet and a test matrix for a person to approve.</p>
-      <p data-lang="no" lang="nb">I dette eksempelet forbereder SINAPS en innkjøpsforespørsel, et datablad og en testmatrise som en person skal godkjenne.</p>
-      <ul class="service-list">
-        <li data-lang="en">Every line shows the clause it came from.</li>
-        <li data-lang="no" lang="nb">Hver linje viser klausulen den kom fra.</li>
-        <li data-lang="en">Nothing goes into your systems until a person approves.</li>
-        <li data-lang="no" lang="nb">Ingenting går inn i systemene deres før en person har godkjent.</li>
-      </ul>
+
+    <div class="cards">
+      <div class="card box">
+        <span class="card-tag" data-lang="en">01 · The baseline changes</span>
+        <span class="card-tag" data-lang="no" lang="nb">01 · Grunnlaget endres</span>
+        <h3 data-lang="en">What does the change do to the hardware and the open orders?</h3>
+        <h3 data-lang="no" lang="nb">Hva gjør endringen med utstyret og de åpne ordrene?</h3>
+        <p data-lang="en">In this sample, a contract modification updates the baseline across overlapping specifications, for example a NASA standard, an ECSS standard and an internal specification.</p>
+        <p data-lang="no" lang="nb">I dette eksempelet oppdaterer en kontraktsendring grunnlaget på tvers av overlappende spesifikasjoner, for eksempel en NASA-standard, en ECSS-standard og en intern spesifikasjon.</p>
+        <ul class="list">
+          <li data-lang="en">Marks the stored lots that need another inspection, without taking built hardware apart.</li>
+          <li data-lang="no" lang="nb">Markerer lagrede partier som trenger en ny inspeksjon, uten å ta bygget utstyr fra hverandre.</li>
+          <li data-lang="en">Checks supplier quotes against the shelf-life, qualification and plating rules in the documents.</li>
+          <li data-lang="no" lang="nb">Kontrollerer leverandørtilbud mot holdbarhets-, kvalifikasjons- og beleggsreglene i dokumentene.</li>
+          <li data-lang="en">Prepares a supplier change, a deviation or a specification revision for a person to approve.</li>
+          <li data-lang="no" lang="nb">Forbereder et leverandørbytte, et avvik eller en spesifikasjonsrevisjon som en person skal godkjenne.</li>
+        </ul>
+      </div>
+      <div class="card box">
+        <span class="card-tag" data-lang="en">02 · A revision lands</span>
+        <span class="card-tag" data-lang="no" lang="nb">02 · En revisjon kommer</span>
+        <h3 data-lang="en">Which designs and test plans still hold?</h3>
+        <h3 data-lang="no" lang="nb">Hvilke design og testplaner gjelder fortsatt?</h3>
+        <p data-lang="en">In this sample, a base standard and its amendment notices, for example MIL&#8209;STD&#8209;889B and its notices, are read against the newer revision.</p>
+        <p data-lang="no" lang="nb">I dette eksempelet leses en grunnstandard og endringsmeldingene til den, for eksempel MIL&#8209;STD&#8209;889B og meldingene, mot den nyere revisjonen.</p>
+        <ul class="list">
+          <li data-lang="en">Finds where “should” became “shall”.</li>
+          <li data-lang="no" lang="nb">Finner hvor «bør» er blitt «skal».</li>
+          <li data-lang="en">Finds where the specification asks for test evidence, for example to ASTM&nbsp;B117, and the evidence is missing.</li>
+          <li data-lang="no" lang="nb">Finner hvor spesifikasjonen ber om testbevis, for eksempel etter ASTM&nbsp;B117, og beviset mangler.</li>
+          <li data-lang="en">Flags a supplier material claim that the standard’s tables do not support.</li>
+          <li data-lang="no" lang="nb">Markerer en materialpåstand fra en leverandør som standardens tabeller ikke støtter.</li>
+        </ul>
+      </div>
+      <div class="card box">
+        <span class="card-tag" data-lang="en">03 · One package</span>
+        <span class="card-tag" data-lang="no" lang="nb">03 · Én pakke</span>
+        <h3 data-lang="en">Specifications for one valve package in, three documents out.</h3>
+        <h3 data-lang="no" lang="nb">Spesifikasjoner for én ventilpakke inn, tre dokumenter ut.</h3>
+        <p data-lang="en">In this sample, SINAPSET prepares a purchase request, a datasheet and a test matrix for a person to approve.</p>
+        <p data-lang="no" lang="nb">I dette eksempelet forbereder SINAPSET en innkjøpsforespørsel, et datablad og en testmatrise som en person skal godkjenne.</p>
+        <ul class="list">
+          <li data-lang="en">Every line shows the clause it came from.</li>
+          <li data-lang="no" lang="nb">Hver linje viser klausulen den kom fra.</li>
+          <li data-lang="en">Nothing goes into your systems until a person approves.</li>
+          <li data-lang="no" lang="nb">Ingenting går inn i systemene deres før en person har godkjent.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- MODEL -->
-<section class="domains" id="model">
-  <div class="section-label" data-lang="en">The model</div>
-  <div class="section-label" data-lang="no" lang="nb">Modellen</div>
-  <h2 data-lang="en">One model. Six axes.</h2>
-  <h2 data-lang="no" lang="nb">Én modell. Seks akser.</h2>
-  <p class="section-intro" data-lang="en">A semantic layer is the organisation’s shared model of meaning. People and agents use the same facts, and each fact points back to the document it came from. Without that layer, each tool invents its own reading of the same documents.</p>
-  <p class="section-intro" data-lang="no" lang="nb">Et semantisk lag er organisasjonens felles modell for mening. Mennesker og agenter bruker de samme faktaene, og hvert faktum peker tilbake til dokumentet det kom fra. Uten den modellen leser hvert verktøy de samme dokumentene på sin egen måte.</p>
-  <p class="section-intro" data-lang="en">SINAPS is that layer for the organisation’s own documents. It reads, reasons and acts, a person approves every action, and every fact stays traceable to its source. The axes stay the same when the documents change.</p>
-  <p class="section-intro" data-lang="no" lang="nb">SINAPS er den modellen for organisasjonens egne dokumenter. Det leser, resonnerer og handler, en person godkjenner hver handling, og hvert faktum kan spores til kilden. Aksene er de samme når dokumentene endres.</p>
-  <div class="domains-grid">
-    <div class="domain-card">
-      <h4 data-lang="en">Asset</h4><h4 data-lang="no" lang="nb">Objekt</h4>
-      <p data-lang="en">Equipment, a contract, or another thing the documents describe.</p>
-      <p data-lang="no" lang="nb">Utstyr, en kontrakt, eller noe annet dokumentene beskriver.</p>
+<section class="dark on-dark" id="model">
+  <div class="inner">
+    <div class="section-label" data-lang="en">The model</div>
+    <div class="section-label" data-lang="no" lang="nb">Modellen</div>
+    <h2 data-lang="en">One model. Six axes.</h2>
+    <h2 data-lang="no" lang="nb">Én modell. Seks akser.</h2>
+    <p class="section-intro" data-lang="en">A semantic layer is the organisation’s shared model of meaning. People and agents use the same facts, and each fact points back to the document it came from. Without that layer, each tool invents its own reading of the same documents.</p>
+    <p class="section-intro" data-lang="no" lang="nb">Et semantisk lag er organisasjonens felles modell for mening. Mennesker og agenter bruker de samme faktaene, og hvert faktum peker tilbake til dokumentet det kom fra. Uten den modellen leser hvert verktøy de samme dokumentene på sin egen måte.</p>
+    <div class="axes" role="img" aria-label="Six axes around one fact that points to its source clause.">
+      <div class="axis"><span class="k">1</span><h4 data-lang="en">Asset</h4><h4 data-lang="no" lang="nb">Objekt</h4>
+        <p data-lang="en">Equipment, a contract, or another thing the documents describe.</p>
+        <p data-lang="no" lang="nb">Utstyr, en kontrakt, eller noe annet dokumentene beskriver.</p></div>
+      <div class="axis"><span class="k">2</span><h4 data-lang="en">Requirements</h4><h4 data-lang="no" lang="nb">Krav</h4>
+        <p data-lang="en">Clauses, tables, and what is required rather than advised.</p>
+        <p data-lang="no" lang="nb">Klausuler, tabeller, og det som er påkrevd og ikke bare anbefalt.</p></div>
+      <div class="axis"><span class="k">3</span><h4 data-lang="en">Applicability</h4><h4 data-lang="no" lang="nb">Virkeområde</h4>
+        <p data-lang="en">Where a requirement applies, and which edition replaced the last one.</p>
+        <p data-lang="no" lang="nb">Hvor et krav gjelder, og hvilken utgave som erstattet den forrige.</p></div>
+      <div class="hub">
+        <div class="fact"><span data-lang="en">One fact</span><span data-lang="no" lang="nb">Ett faktum</span><small><span data-lang="en">Read once, used by every person and agent</span><span data-lang="no" lang="nb">Lest én gang, brukt av alle personer og agenter</span></small></div>
+        <span class="link" aria-hidden="true">⟶</span>
+        <div class="src"><span><span data-lang="en">Its source clause</span><span data-lang="no" lang="nb">Kildeklausulen</span><small><span data-lang="en">Document, edition, page</span><span data-lang="no" lang="nb">Dokument, utgave, side</span></small></span><span class="doc"></span></div>
+      </div>
+      <div class="axis"><span class="k">4</span><h4 data-lang="en">Lifecycle</h4><h4 data-lang="no" lang="nb">Livssyklus</h4>
+        <p data-lang="en">From design and enquiry through to the record of what was done.</p>
+        <p data-lang="no" lang="nb">Fra design og forespørsel til registreringen av det som ble gjort.</p></div>
+      <div class="axis"><span class="k">5</span><h4 data-lang="en">Party</h4><h4 data-lang="no" lang="nb">Aktør</h4>
+        <p data-lang="en">Who issued the document, who supplies, and who approves.</p>
+        <p data-lang="no" lang="nb">Hvem som utstedte dokumentet, hvem som leverer, og hvem som godkjenner.</p></div>
+      <div class="axis"><span class="k">6</span><h4 data-lang="en">Location</h4><h4 data-lang="no" lang="nb">Sted</h4>
+        <p data-lang="en">The site, the warehouse, or the jurisdiction the document names.</p>
+        <p data-lang="no" lang="nb">Anlegget, lageret, eller jurisdiksjonen dokumentet nevner.</p></div>
     </div>
-    <div class="domain-card">
-      <h4 data-lang="en">Requirements</h4><h4 data-lang="no" lang="nb">Krav</h4>
-      <p data-lang="en">Clauses, tables, and what is required rather than advised.</p>
-      <p data-lang="no" lang="nb">Klausuler, tabeller, og det som er påkrevd og ikke bare anbefalt.</p>
-    </div>
-    <div class="domain-card">
-      <h4 data-lang="en">Applicability</h4><h4 data-lang="no" lang="nb">Virkeområde</h4>
-      <p data-lang="en">Where a requirement applies, and which edition replaced the last one.</p>
-      <p data-lang="no" lang="nb">Hvor et krav gjelder, og hvilken utgave som erstattet den forrige.</p>
-    </div>
-    <div class="domain-card">
-      <h4 data-lang="en">Lifecycle</h4><h4 data-lang="no" lang="nb">Livssyklus</h4>
-      <p data-lang="en">From design and enquiry through to the record of what was done.</p>
-      <p data-lang="no" lang="nb">Fra design og forespørsel til registreringen av det som ble gjort.</p>
-    </div>
-    <div class="domain-card">
-      <h4 data-lang="en">Party</h4><h4 data-lang="no" lang="nb">Aktør</h4>
-      <p data-lang="en">Who issued the document, who supplies, and who approves.</p>
-      <p data-lang="no" lang="nb">Hvem som utstedte dokumentet, hvem som leverer, og hvem som godkjenner.</p>
-    </div>
-    <div class="domain-card">
-      <h4 data-lang="en">Location</h4><h4 data-lang="no" lang="nb">Sted</h4>
-      <p data-lang="en">The site, the warehouse, or the jurisdiction the document names.</p>
-      <p data-lang="no" lang="nb">Anlegget, lageret, eller jurisdiksjonen dokumentet nevner.</p>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="band-white" id="connect">
+  <div class="inner">
+    <div class="section-label" data-lang="en">Connect</div>
+    <div class="section-label" data-lang="no" lang="nb">Tilkobling</div>
+    <h2 data-lang="en">One layer over the systems you already run.</h2>
+    <h2 data-lang="no" lang="nb">Ett lag over systemene dere allerede bruker.</h2>
+    <p class="section-intro" data-lang="en">Your systems stay the system of record. SINAPSET reads what a job needs, under your own credentials, and keeps a record of what it read.</p>
+    <p class="section-intro" data-lang="no" lang="nb">Systemene deres forblir kildesystemene. SINAPSET leser det en jobb trenger, med deres egen tilgang, og tar vare på hva den leste.</p>
+    <div class="connect" role="img" aria-label="Documents and data platforms feed SINAPSET; AI agents and your business systems work with it after approval.">
+      <div class="side l">
+        <div class="col-label"><span data-lang="en">Reads from</span><span data-lang="no" lang="nb">Leser fra</span></div>
+        <div class="conn box"><span><span data-lang="en">Documents</span><span data-lang="no" lang="nb">Dokumenter</span><small>PDF, Word, Excel</small></span></div>
+        <div class="conn box"><span>Cognite Data Fusion<small><span data-lang="en">Assets and files</span><span data-lang="no" lang="nb">Objekter og filer</span></small></span></div>
+        <div class="conn box"><span>Microsoft Fabric<small><span data-lang="en">Lakehouse tables</span><span data-lang="no" lang="nb">Lakehouse-tabeller</span></small></span></div>
+        <div class="conn box"><span>SharePoint<small><span data-lang="en">Document libraries</span><span data-lang="no" lang="nb">Dokumentbiblioteker</span></small></span><span class="flag"><span data-lang="en">Coming</span><span data-lang="no" lang="nb">Kommer</span></span></div>
+      </div>
+      <div class="mark-ring"><span class="lockup"><svg class="mk" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#sinapset-mark"/></svg><span class="wm" aria-hidden="true">SINAPSET</span></span></div>
+      <div class="side r">
+        <div class="col-label"><span data-lang="en">Works with</span><span data-lang="no" lang="nb">Fungerer med</span></div>
+        <div class="conn box"><span><span data-lang="en">AI agents</span><span data-lang="no" lang="nb">KI-agenter</span><small><span data-lang="en">Governed access over MCP</span><span data-lang="no" lang="nb">Styrt tilgang via MCP</span></small></span></div>
+        <div class="conn box"><span>ERP<small><span data-lang="en">A purchase request, after approval</span><span data-lang="no" lang="nb">En innkjøpsforespørsel, etter godkjenning</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">Document control</span><span data-lang="no" lang="nb">Dokumentkontroll</span><small><span data-lang="en">A technical query, after approval</span><span data-lang="no" lang="nb">En teknisk forespørsel, etter godkjenning</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">Graph tools</span><span data-lang="no" lang="nb">Grafverktøy</span><small><span data-lang="en">Open standards: RDF, OWL, SHACL</span><span data-lang="no" lang="nb">Åpne standarder: RDF, OWL, SHACL</span></small></span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- DIFFERENCE -->
-<section class="benefits" id="difference">
-  <div class="section-label" data-lang="en">Why SINAPS</div>
-  <div class="section-label" data-lang="no" lang="nb">Hvorfor SINAPS</div>
-  <h2 data-lang="en">What is different about SINAPS</h2>
-  <h2 data-lang="no" lang="nb">Det som er annerledes med SINAPS</h2>
-  <div class="benefits-grid">
-    <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">1</div>
-      <div>
-        <h4 data-lang="en">It acts after approval</h4>
-        <h4 data-lang="no" lang="nb">Iverksetter etter godkjenning</h4>
-        <p data-lang="en">Prepared work goes into the client’s systems after a person approves.</p>
-        <p data-lang="no" lang="nb">Klargjort arbeid går inn i kundens systemer etter at en person har godkjent.</p>
+<section class="rule" id="difference">
+  <div class="inner">
+    <div class="section-label" data-lang="en">Why SINAPSET</div>
+    <div class="section-label" data-lang="no" lang="nb">Hvorfor SINAPSET</div>
+    <h2 data-lang="en">Agents do the reading. A person stays in charge.</h2>
+    <h2 data-lang="no" lang="nb">Agentene leser. En person har kontrollen.</h2>
+    <p class="section-intro" data-lang="en">People and AI agents work in the same place. Agents prepare the work, a person decides, and the decision is kept.</p>
+    <p class="section-intro" data-lang="no" lang="nb">Mennesker og KI-agenter arbeider på samme sted. Agentene forbereder, en person avgjør, og beslutningen tas vare på.</p>
+
+    <div class="approve" role="img" aria-label="An agent prepares work with its clause, a person approves it, and the work goes into your systems with the decision recorded.">
+      <div class="ap box agent">
+        <span class="who"><span class="sq"></span><span data-lang="en">Agent</span><span data-lang="no" lang="nb">Agent</span></span>
+        <h4 data-lang="en">Prepares the work</h4><h4 data-lang="no" lang="nb">Forbereder arbeidet</h4>
+        <p data-lang="en">A deviation, a supplier change or a revised clause, each line with its source.</p>
+        <p data-lang="no" lang="nb">Et avvik, et leverandørbytte eller en revidert klausul, hver linje med sin kilde.</p>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="ap box person">
+        <span class="who"><span class="ci"></span><span data-lang="en">Person</span><span data-lang="no" lang="nb">Person</span></span>
+        <h4 data-lang="en">Approves or sends back</h4><h4 data-lang="no" lang="nb">Godkjenner eller sender tilbake</h4>
+        <p data-lang="en">When the documents do not say, SINAPSET says “cannot tell” and asks an expert.</p>
+        <p data-lang="no" lang="nb">Når dokumentene ikke gir svar, sier SINAPSET at det ikke kan avgjøres, og spør en fagperson.</p>
+        <span class="note" data-lang="en">Nothing changes until a person approves.</span>
+        <span class="note" data-lang="no" lang="nb">Ingenting endres før en person har godkjent.</span>
+      </div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="ap box">
+        <span class="who"><span class="sys"></span><span data-lang="en">Your systems</span><span data-lang="no" lang="nb">Deres systemer</span></span>
+        <h4 data-lang="en">Acts, and remembers</h4><h4 data-lang="no" lang="nb">Utfører, og husker</h4>
+        <p data-lang="en">The work goes in, and the decision is kept with who made it and why.</p>
+        <p data-lang="no" lang="nb">Arbeidet går inn, og beslutningen lagres med hvem som tok den og hvorfor.</p>
       </div>
     </div>
-    <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">2</div>
-      <div>
-        <h4 data-lang="en">People and AI agents, one place</h4>
-        <h4 data-lang="no" lang="nb">Mennesker og KI-agenter, ett sted</h4>
-        <p data-lang="en">People and AI agents work in the same place, and every decision is remembered.</p>
-        <p data-lang="no" lang="nb">Mennesker og KI-agenter arbeider på samme sted, og hver beslutning huskes.</p>
+
+  </div>
+</section>
+
+<!-- NEXT -->
+<section class="band-birch" id="work">
+  <div class="inner">
+    <div class="section-label" data-lang="en">The work</div>
+    <div class="section-label" data-lang="no" lang="nb">Arbeidet</div>
+    <h2 data-lang="en">The next job runs on the same model.</h2>
+    <h2 data-lang="no" lang="nb">Neste jobb kjører på den samme modellen.</h2>
+    <p class="section-intro" data-lang="en">That is the reason to choose SINAPSET over a single tool. These are kinds of work, not completed projects.</p>
+    <p class="section-intro" data-lang="no" lang="nb">Derfor velger man SINAPSET framfor ett enkelt verktøy. Dette er typer arbeid, ikke ferdige prosjekter.</p>
+    <div class="cards">
+      <div class="card box">
+        <span class="card-tag" data-lang="en">A document changes</span>
+        <span class="card-tag" data-lang="no" lang="nb">Et dokument endres</span>
+        <h3 data-lang="en">What else has to be looked at?</h3>
+        <h3 data-lang="no" lang="nb">Hva annet må ses på?</h3>
+        <p data-lang="en">A standard or a contract is replaced. SINAPSET finds the assets and the open work the change touches.</p>
+        <p data-lang="no" lang="nb">En standard eller en kontrakt erstattes. SINAPSET finner objektene og det åpne arbeidet endringen berører.</p>
       </div>
-    </div>
-    <div class="benefit-item">
-      <div class="benefit-check" aria-hidden="true">3</div>
-      <div>
-        <h4 data-lang="en">It says “cannot tell”</h4>
-        <h4 data-lang="no" lang="nb">Den sier fra når dokumentene ikke gir svar</h4>
-        <p data-lang="en">When the documents do not say, it says “cannot tell”.</p>
-        <p data-lang="no" lang="nb">Når dokumentene ikke gir svar, sier SINAPS fra om at det ikke kan avgjøres.</p>
+      <div class="card box">
+        <span class="card-tag" data-lang="en">Documents in, prepared work out</span>
+        <span class="card-tag" data-lang="no" lang="nb">Dokumenter inn, klargjort arbeid ut</span>
+        <h3 data-lang="en">The prepared work, each line traced.</h3>
+        <h3 data-lang="no" lang="nb">Det klargjorte arbeidet, hver linje sporet.</h3>
+        <p data-lang="en">A requirements package comes in. The prepared work comes out. Every line shows the clause it came from.</p>
+        <p data-lang="no" lang="nb">En kravpakke kommer inn. Det klargjorte arbeidet kommer ut. Hver linje viser klausulen den kom fra.</p>
+      </div>
+      <div class="card box">
+        <span class="card-tag" data-lang="en">Same model, later</span>
+        <span class="card-tag" data-lang="no" lang="nb">Samme modell, senere</span>
+        <h3 data-lang="en">Finance and legal come next, on the same model.</h3>
+        <h3 data-lang="no" lang="nb">Økonomi og juss kommer etterpå, på den samme modellen.</h3>
+        <p data-lang="en">They are not done yet.</p>
+        <p data-lang="no" lang="nb">De er ikke ferdige ennå.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEXT -->
-<section class="services" id="work">
-  <div class="section-label" data-lang="en">The work</div>
-  <div class="section-label" data-lang="no" lang="nb">Arbeidet</div>
-  <h2 data-lang="en">The next job runs on the same model.</h2>
-  <h2 data-lang="no" lang="nb">Neste jobb kjører på den samme modellen.</h2>
-  <p class="section-intro" data-lang="en">That is the reason to choose SINAPS over a single tool. These are kinds of work, not completed projects.</p>
-  <p class="section-intro" data-lang="no" lang="nb">Derfor velger man SINAPS framfor ett enkelt verktøy. Dette er typer arbeid, ikke ferdige prosjekter.</p>
-  <div class="service-grid">
-    <div class="service-card">
-      <span class="service-tag" data-lang="en">A document changes</span>
-      <span class="service-tag" data-lang="no" lang="nb">Et dokument endres</span>
-      <h3 data-lang="en">What else has to be looked at?</h3>
-      <h3 data-lang="no" lang="nb">Hva annet må ses på?</h3>
-      <p data-lang="en">A standard or a contract is replaced. SINAPS finds the assets and the open work the change touches.</p>
-      <p data-lang="no" lang="nb">En standard eller en kontrakt erstattes. SINAPS finner objektene og det åpne arbeidet endringen berører.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-tag" data-lang="en">Documents in, prepared work out</span>
-      <span class="service-tag" data-lang="no" lang="nb">Dokumenter inn, klargjort arbeid ut</span>
-      <h3 data-lang="en">The prepared work, each line traced.</h3>
-      <h3 data-lang="no" lang="nb">Det klargjorte arbeidet, hver linje sporet.</h3>
-      <p data-lang="en">A requirements package comes in. The prepared work comes out. Every line shows the clause it came from.</p>
-      <p data-lang="no" lang="nb">En kravpakke kommer inn. Det klargjorte arbeidet kommer ut. Hver linje viser klausulen den kom fra.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-tag" data-lang="en">Same model, later</span>
-      <span class="service-tag" data-lang="no" lang="nb">Samme modell, senere</span>
-      <h3 data-lang="en">Finance and legal come next, on the same model.</h3>
-      <h3 data-lang="no" lang="nb">Økonomi og juss kommer etterpå, på den samme modellen.</h3>
-      <p data-lang="en">They are not done yet.</p>
-      <p data-lang="no" lang="nb">De er ikke ferdige ennå.</p>
+<!-- FAQ -->
+<section class="band-white" id="faq">
+  <div class="inner">
+    <div class="section-label" data-lang="en">Questions</div>
+    <div class="section-label" data-lang="no" lang="nb">Spørsmål</div>
+    <h2 data-lang="en">Frequently asked</h2>
+    <h2 data-lang="no" lang="nb">Ofte stilte spørsmål</h2>
+    <div class="faq">
+      <details>
+        <summary><span data-lang="en">What is SINAPSET?</span><span data-lang="no" lang="nb">Hva er SINAPSET?</span></summary>
+        <p data-lang="en">SINAPSET is an enterprise semantic layer from EikenTech. It reads an organisation’s standards, contracts, specifications and supplier documents into one shared model of assets, requirements and where each requirement applies. Every fact points to the clause it came from. AI agents prepare work from that model, and a person approves it before anything goes into the organisation’s systems.</p>
+        <p data-lang="no" lang="nb">SINAPSET er et semantisk lag for virksomheter, laget av EikenTech. Det leser organisasjonens standarder, kontrakter, spesifikasjoner og leverandørdokumenter inn i én felles modell av objekter, krav og hvor hvert krav gjelder. Hvert faktum peker til klausulen det kom fra. KI-agenter klargjør arbeid fra modellen, og en person godkjenner det før noe går inn i organisasjonens systemer.</p>
+      </details>
+      <details>
+        <summary><span data-lang="en">What problems does SINAPSET solve?</span><span data-lang="no" lang="nb">Hvilke problemer løser SINAPSET?</span></summary>
+        <p data-lang="en">It answers the questions that otherwise take days of reading: what a revised standard or contract change affects, where your specification disagrees with the standards it claims, whether a supplier’s quote or datasheet meets your requirements, which requirements apply to a piece of equipment, and why a past decision was made.</p>
+        <p data-lang="no" lang="nb">Det besvarer spørsmål som ellers krever dager med lesing: hva en revidert standard eller kontraktsendring berører, hvor spesifikasjonen avviker fra standardene den viser til, om et leverandørtilbud eller datablad oppfyller kravene, hvilke krav som gjelder for et utstyr, og hvorfor en tidligere beslutning ble tatt.</p>
+      </details>
+      <details>
+        <summary><span data-lang="en">Who is SINAPSET for?</span><span data-lang="no" lang="nb">Hvem er SINAPSET for?</span></summary>
+        <p data-lang="en">Engineering, quality and product assurance, procurement and supplier quality, document control and compliance teams in industries run on standards, such as space, aerospace and defence, oil and gas and offshore, energy and manufacturing.</p>
+        <p data-lang="no" lang="nb">Team innen prosjektering, kvalitet og produktsikring, innkjøp og leverandørkvalitet, dokumentkontroll og samsvar, i bransjer som styres av standarder, som romfart, luftfart og forsvar, olje og gass og offshore, energi og industri.</p>
+      </details>
+      <details>
+        <summary><span data-lang="en">How is it different from a chatbot or document search?</span><span data-lang="no" lang="nb">Hva skiller det fra en chatbot eller dokumentsøk?</span></summary>
+        <p data-lang="en">A chatbot or search tool finds text and lets a model guess. SINAPSET builds a structured model of requirements, assets and editions, shows the clause behind every line, and says “cannot tell” when the documents do not give an answer. A person approves the work, and the decision is kept.</p>
+        <p data-lang="no" lang="nb">En chatbot eller et søkeverktøy finner tekst og lar en modell gjette. SINAPSET bygger en strukturert modell av krav, objekter og utgaver, viser klausulen bak hver linje, og sier at det ikke kan avgjøres når dokumentene ikke gir svar. En person godkjenner arbeidet, og beslutningen lagres.</p>
+      </details>
+      <details>
+        <summary><span data-lang="en">Which documents can it read?</span><span data-lang="no" lang="nb">Hvilke dokumenter kan det lese?</span></summary>
+        <p data-lang="en">Standards and their amendments, contracts and contract changes, internal specifications, supplier quotes, datasheets and registers, as PDF, Word or Excel. You bring your own licensed copies of standards; SINAPSET ships none.</p>
+        <p data-lang="no" lang="nb">Standarder og endringene til dem, kontrakter og kontraktsendringer, interne spesifikasjoner, leverandørtilbud, datablad og registre, som PDF, Word eller Excel. Dere bruker egne lisensierte kopier av standardene; SINAPSET leverer ingen.</p>
+      </details>
+      <details>
+        <summary><span data-lang="en">Does it replace engineers or our existing systems?</span><span data-lang="no" lang="nb">Erstatter det ingeniører eller eksisterende systemer?</span></summary>
+        <p data-lang="en">No. SINAPSET is decision support. It prepares the work and a qualified person decides. It sits over the systems you already run, which stay the system of record.</p>
+        <p data-lang="no" lang="nb">Nei. SINAPSET er beslutningsstøtte. Det klargjør arbeidet, og en kvalifisert person avgjør. Det ligger over systemene dere allerede bruker, som forblir kildesystemene.</p>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- COMPANY -->
 <section id="company">
-  <div class="section-label" data-lang="en">Company</div>
-  <div class="section-label" data-lang="no" lang="nb">Selskapet</div>
-  <h2 data-lang="en">EikenTech builds SINAPS.</h2>
-  <h2 data-lang="no" lang="nb">EikenTech bygger SINAPS.</h2>
-  <p class="section-intro" data-lang="en">EikenTech is a product company. SINAPS is the product. Asker, Norway. New Delhi, India.</p>
-  <p class="section-intro" data-lang="no" lang="nb">EikenTech er et produktselskap. SINAPS er produktet. Asker, Norge. New Delhi, India.</p>
-  <div class="hero-ctas">
-    <a href="#contact" class="btn-primary" data-lang="en">Book a demo</a>
-    <a href="#contact" class="btn-primary" data-lang="no" lang="nb">Bestill en demo</a>
+  <div class="inner">
+    <div class="section-label" data-lang="en">Company</div>
+    <div class="section-label" data-lang="no" lang="nb">Selskapet</div>
+    <h2 data-lang="en">EikenTech builds SINAPSET.</h2>
+    <h2 data-lang="no" lang="nb">EikenTech bygger SINAPSET.</h2>
+    <p class="section-intro" data-lang="en">EikenTech is a product company in Asker, Norway, with a team in New Delhi, India. SINAPSET is our product. The name stands for Semantic INtegration of Assets, Processes and Systems, with ET for EikenTech.</p>
+    <p class="section-intro" data-lang="no" lang="nb">EikenTech er et produktselskap i Asker, med et team i New Delhi, India. SINAPSET er produktet vårt. Navnet står for Semantic INtegration of Assets, Processes and Systems, med ET for EikenTech.</p>
+    <div class="ctas">
+      <a href="#contact" class="btn btn-primary" data-lang="en">Book a demo</a>
+      <a href="#contact" class="btn btn-primary" data-lang="no" lang="nb">Bestill en demo</a>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section class="dark on-dark" id="contact">
   <div class="contact-inner">
     <div class="section-label" data-lang="en">Book a demo</div>
     <div class="section-label" data-lang="no" lang="nb">Bestill en demo</div>
@@ -1050,12 +895,12 @@
     <p class="section-intro" data-lang="en">Tell us which documents you have. We reply within one business day.</p>
     <p class="section-intro" data-lang="no" lang="nb">Fortell oss hvilke dokumenter du har. Vi svarer innen én virkedag.</p>
 
-    <form class="contact-form" id="contact-form" action="https://formsubmit.co/surbhi.bansal@eikentech.no" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="SINAPS demo from eikentech.no"/>
+    <form class="contact-form" id="contact-form" action="https://formsubmit.co/hello@eikentech.no" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="SINAPSET demo from eikentech.no"/>
       <input type="hidden" name="_template" value="table"/>
       <div class="form-hp" aria-hidden="true"><label for="f-honey">Leave empty</label><input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off"/></div>
       <div class="form-group">
-        <label for="f-name"><span data-lang="en">Full Name</span><span data-lang="no" lang="nb">Fullt navn</span></label>
+        <label for="f-name"><span data-lang="en">Full name</span><span data-lang="no" lang="nb">Fullt navn</span></label>
         <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Your name" data-ph-en="Your name" data-ph-no="Ditt navn" required/>
       </div>
       <div class="form-group">
@@ -1091,47 +936,50 @@
     </form>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="#top" class="brand-lockup">
-        <span class="logo">SINAPS</span>
-        <span class="brand-by">by EikenTech</span>
-      </a>
-      <p data-lang="en">EikenTech builds SINAPS. Asker and New Delhi.</p>
-      <p data-lang="no" lang="nb">EikenTech bygger SINAPS. Asker og New Delhi.</p>
+<footer class="on-dark">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand-lockup" aria-label="SINAPSET by EikenTech">
+          <span class="lockup"><svg class="mk" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#sinapset-mark"/></svg><span class="wm" aria-hidden="true">SINAPSET</span></span>
+          <span class="brand-by" aria-hidden="true">by EikenTech</span>
+        </a>
+        <p data-lang="en">EikenTech builds SINAPSET. Asker and New Delhi.</p>
+        <p data-lang="no" lang="nb">EikenTech bygger SINAPSET. Asker og New Delhi.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-lang="en">Product</h5>
+        <h5 data-lang="no" lang="nb">Produkt</h5>
+        <ul>
+          <li><a href="#problems" data-lang="en">Problems we solve</a><a href="#problems" data-lang="no" lang="nb">Problemer vi løser</a></li>
+          <li><a href="#flow" data-lang="en">How it works</a><a href="#flow" data-lang="no" lang="nb">Slik fungerer det</a></li>
+          <li><a href="#faq" data-lang="en">FAQ</a><a href="#faq" data-lang="no" lang="nb">Spørsmål</a></li>
+          <li><a href="#example" data-lang="en">Examples</a><a href="#example" data-lang="no" lang="nb">Eksempler</a></li>
+          <li><a href="#model" data-lang="en">The model</a><a href="#model" data-lang="no" lang="nb">Modellen</a></li>
+          <li><a href="#connect" data-lang="en">Connect</a><a href="#connect" data-lang="no" lang="nb">Tilkobling</a></li>
+          <li><a href="#difference" data-lang="en">Why SINAPSET</a><a href="#difference" data-lang="no" lang="nb">Hvorfor SINAPSET</a></li>
+          <li><a href="privacy.html" data-lang="en">Privacy policy</a><a href="privacy.html#no" data-lang="no" lang="nb">Personvern</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-lang="en">Contact</h5>
+        <h5 data-lang="no" lang="nb">Kontakt</h5>
+        <ul>
+          <li><a href="mailto:hello@eikentech.no">hello@eikentech.no</a></li>
+          <li><a href="#contact" data-lang="en">Book a demo</a><a href="#contact" data-lang="no" lang="nb">Bestill en demo</a></li>
+          <li><a href="#company" data-lang="en">Asker, Norway</a><a href="#company" data-lang="no" lang="nb">Asker, Norge</a></li>
+          <li><a href="#company">New Delhi, India</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-col">
-      <h5 data-lang="en">Product</h5>
-      <h5 data-lang="no" lang="nb">Produkt</h5>
-      <ul>
-        <li><a href="#flow" data-lang="en">How it works</a><a href="#flow" data-lang="no" lang="nb">Slik fungerer det</a></li>
-        <li><a href="#example" data-lang="en">Examples</a><a href="#example" data-lang="no" lang="nb">Eksempler</a></li>
-        <li><a href="#model" data-lang="en">The model</a><a href="#model" data-lang="no" lang="nb">Modellen</a></li>
-        <li><a href="#work" data-lang="en">The work</a><a href="#work" data-lang="no" lang="nb">Arbeidet</a></li>
-        <li><a href="#difference" data-lang="en">Why SINAPS</a><a href="#difference" data-lang="no" lang="nb">Hvorfor SINAPS</a></li>
-        <li><a href="privacy.html" data-lang="en">Privacy Policy</a><a href="privacy.html#no" data-lang="no" lang="nb">Personvern</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5 data-lang="en">Contact</h5>
-      <h5 data-lang="no" lang="nb">Kontakt</h5>
-      <ul>
-        <li><a href="mailto:surbhi.bansal@eikentech.no">surbhi.bansal@eikentech.no</a></li>
-        <li><a href="#contact" data-lang="en">Book a demo</a><a href="#contact" data-lang="no" lang="nb">Bestill en demo</a></li>
-        <li><a href="#company" data-lang="en">Asker, Norway</a><a href="#company" data-lang="no" lang="nb">Asker, Norge</a></li>
-        <li><a href="#company">New Delhi, India</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© <span class="year">2026</span> EikenTech. <span data-lang="en">All rights reserved.</span><span data-lang="no" lang="nb">Alle rettigheter forbeholdt.</span></p>
-    <p style="font-size: 12px;"><span data-lang="en">Org. No: 937 268 858</span><span data-lang="no" lang="nb">Org.nr: 937 268 858</span></p>
-    <div class="footer-locs">
-      <span class="footer-loc"><span aria-hidden="true">🇳🇴</span> <span data-lang="en">Asker, Norway</span><span data-lang="no" lang="nb">Asker, Norge</span></span>
-      <span class="footer-loc"><span aria-hidden="true">🇮🇳</span> New Delhi, India</span>
+    <p class="footer-legal" data-lang="en">SINAPSET is decision-support software. It does not replace qualified engineering judgement, certification or regulatory approval, and its results cover only the documents and data it is given. The examples are sample jobs, not customer projects. NASA, ECSS, MIL-STD, ASTM, Cognite, Microsoft, Fabric and SharePoint are named only to identify standards and systems; they are trademarks of their owners, and naming them does not imply affiliation or endorsement.</p>
+    <p class="footer-legal" data-lang="no" lang="nb">SINAPSET er programvare for beslutningsstøtte. Den erstatter ikke kvalifisert faglig vurdering, sertifisering eller myndighetsgodkjenning, og resultatene gjelder bare dokumentene og dataene den får. Eksemplene er eksempeljobber, ikke kundeprosjekter. NASA, ECSS, MIL-STD, ASTM, Cognite, Microsoft, Fabric og SharePoint nevnes bare for å identifisere standarder og systemer; de er varemerker som tilhører sine eiere, og omtalen betyr ikke tilknytning eller anbefaling.</p>
+    <div class="footer-bottom">
+      <p>© <span class="year">2026</span> EikenTech. <span data-lang="en">All rights reserved.</span><span data-lang="no" lang="nb">Alle rettigheter forbeholdt.</span></p>
+      <p><span data-lang="en">Org. no. 937 268 858</span><span data-lang="no" lang="nb">Org.nr. 937 268 858</span></p>
     </div>
   </div>
 </footer>
@@ -1180,7 +1028,7 @@
   // ── Contact form ── (delivered by FormSubmit to the address in the form action)
   const form = document.getElementById('contact-form');
   const statusEl = document.getElementById('form-status');
-  const MAILTO = 'surbhi.bansal@eikentech.no';
+  const MAILTO = 'hello@eikentech.no';
   function t(en, no) { return document.body.classList.contains('lang-no') ? no : en; }
 
   form.addEventListener('submit', async e => {
@@ -1212,7 +1060,7 @@
                                '✓ Takk! Vi kontakter deg innen én virkedag.');
     } catch (err) {
       const body = encodeURIComponent(`Name: ${data.name}\nCompany: ${data.company}\nTopic: ${data.topic}\n\n${data.message}`);
-      const href = `mailto:${MAILTO}?subject=${encodeURIComponent('SINAPS demo from eikentech.no')}&body=${body}`;
+      const href = `mailto:${MAILTO}?subject=${encodeURIComponent('SINAPSET demo from eikentech.no')}&body=${body}`;
       statusEl.classList.add('error');
       statusEl.innerHTML = t('Sorry, the message could not be sent. ', 'Beklager, meldingen kunne ikke sendes. ') +
         `<a href="${href}">${t('Email us directly instead', 'Send oss en e-post direkte')}</a>.`;
@@ -1223,22 +1071,6 @@
 
   // ── Footer year ──
   document.querySelectorAll('.year').forEach(el => { el.textContent = new Date().getFullYear(); });
-
-  // ── Scroll reveal ── (skipped when the visitor prefers reduced motion)
-  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.animation = 'fadeUp 0.6s ease both';
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.service-card, .delivery-card, .domain-card, .benefit-item').forEach(el => {
-      el.style.opacity = '0';
-      observer.observe(el);
-    });
-  }
 </script>
 </body>
 </html>

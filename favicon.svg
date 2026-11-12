@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="384" height="384" viewBox="0 0 384 384">
-  <rect width="384" height="384" fill="#0A1628"/>
-  <g transform="translate(192 192) scale(0.118 -0.118) translate(-1055 -320)">
-    <path fill="#FFFFFF" transform="translate(-70 0)" d="M320 270V190H1080V0H70V640H1078V450H320V370H940V270Z"/>
-    <path fill="#00C9A7" transform="translate(1040 0)" d="M30 640H1070V450H30ZM425 463H675V0H425Z"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -18 100 100" fill="none"><title>SINAPSET</title><style>.a{stroke:#1e5470}.s{stroke:#b92c16}@media (prefers-color-scheme:dark){.a{stroke:#8fbdd3}.s{stroke:#f0694a}}</style><rect class="a" x="3" y="3" width="58" height="58" rx="5" stroke-width="6"/><circle class="s" cx="68" cy="32" r="29" stroke-width="6"/></svg>
