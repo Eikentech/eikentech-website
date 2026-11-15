@@ -1,8 +1,8 @@
-# SINAPSET by EikenTech
+# SINAPSET
 
-> SINAPSET is a semantic layer for the organisation that reads, reasons and acts, with people approving every action and every fact traceable to its source. It follows each item, such as a valve, a pump or a whole package, through its life: requirements, design, release, purchase, plan and deliver, install and hand over, operate and maintain, and modify.
+> SINAPSET is a semantic layer for the organisation that reads, reasons and acts, with every fact traceable to its source. Stay in control: people approve every action. It works on your own documents and keeps one picture of your assets, requirements and where they apply. It follows each item, such as a valve, a pump or a whole package, through its life: requirements, design, release, purchase, plan and deliver, install and hand over, operate and maintain, and modify.
 
-EikenTech AS (organisation number 937 268 858) is a Norwegian software product company in Asker, Norway, with a team in New Delhi, India. It builds and sells its own product, SINAPSET. It is not an IT consultancy. Website: https://eikentech.no/
+SINAPSET is made by EikenTech AS (organisation number 937 268 858), a Norwegian software product company at Folabruveien 16, 1384 Asker, Norway, with a team in New Delhi, India. It builds and sells its own product, SINAPSET. It is not an IT consultancy. Website: https://eikentech.no/
 
 ## What SINAPSET does, stage by stage
 
@@ -12,28 +12,27 @@ EikenTech AS (organisation number 937 268 858) is a Norwegian software product c
 4. Purchase: purchase specifications, bid evaluation, and supplier documents and certificates checked against the requirements. Orders stay in the ERP.
 5. Plan and deliver: need dates from the schedule, what a late supplier puts at risk, and getting the item to site or offshore. The scheduling tool and ERP stay the record.
 6. Install and hand over: which unit sits on which tag, with its documents (an equipment passport).
-7. Operate and maintain: failure modes, maintenance strategy and plans, condition data, and work orders proposed to the maintenance system.
+7. Operate and maintain: failure modes, maintenance strategy and plans, condition data, and draft work orders for a person to raise.
 8. Modify: everything a change touches across the item's life, before anyone approves it.
 
-At every stage, agents propose and a person approves. Nothing goes into the organisation's systems before that, and each decision is kept with who made it and why.
+At every stage, agents propose and a person approves. Nothing is acted on before that, and each decision is kept with who made it and why.
 
 ## Who it is for
 
 - Roles: engineering, operations and maintenance, quality, procurement and supplier quality, document control.
 - Industries: starting in oil and gas and offshore; energy, manufacturing, space, aerospace and defence follow on the same platform.
 
-## Works with your systems
+## Your systems
 
-SINAPSET runs in the customer's environment, on the customer's own documents and standards, under the customer's own credentials. EikenTech ships no standard content. It works with the ERP (for example SAP), PLM, scheduling, maintenance systems, historians and data platforms the customer already runs; they stay the system of record.
+Your existing systems stay the record; SINAPSET does not replace them.
 
 ## What SINAPSET is not
 
 - It is decision-support software. It does not replace qualified engineering judgement, certification or regulatory approval.
-- It does not replace the customer's existing systems.
 - Results cover only the documents and data it is given.
 
 ## Contact
 
 - Book a demo: https://eikentech.no/#contact
 - Email: hello@eikentech.no
-- EikenTech AS, Asker, Norway. Organisation number 937 268 858.
+- EikenTech AS, Folabruveien 16, 1384 Asker, Norway. Organisation number 937 268 858.
