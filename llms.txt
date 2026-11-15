@@ -8,9 +8,9 @@ SINAPSET is made by EikenTech AS (organisation number 937 268 858), a Norwegian 
 
 1. Requirements: what each item must do and which rules apply to it, from the organisation's own standards and documents, each with the clause it came from. Where the documents do not say, SINAPSET says it cannot tell.
 2. Design: compare design options against the requirements before anything is released.
-3. Release: a release package where every value traces to its source. The organisation's PLM system performs the release.
-4. Purchase: purchase specifications, bid evaluation, and supplier documents and certificates checked against the requirements. Orders stay in the ERP.
-5. Plan and deliver: need dates from the schedule, what a late supplier puts at risk, and getting the item to site or offshore. The scheduling tool and ERP stay the record.
+3. Release: a release package where every value traces to its source.
+4. Purchase: purchase specifications, bid evaluation, and supplier documents and certificates checked against the requirements.
+5. Plan and deliver: need dates from the schedule, what a late supplier puts at risk, and getting the item to site or offshore.
 6. Install and hand over: which unit sits on which tag, with its documents (an equipment passport).
 7. Operate and maintain: failure modes, maintenance strategy and plans, condition data, and draft work orders for a person to raise.
 8. Modify: everything a change touches across the item's life, before anyone approves it.
