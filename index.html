@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SINAPSET by EikenTech — the semantic layer for your organisation</title>
-  <meta name="description" content="SINAPSET by EikenTech is a semantic layer for the organisation that reads, reasons and acts, with people approving every action and every fact traceable to its source."/>
+  <title>SINAPSET by EikenTech — follow every item through its life</title>
+  <meta name="description" content="EikenTech builds SINAPSET, a semantic layer for the organisation. It follows each item from requirement to modification; people approve every action."/>
   <link rel="canonical" href="https://eikentech.no/"/>
   <meta name="theme-color" content="#F6F7F4"/>
   <link rel="icon" href="favicon.png" type="image/png" sizes="384x384"/>
@@ -12,18 +12,28 @@
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://eikentech.no/"/>
   <meta property="og:site_name" content="EikenTech"/>
-  <meta property="og:title" content="SINAPSET by EikenTech — the semantic layer for your organisation"/>
-  <meta property="og:description" content="SINAPSET by EikenTech is a semantic layer for the organisation that reads, reasons and acts, with people approving every action and every fact traceable to its source."/>
+  <meta property="og:title" content="SINAPSET by EikenTech — follow every item through its life"/>
+  <meta property="og:description" content="EikenTech builds SINAPSET, a semantic layer for the organisation. It follows each item from requirement to modification; people approve every action."/>
+  <meta property="og:image" content="https://eikentech.no/favicon.png"/>
+  <meta property="og:image:alt" content="SINAPSET mark"/>
   <meta property="og:locale" content="en_GB"/>
   <meta property="og:locale:alternate" content="nb_NO"/>
   <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="SINAPSET by EikenTech — follow every item through its life"/>
+  <meta name="twitter:description" content="EikenTech builds SINAPSET, a semantic layer for the organisation. It follows each item from requirement to modification; people approve every action."/>
+  <meta name="twitter:image" content="https://eikentech.no/favicon.png"/>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "EikenTech",
-    "description": "EikenTech is a Norwegian product company in Asker that builds SINAPSET, an enterprise semantic layer.",
+    "@id": "https://eikentech.no/#organization",
+    "name": "EikenTech AS",
+    "legalName": "EikenTech AS",
+    "alternateName": "EikenTech",
+    "description": "EikenTech AS is a Norwegian software product company in Asker. It builds SINAPSET, a semantic layer for engineering organisations that follows each item from requirements and design through purchase, installation, maintenance and modification, with every fact traceable to its source and people approving every action. EikenTech sells its own software product; it is not an IT consultancy.",
     "url": "https://eikentech.no/",
+    "logo": "https://eikentech.no/favicon.png",
+    "knowsAbout": ["Engineering software", "Semantic layer", "Requirements management", "Asset lifecycle", "Procurement engineering", "Maintenance engineering"],
     "email": "hello@eikentech.no",
     "taxID": "937268858",
     "identifier": { "@type": "PropertyValue", "propertyID": "Organisasjonsnummer", "value": "937268858" },
@@ -44,21 +54,21 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://eikentech.no/",
-    "publisher": { "@type": "Organization", "name": "EikenTech", "url": "https://eikentech.no/" },
-    "description": "SINAPSET is a semantic layer for the organisation that reads, reasons and acts, with people approving every action and every fact traceable to its source. It builds an inspectable model of the organisation from its own documents and data: its assets, its requirements and where each requirement applies, and each item's life from requirement through design, purchase, installation, maintenance and modification. Teams use it to generate engineering deliverables, diagnose problems, test what-if changes, optimise and operate, keep know-how, and check work. Agents propose; a person approves before anything goes into the organisation's systems. When the documents do not give an answer, SINAPSET says it cannot tell.",
+    "publisher": { "@id": "https://eikentech.no/#organization" },
+    "description": "SINAPSET is a semantic layer for the organisation that reads, reasons and acts, with people approving every action and every fact traceable to its source. It works on the organisation's own documents and standards and follows each item through its life: requirements, design, release, purchase, plan and deliver, install and hand over, operate and maintain, and modify. Engineers use it to generate deliverables, diagnose problems, try what-if changes and keep know-how. It works with the ERP, PLM, scheduling and maintenance systems the organisation already runs, which stay the system of record.",
     "featureList": [
-      "Engineering deliverables generated from your own documents, such as purchase requests, datasheets and test matrices, approved by a person",
-      "Change impact analysis: what a revised standard or contract change affects in documents, assets and open orders",
-      "Specification harmonisation: clause-by-clause comparison across overlapping standards and internal specifications",
-      "Supplier compliance: checks supplier quotes, datasheets and claims against requirements",
-      "Requirement applicability per asset: applies, does not apply, applies if selected, or cannot tell",
-      "Requirements traceability: every fact traces to its source clause",
-      "Prepared work (deviations, technical queries, specification revisions, purchase requests) approved by a person",
-      "Decision record with clause, evidence and approver",
-      "Grounded context for AI agents over MCP; connects to Cognite Data Fusion and Microsoft Fabric"
+      "Requirements: what each item must do and which rules apply, from your own standards and documents",
+      "Design: compare design options against the requirements before release",
+      "Release: release packages where every value traces to its source; your PLM performs the release",
+      "Purchase: purchase specifications, bid evaluation, and supplier documents and certificates checked against the requirements",
+      "Plan and deliver: need dates from the schedule and what a late supplier puts at risk",
+      "Install and hand over: which unit sits on which tag, with its documents (equipment passport)",
+      "Operate and maintain: failure modes, maintenance strategy and plans, work orders proposed to your maintenance system",
+      "Modify: everything a change touches across the item's life, before you approve it",
+      "People approve every action; every fact traces to its source"
     ],
     "audience": { "@type": "BusinessAudience", "audienceType": "Engineering, operations and maintenance, quality, procurement and supplier quality, and document control teams, starting in oil and gas and offshore, with energy, manufacturing, space, aerospace and defence" },
-    "keywords": "semantic layer, organisation model, engineering deliverables, requirements traceability, change impact analysis, specification comparison, supplier documents, requirement applicability, asset lifecycle, AI agents, decision support"
+    "keywords": "semantic layer, engineering software, asset lifecycle, requirements, design comparison, release package, purchase specification, bid evaluation, equipment passport, maintenance strategy, change impact, decision support"
   }
   </script>
   <script type="application/ld+json">
@@ -73,9 +83,9 @@
       { "@type": "Question", "name": "Who is SINAPSET for?",
         "acceptedAnswer": { "@type": "Answer", "text": "Engineering, operations and maintenance, quality and product assurance, procurement and supplier quality, and document control teams in industries run on standards and long-lived assets. We start in oil and gas and offshore; energy, manufacturing, space, aerospace and defence follow on the same platform." } },
       { "@type": "Question", "name": "How is it different from a chatbot or document search?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A chatbot or search tool finds text and lets a model guess. SINAPSET builds a structured model of requirements, assets and editions, shows the clause behind every line, and says 'cannot tell' when the documents do not give an answer. A person approves the work, and the decision is kept." } },
+        "acceptedAnswer": { "@type": "Answer", "text": "A chatbot or search tool finds text and lets a model guess. SINAPSET keeps one model of your items, their requirements and their history, shows the source behind every line, and says 'cannot tell' when the documents do not give an answer. A person approves the work, and the decision is kept." } },
       { "@type": "Question", "name": "Which documents can it read?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Standards and their amendments, contracts and contract changes, internal specifications, supplier quotes, datasheets and registers, as PDF, Word or Excel. You bring your own licensed copies of standards; SINAPSET ships none." } },
+        "acceptedAnswer": { "@type": "Answer", "text": "Standards and their amendments, contracts and contract changes, internal specifications, supplier quotes, datasheets and registers, as PDF, Word or Excel. SINAPSET runs in your environment on your own documents and standards; we ship no standard content." } },
       { "@type": "Question", "name": "Does it replace engineers or our existing systems?",
         "acceptedAnswer": { "@type": "Answer", "text": "No. SINAPSET is decision support. It prepares the work and a qualified person decides. It sits over the systems you already run, which stay the system of record." } }
     ]
@@ -291,7 +301,7 @@
     .list li { font-size: 14px; color: var(--ink); padding-left: 18px; position: relative; line-height: 1.55; }
     .list li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 1px; background: var(--teal-ink); }
 
-    /* ── MODEL (six axes) ── */
+    /* ── MODEL ── */
     .axes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
     .axis { padding: 24px; border: 1px solid var(--fjord-line); border-radius: var(--r); background: var(--fjord-2); min-width: 0; }
     .axis h4 { color: var(--white); }
@@ -306,6 +316,24 @@
     .hub .src .doc { border-color: var(--frost); background-color: transparent; }
     .hub .link { color: var(--teal); font-size: 22px; }
     .hub .fact small, .hub .src small { display: block; font-size: 12.5px; color: var(--frost); }
+
+    /* ── LIFE OF AN ITEM ── */
+    .lifeline { margin-top: 64px; }
+    .lifeline ol { list-style: none; display: grid; grid-template-columns: repeat(8, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--r); background: var(--white); }
+    .lifeline li + li { border-left: 1px solid var(--line); }
+    .lifeline a { display: block; padding: 14px 12px; text-decoration: none; font-size: 14px; line-height: 1.35; height: 100%; }
+    .lifeline a:hover { background: var(--teal-wash); }
+    .lifeline .n { display: block; font-size: 12px; letter-spacing: 0.14em; color: var(--teal-ink); margin-bottom: 6px; }
+    .life { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .stage { padding: 28px; display: grid; gap: 12px; align-content: start; min-width: 0; scroll-margin-top: 90px; }
+    .stage h3 { font-size: 22px; margin-bottom: 0; }
+    .stage .today, .stage .with { font-size: 14.5px; color: var(--muted); }
+    .stage .with { color: var(--ink); }
+    .stage .lbl { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--muted); margin-bottom: 2px; }
+    .stage .with .lbl { color: var(--teal-ink); }
+    .stage .note { display: flex; gap: 10px; align-items: center; font-size: 13.5px; color: var(--ink); border-top: 1px solid var(--line); padding-top: 12px; }
+    .skip { position: absolute; left: 8px; top: -60px; z-index: 200; background: var(--ink); color: var(--white); padding: 8px 14px; border-radius: var(--r); text-decoration: none; }
+    .skip:focus { top: 8px; }
 
     /* ── CONNECT ── */
     .connect { display: grid; grid-template-columns: 1fr 200px 1fr; align-items: center; }
@@ -384,6 +412,10 @@
       .nav-links { display: none; }
       .nav-links.open { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; padding: 16px 0 12px; }
       .hero-flow { grid-template-columns: 1fr; }
+      .lifeline ol { grid-template-columns: repeat(4, 1fr); }
+      .lifeline li:nth-child(5) { border-left: 0; }
+      .lifeline li:nth-child(n+5) { border-top: 1px solid var(--line); }
+      .life { grid-template-columns: 1fr; }
       .arrow::before { content: "↓"; }
       .steps { grid-template-columns: 1fr 1fr; }
       .step:nth-child(3) { border-left: 0; }
@@ -406,6 +438,9 @@
       section, .hero { padding-left: 16px; padding-right: 16px; }
       nav, .lang-bar { padding-left: 16px; padding-right: 16px; }
       .problems { grid-template-columns: 1fr; }
+      .lifeline ol { grid-template-columns: 1fr 1fr; }
+      .lifeline li:nth-child(odd) { border-left: 0; }
+      .lifeline li:nth-child(n+3) { border-top: 1px solid var(--line); }
       .steps { grid-template-columns: 1fr; }
       .step + .step { border-left: 0; border-top: 1px solid var(--line); }
       .step + .step::before { display: none; }
@@ -431,6 +466,8 @@
   </symbol>
 </svg>
 
+<a class="skip" href="#top"><span data-lang="en">Skip to content</span><span data-lang="no" lang="nb">Hopp til innhold</span></a>
+
 <!-- LANGUAGE BAR -->
 <div class="lang-bar">
   <button class="lang-btn active" onclick="setLang('en')" id="btn-en" aria-pressed="true" lang="en">English</button>
@@ -445,11 +482,9 @@
   </a>
   <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">☰</button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#problems" data-lang="en">Problems we solve</a><a href="#problems" data-lang="no" lang="nb">Problemer vi løser</a></li>
-    <li><a href="#flow" data-lang="en">How it works</a><a href="#flow" data-lang="no" lang="nb">Slik fungerer det</a></li>
-    <li><a href="#example" data-lang="en">Examples</a><a href="#example" data-lang="no" lang="nb">Eksempler</a></li>
-    <li><a href="#model" data-lang="en">The model</a><a href="#model" data-lang="no" lang="nb">Modellen</a></li>
-    <li><a href="#connect" data-lang="en">Connect</a><a href="#connect" data-lang="no" lang="nb">Tilkobling</a></li>
+    <li><a href="#life" data-lang="en">The life of an item</a><a href="#life" data-lang="no" lang="nb">Livet til en enhet</a></li>
+    <li><a href="#difference" data-lang="en">People approve</a><a href="#difference" data-lang="no" lang="nb">Mennesker godkjenner</a></li>
+    <li><a href="#connect" data-lang="en">Your systems</a><a href="#connect" data-lang="no" lang="nb">Systemene deres</a></li>
     <li><a href="#faq" data-lang="en">FAQ</a><a href="#faq" data-lang="no" lang="nb">Spørsmål</a></li>
     <li><a href="#contact" class="nav-cta" data-lang="en">Book a demo</a><a href="#contact" class="nav-cta" data-lang="no" lang="nb">Bestill en demo</a></li>
   </ul>
@@ -462,291 +497,140 @@
   <div class="inner">
     <div class="section-label" data-lang="en">The semantic layer for your organisation</div>
     <div class="section-label" data-lang="no" lang="nb">Det semantiske laget for organisasjonen</div>
-    <h1 data-lang="en">Work prepared from your own documents, approved by a person.</h1>
-    <h1 data-lang="no" lang="nb">Arbeid klargjort fra deres egne dokumenter, godkjent av en person.</h1>
-    <p class="section-intro" data-lang="en">SINAPSET is a semantic layer for the organisation that reads, reasons and acts, with people approving every action and every fact traceable to its source. Use it to generate engineering deliverables, diagnose, test what-if changes, keep know-how and check work, all on one model.</p>
-    <p class="section-intro" data-lang="no" lang="nb">SINAPSET er et semantisk lag for organisasjonen som leser, resonnerer og handler, der mennesker godkjenner hver handling og hvert faktum kan spores til kilden. Bruk det til å lage tekniske leveranser, finne feil, teste hva-om-endringer, ta vare på kunnskap og kontrollere arbeid, alt på én modell.</p>
+    <h1 data-lang="en">Follow every item from requirement to modification, with people approving every action.</h1>
+    <h1 data-lang="no" lang="nb">Følg hver enhet fra krav til modifikasjon, der mennesker godkjenner hver handling.</h1>
+    <p class="section-intro" data-lang="en">SINAPSET is a semantic layer for the organisation that reads, reasons and acts, with every fact traceable to its source. It works on your own documents and standards, and helps your engineers generate deliverables, diagnose, try what-if changes and keep know-how.</p>
+    <p class="section-intro" data-lang="no" lang="nb">SINAPSET er et semantisk lag for organisasjonen som leser, resonnerer og handler, der hvert faktum kan spores til kilden. Det arbeider på deres egne dokumenter og standarder, og hjelper ingeniørene med å lage leveranser, finne feil, prøve hva-om-endringer og ta vare på kunnskap.</p>
     <div class="ctas">
       <a href="#contact" class="btn btn-primary" data-lang="en">Book a demo</a>
       <a href="#contact" class="btn btn-primary" data-lang="no" lang="nb">Bestill en demo</a>
-      <a href="#flow" class="btn btn-outline" data-lang="en">See how it works</a>
-      <a href="#flow" class="btn btn-outline" data-lang="no" lang="nb">Se hvordan det fungerer</a>
+      <a href="#life" class="btn btn-outline" data-lang="en">See the life of an item</a>
+      <a href="#life" class="btn btn-outline" data-lang="no" lang="nb">Se livet til en enhet</a>
     </div>
-
-    <div class="hero-flow" role="img" aria-label="Documents are read into the SINAPSET model; an agent prepares work, a person approves it, and it goes into your systems.">
-      <div class="stack">
-        <div class="col-label"><span data-lang="en">Your documents</span><span data-lang="no" lang="nb">Deres dokumenter</span></div>
-        <div class="item box"><span class="doc"></span><span><span data-lang="en">Standards and amendments</span><span data-lang="no" lang="nb">Standarder og endringer</span></span></div>
-        <div class="item box"><span class="doc"></span><span><span data-lang="en">Contracts</span><span data-lang="no" lang="nb">Kontrakter</span></span></div>
-        <div class="item box"><span class="doc"></span><span><span data-lang="en">Internal specifications</span><span data-lang="no" lang="nb">Interne spesifikasjoner</span></span></div>
-        <div class="item box"><span class="doc"></span><span><span data-lang="en">Supplier documents</span><span data-lang="no" lang="nb">Leverandørdokumenter</span></span></div>
-      </div>
-      <div class="arrow" aria-hidden="true"></div>
-      <div class="core box">
-        <span class="lockup"><svg class="mk" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#sinapset-mark"/></svg><span class="wm" aria-hidden="true">SINAPSET</span></span>
-        <div class="small"><span data-lang="en">One shared model</span><span data-lang="no" lang="nb">Én felles modell</span></div>
-        <div class="axes3">
-          <span><span data-lang="en">Asset</span><span data-lang="no" lang="nb">Objekt</span></span>
-          <span><span data-lang="en">Requirements</span><span data-lang="no" lang="nb">Krav</span></span>
-          <span><span data-lang="en">Applicability</span><span data-lang="no" lang="nb">Virkeområde</span></span>
-        </div>
-        <div class="trace"><span data-lang="en">Every fact</span><span data-lang="no" lang="nb">Hvert faktum</span> → <i><span data-lang="en">its clause</span><span data-lang="no" lang="nb">klausulen</span></i></div>
-      </div>
-      <div class="arrow" aria-hidden="true"></div>
-      <div class="stack">
-        <div class="col-label"><span data-lang="en">Prepared work</span><span data-lang="no" lang="nb">Klargjort arbeid</span></div>
-        <div class="item box"><span class="sq"></span><span><span data-lang="en">An agent prepares</span><span data-lang="no" lang="nb">En agent forbereder</span><small><span data-lang="en">Each line with its clause</span><span data-lang="no" lang="nb">Hver linje med sin klausul</span></small></span></div>
-        <div class="item box"><span class="ci"></span><span><span data-lang="en">A person approves</span><span data-lang="no" lang="nb">En person godkjenner</span><small><span data-lang="en">Nothing moves before that</span><span data-lang="no" lang="nb">Ingenting skjer før det</span></small></span></div>
-        <div class="item box"><span class="sys"></span><span><span data-lang="en">Into your systems</span><span data-lang="no" lang="nb">Inn i deres systemer</span><small><span data-lang="en">And the decision is kept</span><span data-lang="no" lang="nb">Og beslutningen lagres</span></small></span></div>
-      </div>
+    <div class="lifeline">
+      <ol>
+        <li><a href="#stage-1"><span class="n">01</span><span data-lang="en">Requirements</span><span data-lang="no" lang="nb">Krav</span></a></li>
+        <li><a href="#stage-2"><span class="n">02</span><span data-lang="en">Design</span><span data-lang="no" lang="nb">Design</span></a></li>
+        <li><a href="#stage-3"><span class="n">03</span><span data-lang="en">Release</span><span data-lang="no" lang="nb">Frigivelse</span></a></li>
+        <li><a href="#stage-4"><span class="n">04</span><span data-lang="en">Purchase</span><span data-lang="no" lang="nb">Innkjøp</span></a></li>
+        <li><a href="#stage-5"><span class="n">05</span><span data-lang="en">Plan and deliver</span><span data-lang="no" lang="nb">Planlegg og lever</span></a></li>
+        <li><a href="#stage-6"><span class="n">06</span><span data-lang="en">Install and hand over</span><span data-lang="no" lang="nb">Installer og overlever</span></a></li>
+        <li><a href="#stage-7"><span class="n">07</span><span data-lang="en">Operate and maintain</span><span data-lang="no" lang="nb">Drift og vedlikehold</span></a></li>
+        <li><a href="#stage-8"><span class="n">08</span><span data-lang="en">Modify</span><span data-lang="no" lang="nb">Modifiser</span></a></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- PROBLEMS -->
-<section class="band-white rule" id="problems">
+<!-- LIFE OF AN ITEM -->
+<section class="band-white rule" id="life">
   <div class="inner">
-    <div class="section-label" data-lang="en">Problems SINAPSET solves</div>
-    <div class="section-label" data-lang="no" lang="nb">Problemer SINAPSET løser</div>
-    <h2 data-lang="en">Do you recognise these questions?</h2>
-    <h2 data-lang="no" lang="nb">Kjenner du igjen disse spørsmålene?</h2>
-    <p class="section-intro" data-lang="en">They come up wherever work is governed by standards, contracts and specifications. Today they are answered by reading hundreds of pages by hand.</p>
-    <p class="section-intro" data-lang="no" lang="nb">De dukker opp overalt der arbeidet styres av standarder, kontrakter og spesifikasjoner. I dag besvares de ved å lese hundrevis av sider for hånd.</p>
-    <div class="problems">
-      <div class="prob box">
-        <p class="ask" data-lang="en">A standard was revised. What in our documents, hardware and open orders is affected?</p>
-        <p class="ask" data-lang="no" lang="nb">En standard er revidert. Hva i dokumentene, utstyret og de åpne ordrene våre berøres?</p>
-        <p class="does" data-lang="en"><b>Change impact</b>SINAPSET marks every clause, asset and open order that rests on the old edition, and shows what carries over.</p>
-        <p class="does" data-lang="no" lang="nb"><b>Konsekvens av endring</b>SINAPSET markerer hver klausul, hvert objekt og hver åpen ordre som bygger på den gamle utgaven, og viser hva som fortsatt gjelder.</p>
-      </div>
-      <div class="prob box">
-        <p class="ask" data-lang="en">Our specification claims several standards. Where does it actually disagree with them?</p>
-        <p class="ask" data-lang="no" lang="nb">Spesifikasjonen vår viser til flere standarder. Hvor er den faktisk uenig med dem?</p>
-        <p class="does" data-lang="en"><b>Specification harmonisation</b>A clause-by-clause comparison across overlapping standards and your own documents, quoting both sides.</p>
-        <p class="does" data-lang="no" lang="nb"><b>Harmonisering av spesifikasjoner</b>En sammenligning klausul for klausul på tvers av overlappende standarder og egne dokumenter, med sitat fra begge.</p>
-      </div>
-      <div class="prob box">
-        <p class="ask" data-lang="en">Does this supplier’s quote or datasheet really meet our requirements?</p>
-        <p class="ask" data-lang="no" lang="nb">Oppfyller tilbudet eller databladet fra leverandøren virkelig kravene våre?</p>
-        <p class="does" data-lang="en"><b>Supplier compliance</b>Each claim is checked against the requirement it answers. Unsupported claims are flagged, and a deviation or technical query is prepared.</p>
-        <p class="does" data-lang="no" lang="nb"><b>Leverandørsamsvar</b>Hver påstand kontrolleres mot kravet den svarer på. Påstander uten grunnlag markeres, og et avvik eller en teknisk forespørsel klargjøres.</p>
-      </div>
-      <div class="prob box">
-        <p class="ask" data-lang="en">Which requirements apply to this equipment, in this service?</p>
-        <p class="ask" data-lang="no" lang="nb">Hvilke krav gjelder for dette utstyret, i denne bruken?</p>
-        <p class="does" data-lang="en"><b>Requirement applicability</b>Applies, does not apply, applies if selected, or cannot tell, each with the clause behind it.</p>
-        <p class="does" data-lang="no" lang="nb"><b>Kravenes virkeområde</b>Gjelder, gjelder ikke, gjelder hvis valgt, eller kan ikke avgjøres, hver med klausulen bak.</p>
-      </div>
-      <div class="prob box">
-        <p class="ask" data-lang="en">Our AI assistant answers confidently, but cannot show where the answer came from.</p>
-        <p class="ask" data-lang="no" lang="nb">KI-assistenten vår svarer sikkert, men kan ikke vise hvor svaret kom fra.</p>
-        <p class="does" data-lang="en"><b>Grounded AI</b>Agents work from the same model as your people, and every answer points to its source clause.</p>
-        <p class="does" data-lang="no" lang="nb"><b>KI med kildegrunnlag</b>Agentene bruker den samme modellen som medarbeiderne, og hvert svar peker til kildeklausulen.</p>
-      </div>
-      <div class="prob box">
-        <p class="ask" data-lang="en">Two years later, the auditor asks why we accepted it.</p>
-        <p class="ask" data-lang="no" lang="nb">To år senere spør revisoren hvorfor vi godtok det.</p>
-        <p class="does" data-lang="en"><b>Decision record</b>Every approved decision is kept with the clause, the evidence and the person who approved it.</p>
-        <p class="does" data-lang="no" lang="nb"><b>Beslutningslogg</b>Hver godkjent beslutning lagres med klausulen, grunnlaget og personen som godkjente den.</p>
-      </div>
-    </div>
-    <div class="who-for">
-      <div>
-        <h4 data-lang="en">Who it is for</h4><h4 data-lang="no" lang="nb">Hvem det er for</h4>
-        <p data-lang="en">Engineering, operations and maintenance, quality and product assurance, procurement and supplier quality, and document control teams.</p>
-        <p data-lang="no" lang="nb">Team innen prosjektering, drift og vedlikehold, kvalitet og produktsikring, innkjøp og leverandørkvalitet, og dokumentkontroll.</p>
-      </div>
-      <div>
-        <h4 data-lang="en">Where it fits</h4><h4 data-lang="no" lang="nb">Hvor det passer</h4>
-        <p data-lang="en">Industries run on standards and long-lived assets. We start in oil and gas and offshore; energy, manufacturing, space, aerospace and defence follow on the same platform.</p>
-        <p data-lang="no" lang="nb">Bransjer som styres av standarder og langlivede anlegg. Vi starter i olje og gass og offshore; energi, industri, romfart, luftfart og forsvar følger på samme plattform.</p>
-      </div>
+    <div class="section-label" data-lang="en">The life of an item</div>
+    <div class="section-label" data-lang="no" lang="nb">Livet til en enhet</div>
+    <h2 data-lang="en">One item, eight stages, one model.</h2>
+    <h2 data-lang="no" lang="nb">Én enhet, åtte trinn, én modell.</h2>
+    <p class="section-intro" data-lang="en">A valve, a pump or a whole package goes through the same life. At each stage, here is the work your engineers do today, what changes with SINAPSET, and who approves.</p>
+    <p class="section-intro" data-lang="no" lang="nb">En ventil, en pumpe eller en hel pakke går gjennom det samme livsløpet. For hvert trinn: arbeidet ingeniørene gjør i dag, hva som endres med SINAPSET, og hvem som godkjenner.</p>
+    <div class="life">
+      <article class="stage box" id="stage-1">
+        <span class="card-tag">01</span>
+        <h3 data-lang="en">Requirements</h3><h3 data-lang="no" lang="nb">Krav</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Engineers read standards, specifications and contracts by hand to work out what applies to each item.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Ingeniører leser standarder, spesifikasjoner og kontrakter for hånd for å finne ut hva som gjelder for hver enhet.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>Each item gets what it must do and the rules that apply to it, from your own standards and documents, each with the clause it came from. Where the documents do not say, SINAPSET says it cannot tell.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>Hver enhet får det den skal gjøre og reglene som gjelder for den, fra deres egne standarder og dokumenter, hver med klausulen den kom fra. Der dokumentene ikke gir svar, sier SINAPSET fra.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">An engineer confirms the requirements.</span><span data-lang="no" lang="nb">En ingeniør bekrefter kravene.</span></p>
+      </article>
+      <article class="stage box" id="stage-2">
+        <span class="card-tag">02</span>
+        <h3 data-lang="en">Design</h3><h3 data-lang="no" lang="nb">Design</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Design options are compared against the requirements in spreadsheets and review meetings, often late.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Designalternativer sammenlignes med kravene i regneark og møter, ofte sent.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>Compare design options against the requirements before anything is released, and see which requirements each option meets, misses or leaves open.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>Sammenlign designalternativer med kravene før noe frigis, og se hvilke krav hvert alternativ oppfyller, bryter eller lar stå åpne.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">The engineer chooses the option.</span><span data-lang="no" lang="nb">Ingeniøren velger alternativet.</span></p>
+      </article>
+      <article class="stage box" id="stage-3">
+        <span class="card-tag">03</span>
+        <h3 data-lang="en">Release</h3><h3 data-lang="no" lang="nb">Frigivelse</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Release packages are put together by copying values between documents, and the source of each value gets lost.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Frigivelsespakker settes sammen ved å kopiere verdier mellom dokumenter, og kilden til hver verdi går tapt.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>A release package where every value traces to its source. Your PLM system performs the release.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>En frigivelsespakke der hver verdi kan spores til kilden. PLM-systemet deres utfører frigivelsen.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">The responsible engineer approves the package.</span><span data-lang="no" lang="nb">Ansvarlig ingeniør godkjenner pakken.</span></p>
+      </article>
+      <article class="stage box" id="stage-4">
+        <span class="card-tag">04</span>
+        <h3 data-lang="en">Purchase</h3><h3 data-lang="no" lang="nb">Innkjøp</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Purchase specifications are copied from old ones. Bids, supplier documents and certificates are checked line by line.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Innkjøpsspesifikasjoner kopieres fra gamle. Tilbud, leverandørdokumenter og sertifikater kontrolleres linje for linje.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>Purchase specifications drafted from the requirements, bid evaluation, and supplier documents and certificates checked against the requirements, with gaps raised as technical queries. Orders stay in your ERP.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>Innkjøpsspesifikasjoner laget fra kravene, tilbudsevaluering, og leverandørdokumenter og sertifikater kontrollert mot kravene, med mangler sendt som tekniske spørsmål. Ordrene blir i ERP-systemet.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">Procurement and engineering approve each specification, evaluation and query.</span><span data-lang="no" lang="nb">Innkjøp og prosjektering godkjenner hver spesifikasjon, evaluering og forespørsel.</span></p>
+      </article>
+      <article class="stage box" id="stage-5">
+        <span class="card-tag">05</span>
+        <h3 data-lang="en">Plan and deliver</h3><h3 data-lang="no" lang="nb">Planlegg og lever</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Need dates, supplier progress and logistics sit in separate tools, so a late supplier is found late.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Behovsdatoer, leverandørfremdrift og logistikk ligger i ulike verktøy, så en forsinket leverandør oppdages sent.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>Need dates come from the schedule. See what a late supplier puts at risk, and plan getting the item to site or offshore. Your scheduling tool and ERP stay the record.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>Behovsdatoer hentes fra planen. Se hva en forsinket leverandør setter i fare, og planlegg frakt til anlegget eller offshore. Planleggingsverktøyet og ERP-systemet forblir kildesystemene.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">Planners decide every change to the plan.</span><span data-lang="no" lang="nb">Planleggerne avgjør hver endring i planen.</span></p>
+      </article>
+      <article class="stage box" id="stage-6">
+        <span class="card-tag">06</span>
+        <h3 data-lang="en">Install and hand over</h3><h3 data-lang="no" lang="nb">Installer og overlever</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Handover means chasing which unit sits on which tag, and which documents belong to it.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Overlevering betyr å lete etter hvilken enhet som sitter på hvilken tag, og hvilke dokumenter som hører til.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>Know which unit sits on which tag, with its documents and history: an equipment passport that follows it into operation.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>Vit hvilken enhet som sitter på hvilken tag, med dokumenter og historikk: et utstyrspass som følger den inn i drift.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">Completion and operations accept the handover.</span><span data-lang="no" lang="nb">Ferdigstillelse og drift godkjenner overleveringen.</span></p>
+      </article>
+      <article class="stage box" id="stage-7">
+        <span class="card-tag">07</span>
+        <h3 data-lang="en">Operate and maintain</h3><h3 data-lang="no" lang="nb">Drift og vedlikehold</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Maintenance strategies are written once and rarely revisited. Condition data and failure history sit apart from the requirements.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Vedlikeholdsstrategier skrives én gang og revideres sjelden. Tilstandsdata og feilhistorikk ligger adskilt fra kravene.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>Failure modes, maintenance strategy and plans built from the item’s requirements and history, read alongside condition data. Work orders are proposed to your maintenance system.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>Feilmoder, vedlikeholdsstrategi og planer bygget fra enhetens krav og historikk, sett sammen med tilstandsdata. Arbeidsordrer foreslås til vedlikeholdssystemet deres.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">Maintenance engineers approve every strategy change and work order.</span><span data-lang="no" lang="nb">Vedlikeholdsingeniører godkjenner hver strategiendring og arbeidsordre.</span></p>
+      </article>
+      <article class="stage box" id="stage-8">
+        <span class="card-tag">08</span>
+        <h3 data-lang="en">Modify</h3><h3 data-lang="no" lang="nb">Modifiser</h3>
+        <p class="today" data-lang="en"><b class="lbl">Today</b>Before a change, engineers search for what it might affect and hope nothing is missed.</p>
+        <p class="today" data-lang="no" lang="nb"><b class="lbl">I dag</b>Før en endring leter ingeniørene etter hva den kan påvirke, og håper at ingenting blir oversett.</p>
+        <p class="with" data-lang="en"><b class="lbl">With SINAPSET</b>See everything a change touches across the item’s life (requirements, design, documents, spares, open orders and maintenance plans) before you approve it. Try what-if changes first.</p>
+        <p class="with" data-lang="no" lang="nb"><b class="lbl">Med SINAPSET</b>Se alt en endring berører gjennom enhetens levetid (krav, design, dokumenter, reservedeler, åpne ordrer og vedlikeholdsplaner) før dere godkjenner den. Prøv hva-om-endringer først.</p>
+        <p class="note"><span class="ci" aria-hidden="true"></span><span data-lang="en">Nothing changes until a person approves.</span><span data-lang="no" lang="nb">Ingenting endres før en person godkjenner.</span></p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="rule" id="flow">
+<!-- WORKS WITH YOUR SYSTEMS -->
+<section class="rule" id="connect">
   <div class="inner">
-    <div class="section-label" data-lang="en">How it works</div>
-    <div class="section-label" data-lang="no" lang="nb">Slik fungerer det</div>
-    <h2 data-lang="en">From the documents you have to work a person can approve.</h2>
-    <h2 data-lang="no" lang="nb">Fra dokumentene du har, til arbeid en person kan godkjenne.</h2>
-    <p class="section-intro" data-lang="en">The same four steps apply whatever the documents are. A standard, a contract, a requirements package, or the file that replaces one of them.</p>
-    <p class="section-intro" data-lang="no" lang="nb">De samme fire trinnene gjelder uansett hvilke dokumenter det er. En standard, en kontrakt, en kravpakke, eller filen som erstatter en av dem.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="glyph" aria-hidden="true"><span class="doc"></span><span class="doc" style="margin-left:-18px;margin-bottom:-4px"></span><span class="doc" style="margin-left:-18px;margin-bottom:-8px"></span></div>
-        <span class="step-num"><span data-lang="en">01 Read</span><span data-lang="no" lang="nb">01 Les</span></span>
-        <h3 data-lang="en">Which text is in force</h3>
-        <h3 data-lang="no" lang="nb">Hvilken tekst som gjelder</h3>
-        <p data-lang="en">SINAPSET reads overlapping standards, amendments, internal documents and supplier documents into one model.</p>
-        <p data-lang="no" lang="nb">SINAPSET leser overlappende standarder, endringer, interne dokumenter og leverandørdokumenter inn i én modell.</p>
-      </div>
-      <div class="step">
-        <div class="glyph" aria-hidden="true"><span class="doc"></span><span class="fan"><i class="re"></i><i class="re"></i><i></i></span></div>
-        <span class="step-num"><span data-lang="en">02 Trace</span><span data-lang="no" lang="nb">02 Spor</span></span>
-        <h3 data-lang="en">What the change touches</h3>
-        <h3 data-lang="no" lang="nb">Hva endringen berører</h3>
-        <p data-lang="en">When a document is replaced, SINAPSET marks the clauses, assets and open work that have to be looked at again.</p>
-        <p data-lang="no" lang="nb">Når et dokument erstattes, markerer SINAPSET klausulene, objektene og det åpne arbeidet som må ses på nytt.</p>
-      </div>
-      <div class="step">
-        <div class="glyph" aria-hidden="true"><span class="hl"></span></div>
-        <span class="step-num"><span data-lang="en">03 Show</span><span data-lang="no" lang="nb">03 Vis</span></span>
-        <h3 data-lang="en">The clause, or nothing</h3>
-        <h3 data-lang="no" lang="nb">Klausulen, eller ingenting</h3>
-        <p data-lang="en">Every line shows the clause it came from. When the documents do not say, SINAPSET says it cannot tell.</p>
-        <p data-lang="no" lang="nb">Hver linje viser klausulen den kom fra. Når dokumentene ikke gir svar, sier SINAPSET fra om at det ikke kan avgjøres.</p>
-      </div>
-      <div class="step">
-        <div class="glyph" aria-hidden="true"><span class="sq" style="width:28px;height:28px"></span><span class="ci" style="width:30px;height:30px;margin-left:-12px"></span></div>
-        <span class="step-num"><span data-lang="en">04 Act</span><span data-lang="no" lang="nb">04 Utfør</span></span>
-        <h3 data-lang="en">Prepared work, then a person</h3>
-        <h3 data-lang="no" lang="nb">Klargjort arbeid, så en person</h3>
-        <p data-lang="en">SINAPSET prepares the work. It goes into the client’s systems only after a person approves.</p>
-        <p data-lang="no" lang="nb">SINAPSET forbereder arbeidet. Det går inn i kundens systemer først etter at en person har godkjent.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXAMPLES -->
-<section id="example">
-  <div class="inner">
-    <div class="section-label" data-lang="en">Examples</div>
-    <div class="section-label" data-lang="no" lang="nb">Eksempler</div>
-    <h2 data-lang="en">When a document is replaced, see what it touches.</h2>
-    <h2 data-lang="no" lang="nb">Når et dokument erstattes, ser du hva det berører.</h2>
-    <p class="section-intro" data-lang="en">Three sample jobs, not finished projects. All three use the same model. No customer is named, and no result is claimed.</p>
-    <p class="section-intro" data-lang="no" lang="nb">Tre eksempeljobber, ikke ferdige prosjekter. Alle tre bruker den samme modellen. Ingen kunde er navngitt, og ingen resultat er oppgitt.</p>
-
-    <div class="change" role="img" aria-label="A new edition replaces the old one; SINAPSET marks affected clauses, stored items and open orders for re-check, and shows what carries over.">
-      <div class="editions">
-        <div class="ed box old"><span class="doc"></span><span><b data-lang="en">Edition A</b><b data-lang="no" lang="nb">Utgave A</b><small><span data-lang="en">The standard your work was built on</span><span data-lang="no" lang="nb">Standarden arbeidet bygde på</span></small></span></div>
-        <div class="ed box"><span class="doc"></span><span><b data-lang="en">Edition B replaces it</b><b data-lang="no" lang="nb">Utgave B erstatter den</b><small><span data-lang="en">Arrives with a contract change</span><span data-lang="no" lang="nb">Kommer med en kontraktsendring</span></small></span></div>
-      </div>
-      <div class="arrow" aria-hidden="true"></div>
-      <div class="impact">
-        <div class="imp box"><span><span data-lang="en">Clauses in your own specification</span><span data-lang="no" lang="nb">Klausuler i deres egen spesifikasjon</span><small><span data-lang="en">That claimed edition A</span><span data-lang="no" lang="nb">Som viste til utgave A</span></small></span><span class="flag re"><span data-lang="en">Re-check</span><span data-lang="no" lang="nb">Kontroller</span></span></div>
-        <div class="imp box"><span><span data-lang="en">Stored items and lots</span><span data-lang="no" lang="nb">Lagrede enheter og partier</span><small><span data-lang="en">Inspected to the old rules</span><span data-lang="no" lang="nb">Kontrollert etter de gamle reglene</span></small></span><span class="flag re"><span data-lang="en">Re-check</span><span data-lang="no" lang="nb">Kontroller</span></span></div>
-        <div class="imp box"><span><span data-lang="en">Open orders and quotes</span><span data-lang="no" lang="nb">Åpne ordrer og tilbud</span><small><span data-lang="en">Checked against edition B</span><span data-lang="no" lang="nb">Kontrollert mot utgave B</span></small></span><span class="flag re"><span data-lang="en">Re-check</span><span data-lang="no" lang="nb">Kontroller</span></span></div>
-        <div class="imp box"><span><span data-lang="en">Work the change does not touch</span><span data-lang="no" lang="nb">Arbeid endringen ikke berører</span><small><span data-lang="en">With the clause that says so</span><span data-lang="no" lang="nb">Med klausulen som sier det</span></small></span><span class="flag ok"><span data-lang="en">Carries over</span><span data-lang="no" lang="nb">Gjelder fortsatt</span></span></div>
-      </div>
-    </div>
-
-    <div class="cards">
-      <div class="card box">
-        <span class="card-tag" data-lang="en">01 · The baseline changes</span>
-        <span class="card-tag" data-lang="no" lang="nb">01 · Grunnlaget endres</span>
-        <h3 data-lang="en">What does the change do to the hardware and the open orders?</h3>
-        <h3 data-lang="no" lang="nb">Hva gjør endringen med utstyret og de åpne ordrene?</h3>
-        <p data-lang="en">In this sample, a contract modification updates the baseline across overlapping specifications, for example a NASA standard, an ECSS standard and an internal specification.</p>
-        <p data-lang="no" lang="nb">I dette eksempelet oppdaterer en kontraktsendring grunnlaget på tvers av overlappende spesifikasjoner, for eksempel en NASA-standard, en ECSS-standard og en intern spesifikasjon.</p>
-        <ul class="list">
-          <li data-lang="en">Marks the stored lots that need another inspection, without taking built hardware apart.</li>
-          <li data-lang="no" lang="nb">Markerer lagrede partier som trenger en ny inspeksjon, uten å ta bygget utstyr fra hverandre.</li>
-          <li data-lang="en">Checks supplier quotes against the shelf-life, qualification and plating rules in the documents.</li>
-          <li data-lang="no" lang="nb">Kontrollerer leverandørtilbud mot holdbarhets-, kvalifikasjons- og beleggsreglene i dokumentene.</li>
-          <li data-lang="en">Prepares a supplier change, a deviation or a specification revision for a person to approve.</li>
-          <li data-lang="no" lang="nb">Forbereder et leverandørbytte, et avvik eller en spesifikasjonsrevisjon som en person skal godkjenne.</li>
-        </ul>
-      </div>
-      <div class="card box">
-        <span class="card-tag" data-lang="en">02 · A revision lands</span>
-        <span class="card-tag" data-lang="no" lang="nb">02 · En revisjon kommer</span>
-        <h3 data-lang="en">Which designs and test plans still hold?</h3>
-        <h3 data-lang="no" lang="nb">Hvilke design og testplaner gjelder fortsatt?</h3>
-        <p data-lang="en">In this sample, a base standard and its amendment notices, for example MIL&#8209;STD&#8209;889B and its notices, are read against the newer revision.</p>
-        <p data-lang="no" lang="nb">I dette eksempelet leses en grunnstandard og endringsmeldingene til den, for eksempel MIL&#8209;STD&#8209;889B og meldingene, mot den nyere revisjonen.</p>
-        <ul class="list">
-          <li data-lang="en">Finds where “should” became “shall”.</li>
-          <li data-lang="no" lang="nb">Finner hvor «bør» er blitt «skal».</li>
-          <li data-lang="en">Finds where the specification asks for test evidence, for example to ASTM&nbsp;B117, and the evidence is missing.</li>
-          <li data-lang="no" lang="nb">Finner hvor spesifikasjonen ber om testbevis, for eksempel etter ASTM&nbsp;B117, og beviset mangler.</li>
-          <li data-lang="en">Flags a supplier material claim that the standard’s tables do not support.</li>
-          <li data-lang="no" lang="nb">Markerer en materialpåstand fra en leverandør som standardens tabeller ikke støtter.</li>
-        </ul>
-      </div>
-      <div class="card box">
-        <span class="card-tag" data-lang="en">03 · One package</span>
-        <span class="card-tag" data-lang="no" lang="nb">03 · Én pakke</span>
-        <h3 data-lang="en">Specifications for one valve package in, three documents out.</h3>
-        <h3 data-lang="no" lang="nb">Spesifikasjoner for én ventilpakke inn, tre dokumenter ut.</h3>
-        <p data-lang="en">In this sample, SINAPSET prepares a purchase request, a datasheet and a test matrix for a person to approve.</p>
-        <p data-lang="no" lang="nb">I dette eksempelet forbereder SINAPSET en innkjøpsforespørsel, et datablad og en testmatrise som en person skal godkjenne.</p>
-        <ul class="list">
-          <li data-lang="en">Every line shows the clause it came from.</li>
-          <li data-lang="no" lang="nb">Hver linje viser klausulen den kom fra.</li>
-          <li data-lang="en">Nothing goes into your systems until a person approves.</li>
-          <li data-lang="no" lang="nb">Ingenting går inn i systemene deres før en person har godkjent.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MODEL -->
-<section class="dark on-dark" id="model">
-  <div class="inner">
-    <div class="section-label" data-lang="en">The model</div>
-    <div class="section-label" data-lang="no" lang="nb">Modellen</div>
-    <h2 data-lang="en">One model. Six axes.</h2>
-    <h2 data-lang="no" lang="nb">Én modell. Seks akser.</h2>
-    <p class="section-intro" data-lang="en">A semantic layer is the organisation’s shared model of meaning. People and agents use the same facts, and each fact points back to the document it came from. Without that layer, each tool invents its own reading of the same documents.</p>
-    <p class="section-intro" data-lang="no" lang="nb">Et semantisk lag er organisasjonens felles modell for mening. Mennesker og agenter bruker de samme faktaene, og hvert faktum peker tilbake til dokumentet det kom fra. Uten den modellen leser hvert verktøy de samme dokumentene på sin egen måte.</p>
-    <div class="axes" role="img" aria-label="Six axes around one fact that points to its source clause.">
-      <div class="axis"><span class="k">1</span><h4 data-lang="en">Asset</h4><h4 data-lang="no" lang="nb">Objekt</h4>
-        <p data-lang="en">Equipment, a contract, or another thing the documents describe.</p>
-        <p data-lang="no" lang="nb">Utstyr, en kontrakt, eller noe annet dokumentene beskriver.</p></div>
-      <div class="axis"><span class="k">2</span><h4 data-lang="en">Requirements</h4><h4 data-lang="no" lang="nb">Krav</h4>
-        <p data-lang="en">Clauses, tables, and what is required rather than advised.</p>
-        <p data-lang="no" lang="nb">Klausuler, tabeller, og det som er påkrevd og ikke bare anbefalt.</p></div>
-      <div class="axis"><span class="k">3</span><h4 data-lang="en">Applicability</h4><h4 data-lang="no" lang="nb">Virkeområde</h4>
-        <p data-lang="en">Where a requirement applies, and which edition replaced the last one.</p>
-        <p data-lang="no" lang="nb">Hvor et krav gjelder, og hvilken utgave som erstattet den forrige.</p></div>
-      <div class="hub">
-        <div class="fact"><span data-lang="en">One fact</span><span data-lang="no" lang="nb">Ett faktum</span><small><span data-lang="en">Read once, used by every person and agent</span><span data-lang="no" lang="nb">Lest én gang, brukt av alle personer og agenter</span></small></div>
-        <span class="link" aria-hidden="true">⟶</span>
-        <div class="src"><span><span data-lang="en">Its source clause</span><span data-lang="no" lang="nb">Kildeklausulen</span><small><span data-lang="en">Document, edition, page</span><span data-lang="no" lang="nb">Dokument, utgave, side</span></small></span><span class="doc"></span></div>
-      </div>
-      <div class="axis"><span class="k">4</span><h4 data-lang="en">Lifecycle</h4><h4 data-lang="no" lang="nb">Livssyklus</h4>
-        <p data-lang="en">From design and enquiry through to the record of what was done.</p>
-        <p data-lang="no" lang="nb">Fra design og forespørsel til registreringen av det som ble gjort.</p></div>
-      <div class="axis"><span class="k">5</span><h4 data-lang="en">Party</h4><h4 data-lang="no" lang="nb">Aktør</h4>
-        <p data-lang="en">Who issued the document, who supplies, and who approves.</p>
-        <p data-lang="no" lang="nb">Hvem som utstedte dokumentet, hvem som leverer, og hvem som godkjenner.</p></div>
-      <div class="axis"><span class="k">6</span><h4 data-lang="en">Location</h4><h4 data-lang="no" lang="nb">Sted</h4>
-        <p data-lang="en">The site, the warehouse, or the jurisdiction the document names.</p>
-        <p data-lang="no" lang="nb">Anlegget, lageret, eller jurisdiksjonen dokumentet nevner.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONNECT -->
-<section class="band-white" id="connect">
-  <div class="inner">
-    <div class="section-label" data-lang="en">Connect</div>
-    <div class="section-label" data-lang="no" lang="nb">Tilkobling</div>
+    <div class="section-label" data-lang="en">Works with your systems</div>
+    <div class="section-label" data-lang="no" lang="nb">Fungerer med systemene deres</div>
     <h2 data-lang="en">One layer over the systems you already run.</h2>
     <h2 data-lang="no" lang="nb">Ett lag over systemene dere allerede bruker.</h2>
-    <p class="section-intro" data-lang="en">Your systems stay the system of record. SINAPSET reads what a job needs, under your own credentials, and keeps a record of what it read.</p>
-    <p class="section-intro" data-lang="no" lang="nb">Systemene deres forblir kildesystemene. SINAPSET leser det en jobb trenger, med deres egen tilgang, og tar vare på hva den leste.</p>
-    <div class="connect" role="img" aria-label="Documents and data platforms feed SINAPSET; AI agents and your business systems work with it after approval.">
+    <p class="section-intro" data-lang="en">Your systems stay the system of record. SINAPSET runs in your environment, reads what a job needs under your own credentials, and keeps a record of what it read.</p>
+    <p class="section-intro" data-lang="no" lang="nb">Systemene deres forblir kildesystemene. SINAPSET kjører i deres miljø, leser det en jobb trenger med deres egen tilgang, og tar vare på hva den leste.</p>
+    <div class="connect" role="img" aria-label="Your documents, data platforms and historians feed SINAPSET; your ERP, PLM, scheduling and maintenance systems receive work after a person approves it.">
       <div class="side l">
         <div class="col-label"><span data-lang="en">Reads from</span><span data-lang="no" lang="nb">Leser fra</span></div>
-        <div class="conn box"><span><span data-lang="en">Documents</span><span data-lang="no" lang="nb">Dokumenter</span><small>PDF, Word, Excel</small></span></div>
-        <div class="conn box"><span>Cognite Data Fusion<small><span data-lang="en">Assets and files</span><span data-lang="no" lang="nb">Objekter og filer</span></small></span></div>
-        <div class="conn box"><span>Microsoft Fabric<small><span data-lang="en">Lakehouse tables</span><span data-lang="no" lang="nb">Lakehouse-tabeller</span></small></span></div>
-        <div class="conn box"><span>SharePoint<small><span data-lang="en">Document libraries</span><span data-lang="no" lang="nb">Dokumentbiblioteker</span></small></span><span class="flag"><span data-lang="en">Coming</span><span data-lang="no" lang="nb">Kommer</span></span></div>
+        <div class="conn box"><span><span data-lang="en">Your documents</span><span data-lang="no" lang="nb">Deres dokumenter</span><small><span data-lang="en">Standards, specifications, contracts, supplier documents</span><span data-lang="no" lang="nb">Standarder, spesifikasjoner, kontrakter, leverandørdokumenter</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">Existing data platforms</span><span data-lang="no" lang="nb">Eksisterende dataplattformer</span><small><span data-lang="en">Assets, tags and files</span><span data-lang="no" lang="nb">Objekter, tagger og filer</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">Historians</span><span data-lang="no" lang="nb">Historikkdatabaser</span><small><span data-lang="en">Condition and process data</span><span data-lang="no" lang="nb">Tilstands- og prosessdata</span></small></span></div>
       </div>
       <div class="mark-ring"><span class="lockup"><svg class="mk" viewBox="0 0 100 64" aria-hidden="true" focusable="false"><use href="#sinapset-mark"/></svg><span class="wm" aria-hidden="true">SINAPSET</span></span></div>
       <div class="side r">
         <div class="col-label"><span data-lang="en">Works with</span><span data-lang="no" lang="nb">Fungerer med</span></div>
-        <div class="conn box"><span><span data-lang="en">AI agents</span><span data-lang="no" lang="nb">KI-agenter</span><small><span data-lang="en">Governed access over MCP</span><span data-lang="no" lang="nb">Styrt tilgang via MCP</span></small></span></div>
-        <div class="conn box"><span>ERP<small><span data-lang="en">A purchase request, after approval</span><span data-lang="no" lang="nb">En innkjøpsforespørsel, etter godkjenning</span></small></span></div>
-        <div class="conn box"><span><span data-lang="en">Document control</span><span data-lang="no" lang="nb">Dokumentkontroll</span><small><span data-lang="en">A technical query, after approval</span><span data-lang="no" lang="nb">En teknisk forespørsel, etter godkjenning</span></small></span></div>
-        <div class="conn box"><span><span data-lang="en">Graph tools</span><span data-lang="no" lang="nb">Grafverktøy</span><small><span data-lang="en">Open standards: RDF, OWL, SHACL</span><span data-lang="no" lang="nb">Åpne standarder: RDF, OWL, SHACL</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">ERP, such as SAP</span><span data-lang="no" lang="nb">ERP, for eksempel SAP</span><small><span data-lang="en">Purchase requests, after approval</span><span data-lang="no" lang="nb">Innkjøpsforespørsler, etter godkjenning</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">PLM</span><span data-lang="no" lang="nb">PLM</span><small><span data-lang="en">Release packages, after approval</span><span data-lang="no" lang="nb">Frigivelsespakker, etter godkjenning</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">Scheduling tools</span><span data-lang="no" lang="nb">Planleggingsverktøy</span><small><span data-lang="en">Need dates and progress</span><span data-lang="no" lang="nb">Behovsdatoer og fremdrift</span></small></span></div>
+        <div class="conn box"><span><span data-lang="en">Maintenance system</span><span data-lang="no" lang="nb">Vedlikeholdssystem</span><small><span data-lang="en">Work orders, after approval</span><span data-lang="no" lang="nb">Arbeidsordrer, etter godkjenning</span></small></span></div>
       </div>
     </div>
   </div>
@@ -790,44 +674,6 @@
   </div>
 </section>
 
-<!-- NEXT -->
-<section class="band-birch" id="work">
-  <div class="inner">
-    <div class="section-label" data-lang="en">The work</div>
-    <div class="section-label" data-lang="no" lang="nb">Arbeidet</div>
-    <h2 data-lang="en">The next job runs on the same model.</h2>
-    <h2 data-lang="no" lang="nb">Neste jobb kjører på den samme modellen.</h2>
-    <p class="section-intro" data-lang="en">That is the reason to choose SINAPSET over a single tool. These are kinds of work, not completed projects.</p>
-    <p class="section-intro" data-lang="no" lang="nb">Derfor velger man SINAPSET framfor ett enkelt verktøy. Dette er typer arbeid, ikke ferdige prosjekter.</p>
-    <div class="cards">
-      <div class="card box">
-        <span class="card-tag" data-lang="en">A document changes</span>
-        <span class="card-tag" data-lang="no" lang="nb">Et dokument endres</span>
-        <h3 data-lang="en">What else has to be looked at?</h3>
-        <h3 data-lang="no" lang="nb">Hva annet må ses på?</h3>
-        <p data-lang="en">A standard or a contract is replaced. SINAPSET finds the assets and the open work the change touches.</p>
-        <p data-lang="no" lang="nb">En standard eller en kontrakt erstattes. SINAPSET finner objektene og det åpne arbeidet endringen berører.</p>
-      </div>
-      <div class="card box">
-        <span class="card-tag" data-lang="en">Documents in, prepared work out</span>
-        <span class="card-tag" data-lang="no" lang="nb">Dokumenter inn, klargjort arbeid ut</span>
-        <h3 data-lang="en">The prepared work, each line traced.</h3>
-        <h3 data-lang="no" lang="nb">Det klargjorte arbeidet, hver linje sporet.</h3>
-        <p data-lang="en">A requirements package comes in. The prepared work comes out. Every line shows the clause it came from.</p>
-        <p data-lang="no" lang="nb">En kravpakke kommer inn. Det klargjorte arbeidet kommer ut. Hver linje viser klausulen den kom fra.</p>
-      </div>
-      <div class="card box">
-        <span class="card-tag" data-lang="en">Same model, later</span>
-        <span class="card-tag" data-lang="no" lang="nb">Samme modell, senere</span>
-        <h3 data-lang="en">Finance and legal come next, on the same model.</h3>
-        <h3 data-lang="no" lang="nb">Økonomi og juss kommer etterpå, på den samme modellen.</h3>
-        <p data-lang="en">They are not done yet.</p>
-        <p data-lang="no" lang="nb">De er ikke ferdige ennå.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="band-white" id="faq">
   <div class="inner">
@@ -853,13 +699,13 @@
       </details>
       <details>
         <summary><span data-lang="en">How is it different from a chatbot or document search?</span><span data-lang="no" lang="nb">Hva skiller det fra en chatbot eller dokumentsøk?</span></summary>
-        <p data-lang="en">A chatbot or search tool finds text and lets a model guess. SINAPSET builds a structured model of requirements, assets and editions, shows the clause behind every line, and says “cannot tell” when the documents do not give an answer. A person approves the work, and the decision is kept.</p>
-        <p data-lang="no" lang="nb">En chatbot eller et søkeverktøy finner tekst og lar en modell gjette. SINAPSET bygger en strukturert modell av krav, objekter og utgaver, viser klausulen bak hver linje, og sier at det ikke kan avgjøres når dokumentene ikke gir svar. En person godkjenner arbeidet, og beslutningen lagres.</p>
+        <p data-lang="en">A chatbot or search tool finds text and lets a model guess. SINAPSET keeps one model of your items, their requirements and their history, shows the source behind every line, and says “cannot tell” when the documents do not give an answer. A person approves the work, and the decision is kept.</p>
+        <p data-lang="no" lang="nb">En chatbot eller et søkeverktøy finner tekst og lar en modell gjette. SINAPSET har én modell av enhetene, kravene og historikken deres, viser kilden bak hver linje, og sier at det ikke kan avgjøres når dokumentene ikke gir svar. En person godkjenner arbeidet, og beslutningen lagres.</p>
       </details>
       <details>
         <summary><span data-lang="en">Which documents can it read?</span><span data-lang="no" lang="nb">Hvilke dokumenter kan det lese?</span></summary>
-        <p data-lang="en">Standards and their amendments, contracts and contract changes, internal specifications, supplier quotes, datasheets and registers, as PDF, Word or Excel. You bring your own licensed copies of standards; SINAPSET ships none.</p>
-        <p data-lang="no" lang="nb">Standarder og endringene til dem, kontrakter og kontraktsendringer, interne spesifikasjoner, leverandørtilbud, datablad og registre, som PDF, Word eller Excel. Dere bruker egne lisensierte kopier av standardene; SINAPSET leverer ingen.</p>
+        <p data-lang="en">Standards and their amendments, contracts and contract changes, internal specifications, supplier quotes, datasheets and registers, as PDF, Word or Excel. SINAPSET runs in your environment on your own documents and standards; we ship no standard content.</p>
+        <p data-lang="no" lang="nb">Standarder og endringene til dem, kontrakter og kontraktsendringer, interne spesifikasjoner, leverandørtilbud, datablad og registre, som PDF, Word eller Excel. SINAPSET kjører i deres miljø på deres egne dokumenter og standarder; vi leverer ikke noe standardinnhold.</p>
       </details>
       <details>
         <summary><span data-lang="en">Does it replace engineers or our existing systems?</span><span data-lang="no" lang="nb">Erstatter det ingeniører eller eksisterende systemer?</span></summary>
@@ -916,10 +762,10 @@
         <label for="f-topic"><span data-lang="en">What do you want to talk about?</span><span data-lang="no" lang="nb">Hva vil du snakke om?</span></label>
         <select id="f-topic" name="topic">
           <option value="Not sure yet" data-en="Not sure yet" data-no="Vet ikke ennå">Not sure yet</option>
-          <option value="Sample 01: hardware and open orders" data-en="Sample 01: hardware and open orders" data-no="Eksempel 01: materiell og åpne ordrer">Sample 01: hardware and open orders</option>
-          <option value="Sample 02: designs and test plans" data-en="Sample 02: designs and test plans" data-no="Eksempel 02: konstruksjoner og testplaner">Sample 02: designs and test plans</option>
-          <option value="Sample 03: a valve package" data-en="Sample 03: a valve package" data-no="Eksempel 03: en ventilpakke">Sample 03: a valve package</option>
-          <option value="Finance or legal (later)" data-en="Finance or legal (later)" data-no="Økonomi eller juss (senere)">Finance or legal (later)</option>
+          <option value="Requirements and design" data-en="Requirements and design" data-no="Krav og design">Requirements and design</option>
+          <option value="Release and purchase" data-en="Release and purchase" data-no="Frigivelse og innkjøp">Release and purchase</option>
+          <option value="Plan, deliver and install" data-en="Plan, deliver and install" data-no="Planlegg, lever og installer">Plan, deliver and install</option>
+          <option value="Operate, maintain and modify" data-en="Operate, maintain and modify" data-no="Drift, vedlikehold og modifikasjon">Operate, maintain and modify</option>
           <option value="Partnership" data-en="Partnership" data-no="Partnerskap">Partnership</option>
           <option value="Other" data-en="Other" data-no="Annet">Other</option>
         </select>
@@ -955,13 +801,10 @@
         <h5 data-lang="en">Product</h5>
         <h5 data-lang="no" lang="nb">Produkt</h5>
         <ul>
-          <li><a href="#problems" data-lang="en">Problems we solve</a><a href="#problems" data-lang="no" lang="nb">Problemer vi løser</a></li>
-          <li><a href="#flow" data-lang="en">How it works</a><a href="#flow" data-lang="no" lang="nb">Slik fungerer det</a></li>
+          <li><a href="#life" data-lang="en">The life of an item</a><a href="#life" data-lang="no" lang="nb">Livet til en enhet</a></li>
+          <li><a href="#difference" data-lang="en">People approve</a><a href="#difference" data-lang="no" lang="nb">Mennesker godkjenner</a></li>
+          <li><a href="#connect" data-lang="en">Your systems</a><a href="#connect" data-lang="no" lang="nb">Systemene deres</a></li>
           <li><a href="#faq" data-lang="en">FAQ</a><a href="#faq" data-lang="no" lang="nb">Spørsmål</a></li>
-          <li><a href="#example" data-lang="en">Examples</a><a href="#example" data-lang="no" lang="nb">Eksempler</a></li>
-          <li><a href="#model" data-lang="en">The model</a><a href="#model" data-lang="no" lang="nb">Modellen</a></li>
-          <li><a href="#connect" data-lang="en">Connect</a><a href="#connect" data-lang="no" lang="nb">Tilkobling</a></li>
-          <li><a href="#difference" data-lang="en">Why SINAPSET</a><a href="#difference" data-lang="no" lang="nb">Hvorfor SINAPSET</a></li>
           <li><a href="privacy.html" data-lang="en">Privacy policy</a><a href="privacy.html#no" data-lang="no" lang="nb">Personvern</a></li>
         </ul>
       </div>
@@ -976,8 +819,8 @@
         </ul>
       </div>
     </div>
-    <p class="footer-legal" data-lang="en">SINAPSET is decision-support software. It does not replace qualified engineering judgement, certification or regulatory approval, and its results cover only the documents and data it is given. The examples are sample jobs, not customer projects. NASA, ECSS, MIL-STD, ASTM, Cognite, Microsoft, Fabric and SharePoint are named only to identify standards and systems; they are trademarks of their owners, and naming them does not imply affiliation or endorsement.</p>
-    <p class="footer-legal" data-lang="no" lang="nb">SINAPSET er programvare for beslutningsstøtte. Den erstatter ikke kvalifisert faglig vurdering, sertifisering eller myndighetsgodkjenning, og resultatene gjelder bare dokumentene og dataene den får. Eksemplene er eksempeljobber, ikke kundeprosjekter. NASA, ECSS, MIL-STD, ASTM, Cognite, Microsoft, Fabric og SharePoint nevnes bare for å identifisere standarder og systemer; de er varemerker som tilhører sine eiere, og omtalen betyr ikke tilknytning eller anbefaling.</p>
+    <p class="footer-legal" data-lang="en">SINAPSET is decision-support software. It does not replace qualified engineering judgement, certification or regulatory approval, and its results cover only the documents and data it is given. SAP and other product names are used only to identify systems; they are trademarks of their owners, and naming them does not imply affiliation or endorsement.</p>
+    <p class="footer-legal" data-lang="no" lang="nb">SINAPSET er programvare for beslutningsstøtte. Den erstatter ikke kvalifisert faglig vurdering, sertifisering eller myndighetsgodkjenning, og resultatene gjelder bare dokumentene og dataene den får. SAP og andre produktnavn nevnes bare for å identifisere systemer; de er varemerker som tilhører sine eiere, og omtalen betyr ikke tilknytning eller anbefaling.</p>
     <div class="footer-bottom">
       <p>© <span class="year">2026</span> EikenTech. <span data-lang="en">All rights reserved.</span><span data-lang="no" lang="nb">Alle rettigheter forbeholdt.</span></p>
       <p><span data-lang="en">Org. no. 937 268 858</span><span data-lang="no" lang="nb">Org.nr. 937 268 858</span></p>
